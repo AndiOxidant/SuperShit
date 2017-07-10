@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+'use strict';
+
+let path = require('path');
+let Supershit = require('../lib/supershit');
+
+let cmd;
+let cmdName = process.argv[2] || 'start';
+let supershit = new Supershit();
+let superimport = require('superimport');
+
+try {
+  let cmdPaths = [
+    path.join(process.cwd(), 'bin'),
+    path.join(__dirname)
+  ];
+
+  cmd = superimport(cmdName + '.js', cmdPaths);
+}
+catch (err) {
+  console.log(`${cmdName} is not defined!`, err);
+  process.exit(1);
+}
+
+cmd(supershit);
