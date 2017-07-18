@@ -1,0 +1,8 @@
+{
+    "name": "supershit-project",
+    "description": "",
+    "version": "0.0.1",
+    "dependencies": {
+        "supershit": "^0.0.1"
+    }
+}

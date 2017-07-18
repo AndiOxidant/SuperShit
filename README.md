@@ -9,9 +9,9 @@ Folder tree
 
 ```
 app/            Backend stuff
-    modules/    Backend modules
-    routes/     Backend rest api adapter
-    app.js      Bootstrap file
+  modules/    Backend modules
+  routes/     Backend rest api adapter
+  app.js      Bootstrap file
 conf/       Configurations
 bin/        Scripts
 public/     Public stuff (URL: /filename.xy)
