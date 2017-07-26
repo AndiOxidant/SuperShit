@@ -1,8 +1,30 @@
+const SuperShitServer = require('./SuperShitServer')
+const SuperShitNode = require('./SuperShitNode')
 const SuperShitCommander = require('./SuperShitCommander')
+const CoreIO = require('coreio')
+const log = require('logtopus').getLogger('supershit')
 
 class SuperShit {
-  static app() {
+  static app(conf) {
+    CoreIO.logLevel = 'sys'
+    CoreIO.httpPort = conf.port || 7448
 
+    CoreIO.htmlPage('/', {
+      title: conf.title
+    })
+
+    const nodes = new SuperShitNode({
+      type: 'root',
+      selector: 'body'
+    })
+
+    CoreIO.api('/api/nodes', {
+      get(req, res, next) {
+        res.json(nodes.toJSON())
+      }
+    })
+
+    return nodes
   }
 
   /**

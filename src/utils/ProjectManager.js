@@ -1,40 +1,44 @@
 const path = require('path');
-const fs = require('fs');
+const co = require('co');
 
-const copyDir = require('copy-dir');
+const SuperFS = require('superfs');
 // const createModule = require('../modules/createModule');
 
 class ProjectManager {
-  static getProjectDir(projectName) {
-    if (!projectName) {
-      throw 'Missing project name!';
+    static getProjectName(projectName) {
+      if (/^\.{1,2}($|\/)/.test(projectName)) {
+        return path.basename(path.join(process.cwd(), projectName))
+      }
+
+      if (!/^[a-zA-Z0-9_.-]+$/.test(projectName)) {
+        throw 'Invalid project name! Only a-z A-Z 0-9 _ . - are allowed in project names.';
+      }
+
+      return projectName
     }
 
-    if (!/^[a-zA-Z0-9_.-]+$/.test(projectName)) {
-      throw 'Invalid project name! Only a-z A-Z 0-9 _ . - are allowed in project names.';
+  static getProjectDir(projectName, projectDir) {
+    if (/^\.{1,2}($|\/)/.test(projectName) && !projectDir) {
+      return path.join(process.cwd(), projectName)
     }
 
-    return path.join(process.cwd(), projectName)
+    return path.join(process.cwd(), projectDir ? projectDir : projectName)
   }
 
-  static createProject(projectName) {
-    const srcDir = path.join(__dirname, '../../drafts/project/')
-    const destDir = ProjectManager.getProjectDir(projectName)
+  static createProject(projectName, projectDir) {
+    return co(function *() {
+      const srcDir = path.join(__dirname, '../../drafts/project/')
+      const destDir = ProjectManager.getProjectDir(projectDir)
 
-    copyDir.sync(srcDir, destDir, (stat, filepath, filename) => {
-      const destFile = path.join(destDir, path.relative(srcDir, filepath))
-      console.log('DESTF', destFile)
-      console.log('DESTF', filename)
-      return false
+      yield SuperFS.copyDir(srcDir, destDir, true)
+
+      //Write packege.json
+      const pkg = require(path.join(projectDir, 'package.json'));
+      pkg.name = projectName;
+
+      const dest = path.join(projectDir, 'package.json')
+      yield SuperFS.writeFile(dest, JSON.stringify(pkg, null, '  '))
     });
-    //
-    // //Write packege.json
-    // const pkg = require(path.join(process.cwd(), projectName, 'package.json'));
-    // pkg.name = projectName;
-    // fs.writeFileSync(path.join(process.cwd(), projectName, 'package.json'), JSON.stringify(pkg, null, '    '));
-    //
-    // process.chdir(destDir);
-    // createModule('index');
   }
 }
 
