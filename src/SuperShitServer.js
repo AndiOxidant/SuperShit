@@ -1,3 +1,5 @@
+'use strict';
+
 const ExpressServer = require('express-server');
 
 class SupershitServer extends ExpressServer {

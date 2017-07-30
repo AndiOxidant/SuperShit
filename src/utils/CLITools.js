@@ -1,3 +1,5 @@
+'use strict';
+
 const CLITable = require('cli-table')
 
 class CLITools {

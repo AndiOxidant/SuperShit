@@ -1,7 +1,17 @@
+'use strict';
+
 class SuperShitNode {
   constructor(conf) {
     this.node = conf
     this.node.childs = []
+  }
+
+  addChild(child) {
+    if (!this.node.childs) {
+      this.node.childs = []
+    }
+
+    this.node.childs.push(child)
   }
 
   cmp(cmpName, conf) {
@@ -12,7 +22,7 @@ class SuperShitNode {
       list: conf.list ? conf.list.name : undefined
     })
 
-    this.node.childs.push(c)
+    this.addChild(c)
     return c
   }
 
@@ -24,7 +34,7 @@ class SuperShitNode {
       list: conf.list ? conf.list.name : undefined
     });
 
-    this.node.childs.push(c)
+    this.addChild(c)
     return c
   }
 
@@ -34,7 +44,7 @@ class SuperShitNode {
       content
     })
 
-    this.node.childs.push(c)
+    this.addChild(c)
 
     return c
   }

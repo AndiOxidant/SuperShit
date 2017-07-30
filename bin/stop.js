@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path')
 
 const supershit = require('../src/SuperShit')
@@ -10,7 +12,7 @@ supershit.cmd('stop', () => {
       process.exit(1)
     }
 
-    pm2.delete(path.join(__dirname, '../', 'app.js'), (err, apps) => {
+    pm2.delete(path.join(process.cwd(), 'app/app.js'), (err, apps) => {
       pm2.disconnect()
       if (err) {
         throw err

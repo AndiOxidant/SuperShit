@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path')
 
 const supershit = require('../src/SuperShit')
@@ -12,7 +14,7 @@ supershit.cmd('start', () => {
     }
 
     pm2.start({
-      script: path.join(__dirname, '../', 'app.js'),
+      script: path.join(process.cwd(), 'app/app.js'),
       exec_mode: 'cluster',
       instances: 4,
       max_memory_restart: '100M'

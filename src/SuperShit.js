@@ -1,6 +1,9 @@
+'use strict';
+
 const SuperShitServer = require('./SuperShitServer')
 const SuperShitNode = require('./SuperShitNode')
 const SuperShitCommander = require('./SuperShitCommander')
+const WebBuilder = require('./utils/WebBuilder')
 const CoreIO = require('coreio')
 const log = require('logtopus').getLogger('supershit')
 
@@ -10,7 +13,10 @@ class SuperShit {
     CoreIO.httpPort = conf.port || 7448
 
     CoreIO.htmlPage('/', {
-      title: conf.title
+      title: conf.title,
+      scripts: [
+        '/js/bundle.js'
+      ]
     })
 
     const nodes = new SuperShitNode({
@@ -21,6 +27,15 @@ class SuperShit {
     CoreIO.api('/api/nodes', {
       get(req, res, next) {
         res.json(nodes.toJSON())
+      }
+    })
+
+    CoreIO.api('/js/bundle.js', {
+      get(req, res, next) {
+        WebBuilder.buildJS().then((bundle) => {
+          res.type('application/javascript')
+          res.send(bundle)
+        })
       }
     })
 
