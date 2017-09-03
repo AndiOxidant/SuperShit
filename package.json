@@ -19,8 +19,9 @@
     "express-server": "^0.7.0",
     "jquery": "^3.2.1",
     "nodemon": "^1.11.0",
-    "pm2": "^2.5.0",
-    "superfs": "^0.4.0",
+    "pm2": "^2.6.1",
+    "superconf": "^1.0.0",
+    "superfs": "^0.5.0",
     "superimport": "^1.0.0"
   },
   "devDependencies": {
@@ -30,7 +31,7 @@
     "sinon": "^3.2.1"
   },
   "scripts": {
-    "test": "mocha --reporter lagoon-reporter --recursive test/unit/"
+    "test": "mocha --reporter lagoon-reporter --recursive tests/unit/"
   },
   "repository": {
     "type": "git",

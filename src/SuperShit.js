@@ -2,15 +2,15 @@
 
 const CoreIO = require('coreio')
 const SuperShitNode = require('./SuperShitNode')
-const SuperShitConfig = require('./SuperShitConfig')
+const SupershitConfig = require('./SuperShitConfig')
 const SuperShitCommander = require('./SuperShitCommander')
-const WebBuilder = require('./utils/WebBuilder')
+const WebBuilder = require('./libs/WebBuilder')
 const log = require('logtopus').getLogger('supershit')
 
 class SuperShit {
   static app(conf) {
     // load config
-    const config = new SuperShitConfig(conf)
+    const config = new SupershitConfig(conf)
 
     CoreIO.logLevel = 'sys'
     CoreIO.httpPort = conf.port || 7448
