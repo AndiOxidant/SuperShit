@@ -23,9 +23,14 @@
     "superfs": "^0.4.0",
     "superimport": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "inspect.js": "^1.6.1",
+    "lagoon-reporter": "^0.3.4",
+    "mocha": "^3.5.0",
+    "sinon": "^3.2.1"
+  },
   "scripts": {
-    "test": "mocha --reporter lagoon-reporter tests/*.spect.js"
+    "test": "mocha --reporter lagoon-reporter --recursive test/unit/"
   },
   "repository": {
     "type": "git",

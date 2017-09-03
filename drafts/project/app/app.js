@@ -13,4 +13,4 @@ appNode.cmp('WelcomeCmp', {
   model: WelcomeModel
 })
 
-appNode.html('<article><your supershit app has been started succesfully!</article>')
+appNode.html('<article>Your supershit app has been started succesfully!</article>')

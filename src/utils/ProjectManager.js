@@ -8,6 +8,10 @@ const SuperFS = require('superfs');
 
 class ProjectManager {
     static getProjectName(projectName) {
+      if (!projectName) {
+        return path.dirname(process.cwd())
+      }
+
       if (/^\.{1,2}($|\/)/.test(projectName)) {
         return path.basename(path.join(process.cwd(), projectName))
       }
@@ -21,10 +25,10 @@ class ProjectManager {
 
   static getProjectDir(projectName, projectDir) {
     if (/^\.{1,2}($|\/)/.test(projectName) && !projectDir) {
-      return path.join(process.cwd(), projectName)
+      return path.resolve(process.cwd(), projectName)
     }
 
-    return path.join(process.cwd(), projectDir ? projectDir : projectName)
+    return path.resolve(process.cwd(), projectDir ? projectDir : projectName)
   }
 
   static createProject(projectName, projectDir) {
@@ -32,7 +36,7 @@ class ProjectManager {
       const srcDir = path.join(__dirname, '../../drafts/project/')
       const destDir = ProjectManager.getProjectDir(projectDir)
 
-      yield SuperFS.copyDir(srcDir, destDir, true)
+      const copiedFiles = yield SuperFS.copyDir(srcDir, destDir, true)
 
       //Write packege.json
       const pkg = require(path.join(projectDir, 'package.json'));
@@ -40,6 +44,10 @@ class ProjectManager {
 
       const dest = path.join(projectDir, 'package.json')
       yield SuperFS.writeFile(dest, JSON.stringify(pkg, null, '  '))
+
+      return {
+        copiedFiles
+      }
     });
   }
 }

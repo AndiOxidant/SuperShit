@@ -1,16 +1,21 @@
 'use strict';
 
-const SuperShitServer = require('./SuperShitServer')
+const CoreIO = require('coreio')
 const SuperShitNode = require('./SuperShitNode')
+const SuperShitConfig = require('./SuperShitConfig')
 const SuperShitCommander = require('./SuperShitCommander')
 const WebBuilder = require('./utils/WebBuilder')
-const CoreIO = require('coreio')
 const log = require('logtopus').getLogger('supershit')
 
 class SuperShit {
   static app(conf) {
+    // load config
+    const config = new SuperShitConfig(conf)
+
     CoreIO.logLevel = 'sys'
     CoreIO.httpPort = conf.port || 7448
+
+    log.setLevel('debug')
 
     CoreIO.htmlPage('/', {
       title: conf.title,
@@ -50,10 +55,23 @@ class SuperShit {
   static cmd(name, fn) {
     const cmd = new SuperShitCommander();
     cmd.command(name || 'default');
-    return cmd.then(fn).catch((err) => {
-      console.error(err) // eslint-disable-line no-console
-      process.exit(1)
-    })
+    if (typeof fn === 'function') {
+      return cmd.then(fn).catch((err) => {
+        console.error(err) // eslint-disable-line no-console
+        process.exit(1)
+      })
+    }
+
+    return {
+      action(fn) {
+        cmd.then(fn).catch((err) => {
+          console.error(err) // eslint-disable-line no-console
+          process.exit(1)
+        })
+
+        return cmd
+      }
+    }
   }
 }
 
