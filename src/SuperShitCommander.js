@@ -3,8 +3,8 @@
 const Commander = require('commander').Command;
 
 class SupershitCommander extends Commander {
-  constructor(name, conf) {
-    super(name);
+  constructor(conf) {
+    super();
     this.conf = Object.assign({
       workingDir: process.cwd()
     }, conf);

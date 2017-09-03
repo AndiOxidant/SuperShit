@@ -1,5 +1,7 @@
 'use strict';
 
+const log = require('logtopus').getLogger('supershit')
+
 class SuperShitNode {
   constructor(conf) {
     this.node = conf
@@ -15,6 +17,7 @@ class SuperShitNode {
   }
 
   cmp(cmpName, conf) {
+    log.debug(`Add CMP ${cmpName}`, conf)
     const c = new SuperShitNode({
       type: 'cmp',
       name: cmpName,
@@ -53,6 +56,24 @@ class SuperShitNode {
     const nodeCopy = Object.assign({}, this.node);
     nodeCopy.childs.map((n) => n.toJSON());
     return nodeCopy;
+  }
+
+  getComponents() {
+    const components = []
+    const walker = (nodes) => {
+      for (const n of nodes) {
+        if (n.type === 'cmp') {
+          components.push(n.name)
+        }
+
+        if (n.childs) {
+          walker(n.childs)
+        }
+      }
+    }
+
+    walker(this.nodes.childs)
+    return components
   }
 }
 

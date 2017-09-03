@@ -1,7 +1,7 @@
 SuperShit
 =========
 
-Lightwight search-engine friendly single-page web framework
+Lightweight search-engine friendly single-page web framework
 
 ## Installation
 
