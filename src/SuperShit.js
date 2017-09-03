@@ -1,6 +1,7 @@
 'use strict';
 
 const CoreIO = require('coreio')
+const SuperShitServer = require('./SuperShitServer')
 const SuperShitNode = require('./SuperShitNode')
 const SupershitConfig = require('./SuperShitConfig')
 const SuperShitCommander = require('./SuperShitCommander')

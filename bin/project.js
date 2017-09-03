@@ -14,8 +14,8 @@ supershit
     // throw new Error('Wrong number of arguments! Project name missing. `supershit project <name>`')
   // }
 
-  projectName = ProjectManager.getProjectName(projectName)
-  projectDir = ProjectManager.getProjectDir(projectName, projectDir)
+  // const projectName = ProjectManager.getProjectName(cmd.args[0])
+  // const projectDir = ProjectManager.getProjectDir(cmd.args[0], cmd.args[1])
 
   const cf = colorfy()
   cf.txt('Create new SuperShit project').lime(projectName).txt('in dir').grey(projectDir).print()
