@@ -4,7 +4,7 @@ const inspect = require('inspect.js');
 const sinon = require('sinon');
 inspect.useSinon(sinon);
 
-const supershit = require('');
+const supershit = require('../../../src/SuperShit');
 
 describe('Supershit', () => {
   describe('app', () => {
