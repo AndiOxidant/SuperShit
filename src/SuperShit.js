@@ -9,6 +9,16 @@ const WebBuilder = require('./libs/WebBuilder')
 const log = require('logtopus').getLogger('supershit')
 
 class SuperShit {
+  /**
+   * Register a supershit app
+   *
+   * @method app
+   * @static
+   * @version 1.0.0
+   *
+   * @param  {object} conf Custom configuration
+   * @return {[type]}      [description]
+   */
   static app(conf) {
     // load config
     const config = new SupershitConfig(conf)
@@ -50,6 +60,11 @@ class SuperShit {
 
   /**
    * Register new cli command
+   *
+   * @method cmd
+   * @static
+   * @version 1.0.0
+   *
    * @param  {string} name Command name
    * @return {object}      Returns a SuperShitCommander object
    */
@@ -73,6 +88,21 @@ class SuperShit {
         return cmd
       }
     }
+  }
+
+  /**
+   * Load supershit conf from `$PROJECT_DIR/config/`
+   *
+   * @method config
+   * @static
+   * @version 1.0.0
+   *
+   * @param  {object} customConf Set custom conf, overwrites predefined config
+   * @return {object}            Returns a SupershitConfig object
+   */
+  static config(customConf) {
+    const conf = new SupershitConfig(customConf)
+    return conf.load()
   }
 }
 
