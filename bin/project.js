@@ -1,6 +1,6 @@
 'use strict';
 
-const supershit = require('../src/SuperShit')
+const supershit = require('../src/Supershit')
 const ProjectManager = require('../src/utils/ProjectManager')
 const colorfy = require('colorfy')
 
@@ -18,7 +18,7 @@ supershit
   // const projectDir = ProjectManager.getProjectDir(cmd.args[0], cmd.args[1])
 
   const cf = colorfy()
-  cf.txt('Create new SuperShit project').lime(projectName).txt('in dir').grey(projectDir).print()
+  cf.txt('Create new Supershit project').lime(projectName).txt('in dir').grey(projectDir).print()
 
   ProjectManager.createProject(projectName, projectDir).then((task) => {
     for (const fl of task.copiedFiles) {

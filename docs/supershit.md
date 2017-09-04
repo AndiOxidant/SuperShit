@@ -1,12 +1,12 @@
-SuperShit Docs
+Supershit Docs
 ==============
 
 ## Example
 
 ```js
-import SuperShit from 'supershit'
+import Supershit from 'supershit'
 
-const app = SuperShit.app({
+const app = Supershit.app({
   path: '/',
   title: 'My page title',
   port: 7448
@@ -26,11 +26,11 @@ Start the web-server with `supershit start` and navigate to `http://localhost:74
 
 ## Static methods
 
-### app(*obj* path) `SuperShitPage`
+### app(*obj* path) `SupershitPage`
 
-Register a `SuperShitApp` under a specific path and port.
+Register a `SupershitApp` under a specific path and port.
 
-Returns a `SuperShitPage` object
+Returns a `SupershitPage` object
 
 
 ### cmd(*str* command) `Promise`
@@ -45,8 +45,8 @@ my-project/
 ```
 
 ```js
-import SuperShit from 'supershit'
-SuperShit.cmd('test', () => {
+import Supershit from 'supershit'
+Supershit.cmd('test', () => {
   console.log('Hello World!')
 })
 ```

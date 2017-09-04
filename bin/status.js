@@ -1,6 +1,6 @@
 'use strict';
 
-const supershit = require('../src/SuperShit')
+const supershit = require('../src/Supershit')
 const pm2 = require('pm2')
 const CLITools = require('../src/utils/CLITools')
 

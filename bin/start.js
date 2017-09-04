@@ -2,10 +2,17 @@
 
 const path = require('path')
 
-const supershit = require('../src/SuperShit')
+const supershit = require('../src/Supershit')
 const pm2 = require('pm2')
 const CLITools = require('../src/utils/CLITools')
 
+/**
+ * Starts the app
+ *
+ * @cmd start
+ * @example shell
+ * supershit start
+ */
 supershit.cmd('start', () => {
   pm2.connect((err) => {
     if (err) {

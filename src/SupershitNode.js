@@ -2,7 +2,7 @@
 
 const log = require('logtopus').getLogger('supershit')
 
-class SuperShitNode {
+class SupershitNode {
   constructor(conf) {
     this.node = conf
     this.node.childs = []
@@ -18,7 +18,7 @@ class SuperShitNode {
 
   cmp(cmpName, conf) {
     log.debug(`Add CMP ${cmpName}`, conf)
-    const c = new SuperShitNode({
+    const c = new SupershitNode({
       type: 'cmp',
       name: cmpName,
       model: conf.model ? conf.model.name : undefined,
@@ -30,7 +30,7 @@ class SuperShitNode {
   }
 
   tmpl(template, conf) {
-    const c = new SuperShitNode({
+    const c = new SupershitNode({
       type: 'tmpl',
       template,
       model: conf.model ? conf.model.name : undefined,
@@ -42,7 +42,7 @@ class SuperShitNode {
   }
 
   html(content) {
-    const c = new SuperShitNode({
+    const c = new SupershitNode({
       type: 'html',
       content
     })
@@ -77,4 +77,4 @@ class SuperShitNode {
   }
 }
 
-module.exports = SuperShitNode
+module.exports = SupershitNode

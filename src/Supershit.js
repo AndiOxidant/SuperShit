@@ -1,14 +1,14 @@
 'use strict';
 
 const CoreIO = require('coreio')
-const SuperShitServer = require('./SuperShitServer')
-const SuperShitNode = require('./SuperShitNode')
-const SupershitConfig = require('./SuperShitConfig')
-const SuperShitCommander = require('./SuperShitCommander')
+const SupershitServer = require('./SupershitServer')
+const SupershitNode = require('./SupershitNode')
+const SupershitConfig = require('./SupershitConfig')
+const SupershitCommander = require('./SupershitCommander')
 const WebBuilder = require('./libs/WebBuilder')
 const log = require('logtopus').getLogger('supershit')
 
-class SuperShit {
+class Supershit {
   /**
    * Register a supershit app
    *
@@ -35,7 +35,7 @@ class SuperShit {
       ]
     })
 
-    const nodes = new SuperShitNode({
+    const nodes = new SupershitNode({
       type: 'root',
       selector: 'body'
     })
@@ -66,10 +66,10 @@ class SuperShit {
    * @version 1.0.0
    *
    * @param  {string} name Command name
-   * @return {object}      Returns a SuperShitCommander object
+   * @return {object}      Returns a SupershitCommander object
    */
   static cmd(name, fn) {
-    const cmd = new SuperShitCommander();
+    const cmd = new SupershitCommander();
     cmd.command(name || 'default');
     if (typeof fn === 'function') {
       return cmd.then(fn).catch((err) => {
@@ -106,4 +106,4 @@ class SuperShit {
   }
 }
 
-module.exports = SuperShit
+module.exports = Supershit

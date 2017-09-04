@@ -1,6 +1,6 @@
-const SuperShit = require('supershit')
+const Supershit = require('supershit')
 
-const appNode = SuperShit.app({
+const appNode = Supershit.app({
   path: '/',
   title: 'My supershit app!'
 })

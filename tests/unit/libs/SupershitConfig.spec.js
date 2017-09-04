@@ -8,7 +8,7 @@ const SupershitConfig = require('../../../src/SupershitConfig')
 
 process.env.NODE_ENV = 'test'
 
-describe('SuperShitConfig', () => {
+describe('SupershitConfig', () => {
   describe('class', () => {
     it('should be a class', () => {
       inspect(SupershitConfig).isClass()

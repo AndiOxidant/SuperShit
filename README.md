@@ -1,4 +1,4 @@
-SuperShit
+Supershit
 =========
 
 Lightweight search-engine friendly single-page web framework
