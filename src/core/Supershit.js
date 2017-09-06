@@ -11,8 +11,8 @@ class Supershit {
   constructor() {
     const config = new SupershitConfig()
 
-    log.info('Setting loglevel to', config.log.level)
     log.setLevel(config.log.level)
+    log.sys('Setting loglevel to', config.log.level)
 
     CoreIO.logLevel = config.log.level
     CoreIO.httpPort = config.server.port
