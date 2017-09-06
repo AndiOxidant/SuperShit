@@ -4,7 +4,7 @@ const inspect = require('inspect.js');
 const sinon = require('sinon');
 inspect.useSinon(sinon);
 
-const SupershitConfig = require('../../../src/SupershitConfig')
+const SupershitConfig = require('../../../src/core/SupershitConfig')
 
 process.env.NODE_ENV = 'test'
 
@@ -23,25 +23,88 @@ describe('SupershitConfig', () => {
 
     it('loads a json config', () => {
       const conf = new SupershitConfig()
-      inspect(conf.load('tests/fixtures/config/json')).isEql({
+      conf.load('tests/fixtures/config/json')
+      inspect(conf).hasProps({
         foo: 'bla',
-        bar: 'blub'
+        bar: 'blub',
+        log: {
+          level: 'sys'
+        }
       })
     })
 
     it('loads a cson config', () => {
       const conf = new SupershitConfig()
-      inspect(conf.load('tests/fixtures/config/cson')).isEql({
+      conf.load('tests/fixtures/config/cson')
+      inspect(conf).hasProps({
         foo: 'bla',
-        bar: 'blub'
+        bar: 'blub',
+        log: {
+          level: 'sys'
+        }
       })
     })
 
     it('loads a yml config', () => {
       const conf = new SupershitConfig()
-      inspect(conf.load('tests/fixtures/config/yaml')).isEql({
+      conf.load('tests/fixtures/config/yaml')
+      inspect(conf).hasProps({
         foo: 'bla',
-        bar: 'blub'
+        bar: 'blub',
+        log: {
+          level: 'sys'
+        }
+      })
+    })
+
+    it('loads a json config, keeps custom conf', () => {
+      const conf = new SupershitConfig({
+        log: {
+          level: 'error'
+        }
+      })
+
+      conf.load('tests/fixtures/config/json')
+      inspect(conf).hasProps({
+        foo: 'bla',
+        bar: 'blub',
+        log: {
+          level: 'error'
+        }
+      })
+    })
+
+    it('loads a cson config, keeps custom conf', () => {
+      const conf = new SupershitConfig({
+        log: {
+          level: 'error'
+        }
+      })
+
+      conf.load('tests/fixtures/config/cson')
+      inspect(conf).hasProps({
+        foo: 'bla',
+        bar: 'blub',
+        log: {
+          level: 'error'
+        }
+      })
+    })
+
+    it('loads a yml config, keeps custom conf', () => {
+      const conf = new SupershitConfig({
+        log: {
+          level: 'error'
+        }
+      })
+
+      conf.load('tests/fixtures/config/yaml')
+      inspect(conf).hasProps({
+        foo: 'bla',
+        bar: 'blub',
+        log: {
+          level: 'error'
+        }
       })
     })
   })

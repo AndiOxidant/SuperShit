@@ -27,3 +27,24 @@ web/            Frontend stuff
   styles/       Frontend styls
     styles.styl Bootstrap file
 ```
+## How to use
+
+### REST API
+
+Lets create a simple REST API in a few steps.
+
+```js
+const api = supershit.api('/api')
+
+api.route('/hello', {
+  get() {
+    return { message: 'Hello World!' }
+  }
+})
+```
+
+Start the server and fire a curl against your API.
+
+```curl
+curl -X GET -H "accept: application/json" http://localhost:7448/api/hello
+```

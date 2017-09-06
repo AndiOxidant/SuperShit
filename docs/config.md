@@ -2,9 +2,9 @@ Configuration
 =============
 
 Supershit uses [superconf](https://npmjs.org/packages/superconf) to handle configurations.  
-Configuration is getting load from `config/${process.env.NODE_ENV}.json`. The default environment is `development`. A configuration can be either a `.json` `.cson` or  a `.yml` file.
+Configurations getting load from `config/${process.env.NODE_ENV}.json`. The default environment is `development`. A configuration can be either a `.json` `.cson` or  a `.yml` file.
 
-
+## Usage
 
 ```js
 const supershit = require('supershit')

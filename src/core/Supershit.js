@@ -1,14 +1,33 @@
 'use strict';
 
 const CoreIO = require('coreio')
-const SupershitServer = require('./SupershitServer')
 const SupershitNode = require('./SupershitNode')
 const SupershitConfig = require('./SupershitConfig')
 const SupershitCommander = require('./SupershitCommander')
-const WebBuilder = require('./libs/WebBuilder')
+const WebBuilder = require('../libs/WebBuilder')
 const log = require('logtopus').getLogger('supershit')
 
 class Supershit {
+  constructor() {
+    const config = new SupershitConfig()
+
+    log.info('Setting loglevel to', config.log.level)
+    log.setLevel(config.log.level)
+
+    CoreIO.logLevel = config.log.level
+    CoreIO.httpPort = config.server.port
+    CoreIO.httpHost = config.server.host
+  }
+
+  api(mount) {
+    mount = mount || '';
+    return {
+      route(slug, conf) {
+        CoreIO.api(`${mount}${slug}`, conf);
+      }
+    }
+  }
+
   /**
    * Register a supershit app
    *
@@ -19,15 +38,7 @@ class Supershit {
    * @param  {object} conf Custom configuration
    * @return {[type]}      [description]
    */
-  static app(conf) {
-    // load config
-    const config = new SupershitConfig(conf)
-
-    CoreIO.logLevel = 'sys'
-    CoreIO.httpPort = conf.port || 7448
-
-    log.setLevel('debug')
-
+  app(conf) {
     CoreIO.htmlPage('/', {
       title: conf.title,
       scripts: [
@@ -68,7 +79,7 @@ class Supershit {
    * @param  {string} name Command name
    * @return {object}      Returns a SupershitCommander object
    */
-  static cmd(name, fn) {
+  cmd(name, fn) {
     const cmd = new SupershitCommander();
     cmd.command(name || 'default');
     if (typeof fn === 'function') {
@@ -100,7 +111,7 @@ class Supershit {
    * @param  {object} customConf Set custom conf, overwrites predefined config
    * @return {object}            Returns a SupershitConfig object
    */
-  static config(customConf) {
+  config(customConf) {
     const conf = new SupershitConfig(customConf)
     return conf.load()
   }

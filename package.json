@@ -2,7 +2,7 @@
   "name": "supershit",
   "version": "0.0.0",
   "description": "Supershit =========",
-  "main": "src/Supershit.js",
+  "main": "src/app.js",
   "author": "Andi Heinkelein <andifeind@noname-media.com>",
   "license": "MIT",
   "bin": {
@@ -29,10 +29,11 @@
     "inspect.js": "^1.6.1",
     "lagoon-reporter": "^0.3.4",
     "mocha": "^3.5.0",
-    "sinon": "^3.2.1"
+    "sinon": "^3.2.1",
+    "superjoin": "^0.5.0"
   },
   "scripts": {
-    "test": "mocha --reporter lagoon-reporter --recursive tests/unit/"
+    "test": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive tests/unit/"
   },
   "repository": {
     "type": "git",
