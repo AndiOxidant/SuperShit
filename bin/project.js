@@ -1,6 +1,6 @@
 'use strict';
 
-const supershit = require('../src/Supershit')
+const supershit = require('../src/app')
 const ProjectManager = require('../src/utils/ProjectManager')
 const colorfy = require('colorfy')
 

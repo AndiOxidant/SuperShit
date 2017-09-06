@@ -2,7 +2,7 @@
 
 const path = require('path')
 
-const supershit = require('../src/Supershit')
+const supershit = require('../src/app')
 const pm2 = require('pm2')
 
 supershit.cmd('stop', () => {

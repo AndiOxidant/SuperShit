@@ -1,7 +1,7 @@
 'use strict';
 
 const nodemon = require('nodemon')
-const supershit = require('../src/Supershit')
+const supershit = require('../src/app')
 
 supershit.cmd('start', () => {
   nodemon({
