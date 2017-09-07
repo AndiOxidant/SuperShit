@@ -76,5 +76,18 @@ describe.only('/ping', () => {
         inspect(ctx.body).isEql({ status: 'success' })
       })
     })
+
+    it('sends a 404 http status', () => {
+      fakeConfig.set({
+        pingRoute: {
+          enabled: false
+        }
+      })
+
+      pingRoute(fakeShit)
+      return apiInspect.get('/ping').test((ctx) => {
+        ctx.statusCode(404)
+      })
+    })
   })
 })
