@@ -1,5 +1,7 @@
 const path = require('path')
 const superconf = require('superconf')
+const defaultConf = require('../config/defaultConfig')
+
 
 /**
  * Configuration loader module
@@ -19,16 +21,6 @@ class SupershitConfig {
    */
   constructor(customConf) {
     this.__customConf = customConf || {}
-
-    const defaultConf = {
-      server: {
-        port: 7448,
-        listen: '0.0.0.0'
-      },
-      log: {
-        level: 'sys'
-      }
-    }
 
     const conf = superconf.config({
       dept: 1

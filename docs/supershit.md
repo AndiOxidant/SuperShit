@@ -4,27 +4,46 @@ Supershit Docs
 ## Example
 
 ```js
-import Supershit from 'supershit'
+import supershit from 'supershit'
 
-const app = Supershit.app({
+const app = supershit.app({
   path: '/',
   title: 'My page title',
   port: 7448
-});
+})
 
 const pageModule = app.module({
   cmp: 'PageLayout'
-});
+})
 
 const contentModule = pageModule.module({
   cmp: 'HelloCMP',
   model: 'HelloModel'
-});
+})
 ```
 
-Start the web-server with `supershit start` and navigate to `http://localhost:7448/`
+Start the web-server with the `supershit start` command and navigate to `http://localhost:7448/`
 
-## Static methods
+## Class methods
+
+### api(*str* mount path) => `SupershitRouter`
+
+Creates a API object and defines a route namespace. The method returns a `SupershitRouter` instance.
+Use this to define a RESTFull API.
+
+#### Example:
+
+```js
+import supershit from 'supershit'
+
+const api = supershit.api('/api')
+
+api.route('/hello', {
+  get() {
+    return { message: 'Hello World!' }
+  }
+})
+```
 
 ### app(*obj* path) `SupershitPage`
 

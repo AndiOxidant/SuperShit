@@ -6,8 +6,6 @@ inspect.useSinon(sinon);
 
 const SupershitConfig = require('../../../src/core/SupershitConfig')
 
-process.env.NODE_ENV = 'test'
-
 describe('SupershitConfig', () => {
   describe('class', () => {
     it('should be a class', () => {
@@ -28,7 +26,7 @@ describe('SupershitConfig', () => {
         foo: 'bla',
         bar: 'blub',
         log: {
-          level: 'sys'
+          level: 'error'
         }
       })
     })
@@ -40,7 +38,7 @@ describe('SupershitConfig', () => {
         foo: 'bla',
         bar: 'blub',
         log: {
-          level: 'sys'
+          level: 'error'
         }
       })
     })
@@ -52,7 +50,7 @@ describe('SupershitConfig', () => {
         foo: 'bla',
         bar: 'blub',
         log: {
-          level: 'sys'
+          level: 'error'
         }
       })
     })
@@ -60,7 +58,7 @@ describe('SupershitConfig', () => {
     it('loads a json config, keeps custom conf', () => {
       const conf = new SupershitConfig({
         log: {
-          level: 'error'
+          level: 'warn'
         }
       })
 
@@ -69,7 +67,7 @@ describe('SupershitConfig', () => {
         foo: 'bla',
         bar: 'blub',
         log: {
-          level: 'error'
+          level: 'warn'
         }
       })
     })
@@ -77,7 +75,7 @@ describe('SupershitConfig', () => {
     it('loads a cson config, keeps custom conf', () => {
       const conf = new SupershitConfig({
         log: {
-          level: 'error'
+          level: 'warn'
         }
       })
 
@@ -86,7 +84,7 @@ describe('SupershitConfig', () => {
         foo: 'bla',
         bar: 'blub',
         log: {
-          level: 'error'
+          level: 'warn'
         }
       })
     })
@@ -94,7 +92,7 @@ describe('SupershitConfig', () => {
     it('loads a yml config, keeps custom conf', () => {
       const conf = new SupershitConfig({
         log: {
-          level: 'error'
+          level: 'warn'
         }
       })
 
@@ -103,7 +101,7 @@ describe('SupershitConfig', () => {
         foo: 'bla',
         bar: 'blub',
         log: {
-          level: 'error'
+          level: 'warn'
         }
       })
     })

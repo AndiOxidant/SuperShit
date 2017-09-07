@@ -4,12 +4,13 @@ const CoreIO = require('coreio')
 const SupershitNode = require('./SupershitNode')
 const SupershitConfig = require('./SupershitConfig')
 const SupershitCommander = require('./SupershitCommander')
+const SupershitRouter = require('./SupershitRouter')
 const WebBuilder = require('../libs/WebBuilder')
 const log = require('logtopus').getLogger('supershit')
 
 class Supershit {
-  constructor() {
-    const config = new SupershitConfig()
+  constructor(conf) {
+    const config = new SupershitConfig(conf)
 
     log.setLevel(config.log.level)
     log.sys('Setting loglevel to', config.log.level)
@@ -20,12 +21,7 @@ class Supershit {
   }
 
   api(mount) {
-    mount = mount || '';
-    return {
-      route(slug, conf) {
-        CoreIO.api(`${mount}${slug}`, conf);
-      }
-    }
+    return new SupershitRouter(mount)
   }
 
   /**
@@ -112,7 +108,12 @@ class Supershit {
    * @return {object}            Returns a SupershitConfig object
    */
   config(customConf) {
+    if (this.__config) {
+      return this.__config
+    }
+
     const conf = new SupershitConfig(customConf)
+    this.__config = conf
     return conf.load()
   }
 }
