@@ -6,6 +6,7 @@ const sinon = require('sinon')
 inspect.useSinon(sinon)
 
 const supershit = require('../../../src/app');
+const SupershitConfig = require('../../../src/core/SupershitConfig')
 const SupershitRouter = require('../../../src/core/SupershitRouter');
 
 describe('Supershit', () => {
@@ -142,9 +143,96 @@ describe('Supershit', () => {
     })
   })
 
-  describe('config', () => {
-    it('load config from config file', () => {
+  describe.only('config', () => {
+    it('load configs from a config file', () => {
+      const config = supershit.config()
+      inspect(config).isInstanceOf(SupershitConfig)
+    })
 
-    });
-  });
+    it('load configs gets cached', () => {
+      const config1 = supershit.config()
+      const config2 = supershit.config()
+      inspect(config1).isEqual(config2)
+    })
+
+    it('overwrites default config', () => {
+      supershit.resetConfig()
+      const config = supershit.config({
+        pingRoute: {
+          enabled: false
+        }
+      })
+
+      inspect(config.pingRoute).isEql({
+        enabled: false,
+        status: 204,
+        message: ''
+      })
+    })
+
+    it('re-overwrites default config', () => {
+      supershit.resetConfig()
+      const config = supershit.config({
+        pingRoute: {
+          enabled: false
+        }
+      })
+
+      const config2 = supershit.config({
+        pingRoute: {
+          enabled: true,
+          status: 200
+        }
+      })
+
+      // both got changed
+
+      inspect(config.pingRoute).isEql({
+        enabled: true,
+        status: 200,
+        message: ''
+      })
+
+      inspect(config2.pingRoute).isEql({
+        enabled: true,
+        status: 200,
+        message: ''
+      })
+    })
+
+    it('unset a config block', () => {
+      supershit.resetConfig()
+      const config = supershit.config({
+        pingRoute: null
+      })
+
+      inspect(config.pingRoute).isNull()
+
+      const config2 = supershit.config()
+      inspect(config2.pingRoute).isNull()
+    })
+
+    it('reenable an unset config block', () => {
+      supershit.resetConfig()
+      const config = supershit.config({
+        pingRoute: null
+      })
+
+      inspect(config.pingRoute).isNull()
+
+      const config2 = supershit.config({
+        pingRoute: {
+          enabled: true,
+          status: 200,
+          message: ''
+        }
+      })
+
+      inspect(config2.pingRoute).isEql({
+        enabled: true,
+        status: 200,
+        message: ''
+      })
+    })
+  })
 })

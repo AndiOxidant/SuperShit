@@ -50,10 +50,27 @@ class SupershitConfig {
     const loadedConf = superconf(process.env.NODE_ENV || 'development', opts)
     const conf = superconf.config({
       dept: 1
-    }).merge(loadedConf, this.__customConf)
+    }).merge(loadedConf || {}, this.getConf(), this.__customConf)
 
     Object.assign(this, conf)
     return this
+  }
+
+  merge(mergeConf) {
+    const conf = superconf.config({
+      dept: 1
+    }).merge(this, mergeConf)
+    Object.assign(this, conf)
+  }
+
+  getConf() {
+    const conf = {}
+    for (const key of Object.keys(this)) {
+      if (/^[a-zA-Z]/.test(key)) {
+        conf[key] = this[key]
+      }
+    }
+    return conf
   }
 }
 

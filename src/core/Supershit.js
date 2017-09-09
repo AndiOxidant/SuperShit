@@ -1,6 +1,8 @@
 'use strict';
 
 const CoreIO = require('coreio')
+const superimport = require('superimport')
+
 const SupershitNode = require('./SupershitNode')
 const SupershitConfig = require('./SupershitConfig')
 const SupershitCommander = require('./SupershitCommander')
@@ -18,6 +20,8 @@ class Supershit {
     CoreIO.logLevel = config.log.level
     CoreIO.httpPort = config.server.port
     CoreIO.httpHost = config.server.host
+
+    this.loadRoutes()
   }
 
   api(mount) {
@@ -109,12 +113,25 @@ class Supershit {
    */
   config(customConf) {
     if (this.__config) {
+      if (customConf) {
+        this.__config.merge(customConf)
+      }
+
       return this.__config
     }
 
     const conf = new SupershitConfig(customConf)
     this.__config = conf
     return conf.load()
+  }
+
+  resetConfig() {
+    this.__config = null
+  }
+
+  loadRoutes() {
+    const routes = superimport.importAll('../routes/')
+    routes.forEach((r) => r(this))
   }
 }
 

@@ -1,3 +1,22 @@
+/**
+ * Registers a ping route
+ *
+ * It replays with a http status `204`. The route is configurable
+ * by using the `pingRoute` configuration.
+ *
+ * ```cson
+ * pingRoute:
+ *   enabled: true
+ *   status: 204
+ *   message: ''
+ * ```
+ * Overwrite the configuration to change the endpoint behavior
+ *
+ * @module Routes
+ * @api GET /ping
+ * @response 204
+ *
+ */
 module.exports = (supershit) => {
   const config = supershit.config()
 

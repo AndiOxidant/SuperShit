@@ -7,7 +7,7 @@ const SupershitRouter = require('../../../src/core/SupershitRouter')
 const fakeConfig = require('../../utils/fakeConfig')
 const pingRoute = require('../../../src/routes/ping')
 
-describe.only('/ping', () => {
+describe('/ping', () => {
   let api
   let fakeShit
 
