@@ -15,7 +15,7 @@ try {
   superimport(cmdName + '.js', cmdPaths);
 }
 catch (err) {
-  console.log('FILE', err)
+  console.log('FILE', err.stack)
   console.log(`No ${cmdName} task was defined!`, err);
   process.exit(1);
 }

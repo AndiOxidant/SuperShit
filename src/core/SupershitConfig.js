@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path')
 const superconf = require('superconf')
 const defaultConf = require('../config/defaultConfig')

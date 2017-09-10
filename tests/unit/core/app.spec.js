@@ -143,7 +143,7 @@ describe('Supershit', () => {
     })
   })
 
-  describe.only('config', () => {
+  describe('config', () => {
     it('load configs from a config file', () => {
       const config = supershit.config()
       inspect(config).isInstanceOf(SupershitConfig)
@@ -212,7 +212,7 @@ describe('Supershit', () => {
       inspect(config2.pingRoute).isNull()
     })
 
-    it('reenable an unset config block', () => {
+    it('re-enable an unset config block', () => {
       supershit.resetConfig()
       const config = supershit.config({
         pingRoute: null

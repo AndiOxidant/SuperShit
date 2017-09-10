@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('path')
+
 const CoreIO = require('coreio')
 const superimport = require('superimport')
 
@@ -12,8 +14,16 @@ const log = require('logtopus').getLogger('supershit')
 
 class Supershit {
   constructor(conf) {
-    const config = new SupershitConfig(conf)
+    if (conf) {
+      this.config(conf)
+    }
 
+    this.__initDone = false
+  }
+
+  init() {
+    this.__initDone = true
+    const config = this.config()
     log.setLevel(config.log.level)
     log.sys('Setting loglevel to', config.log.level)
 
@@ -25,6 +35,10 @@ class Supershit {
   }
 
   api(mount) {
+    if (!this.__initDone) {
+      this.init()
+    }
+
     return new SupershitRouter(mount)
   }
 
@@ -39,6 +53,10 @@ class Supershit {
    * @return {[type]}      [description]
    */
   app(conf) {
+    if (!this.__initDone) {
+      this.init()
+    }
+
     CoreIO.htmlPage('/', {
       title: conf.title,
       scripts: [
@@ -79,26 +97,9 @@ class Supershit {
    * @param  {string} name Command name
    * @return {object}      Returns a SupershitCommander object
    */
-  cmd(name, fn) {
-    const cmd = new SupershitCommander();
-    cmd.command(name || 'default');
-    if (typeof fn === 'function') {
-      return cmd.then(fn).catch((err) => {
-        console.error(err) // eslint-disable-line no-console
-        process.exit(1)
-      })
-    }
-
-    return {
-      action(fn) {
-        cmd.then(fn).catch((err) => {
-          console.error(err) // eslint-disable-line no-console
-          process.exit(1)
-        })
-
-        return cmd
-      }
-    }
+  cmd(name) {
+    const command = new SupershitCommander()
+    return command.cmd(name || 'default')
   }
 
   /**
@@ -130,7 +131,7 @@ class Supershit {
   }
 
   loadRoutes() {
-    const routes = superimport.importAll('../routes/')
+    const routes = superimport.importAll(path.join(__dirname, '../routes/'))
     routes.forEach((r) => r(this))
   }
 }

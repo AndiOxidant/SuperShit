@@ -1,3 +1,5 @@
+'use strict';
+
 const CoreIO = require('coreio')
 
 class SupershitRouter {
