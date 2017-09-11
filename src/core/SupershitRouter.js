@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 const CoreIO = require('coreio')
 
 class SupershitRouter {
-  constructor(mount, conf) {
+  constructor (mount, conf) {
     conf = conf || {}
     this.mount = mount || ''
     this.Router = new CoreIO.Router({
@@ -29,7 +29,7 @@ class SupershitRouter {
    *
    * @chainable
    */
-  route(slug, conf) {
+  route (slug, conf) {
     this.Router.registerRoutes(Object.assign({
       slug
     }, conf))
@@ -45,7 +45,7 @@ class SupershitRouter {
    * @param {string} ...path Takes one or n path fragments and puts it together.
    * @return {string} Returns a path string
    */
-  join() {
+  join () {
     const args = Array.prototype.slice.call(arguments)
     let parts = []
 
@@ -57,12 +57,12 @@ class SupershitRouter {
     return `/${parts.filter((a) => !!a).join('/')}`
   }
 
-  use() {
+  use () {
     // TODO add middleware support
   }
 
-  removeRoute(path) {
-    let i = 0;
+  removeRoute (path) {
+    let i = 0
     for (const layer of this.Router.app._router.stack) {
       if (layer.path === path) {
         this.Router.app._router.stack.splice(i, 1)

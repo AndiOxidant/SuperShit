@@ -1,21 +1,17 @@
-'use strict';
+'use strict'
 
-const ExpressServer = require('express-server');
+const ExpressServer = require('express-server')
 
 class SupershitServer extends ExpressServer {
-  constructor(conf) {
-    super(conf);
-  }
-
-  then(fn) {
-    const p =  new Promise((resolve, reject) => {
+  then (fn) {
+    const p = new Promise((resolve, reject) => {
       this.start({}, () => {
-        resolve();
-      });
-    });
+        resolve()
+      })
+    })
 
-    return p.then(fn.bind(this));
+    return p.then(fn.bind(this))
   }
 }
 
-module.exports = SupershitServer;
+module.exports = SupershitServer

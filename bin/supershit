@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-'use strict';
+'use strict'
 
 const path = require('path')
 
@@ -10,12 +10,11 @@ try {
   const cmdPaths = [
     path.join(process.cwd(), 'bin'),
     path.join(__dirname)
-  ];
+  ]
 
-  superimport(cmdName + '.js', cmdPaths);
-}
-catch (err) {
+  superimport(cmdName + '.js', cmdPaths)
+} catch (err) {
   console.log('FILE', err.stack)
-  console.log(`No ${cmdName} task was defined!`, err);
-  process.exit(1);
+  console.log(`No ${cmdName} task was defined!`, err)
+  process.exit(1)
 }

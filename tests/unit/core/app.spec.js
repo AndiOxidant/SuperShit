@@ -1,13 +1,13 @@
-'use strict';
+'use strict'
 
 const inspect = require('inspect.js')
 const apiInspect = require('api-inspect')
 const sinon = require('sinon')
 inspect.useSinon(sinon)
 
-const supershit = require('../../../src/app');
+const supershit = require('../../../src/app')
 const SupershitConfig = require('../../../src/core/SupershitConfig')
-const SupershitRouter = require('../../../src/core/SupershitRouter');
+const SupershitRouter = require('../../../src/core/SupershitRouter')
 
 describe('Supershit', () => {
   describe('api', () => {
@@ -26,12 +26,12 @@ describe('Supershit', () => {
 
     afterEach(() => {
       sandbox.restore()
-    });
+    })
 
     it('registers a supershit api', () => {
       const stub = sandbox.stub(SupershitRouter.prototype, 'route')
       const callObj = {
-        get() {}
+        get () {}
       }
 
       api.route('/bar', callObj)
@@ -43,7 +43,7 @@ describe('Supershit', () => {
 
     it('registers a /foo/bar GET endpoint of type json', () => {
       api.route('/bar', {
-        get() {
+        get () {
           return {
             bla: 'blub'
           }
@@ -62,7 +62,7 @@ describe('Supershit', () => {
 
     it('registers a /foo/bar POST endpoint of type json', () => {
       api.route('/bar', {
-        post() {
+        post () {
           return {
             bla: 'blub'
           }
@@ -81,7 +81,7 @@ describe('Supershit', () => {
 
     it('registers a /foo/bar PUT endpoint of type json', () => {
       api.route('/bar', {
-        put() {
+        put () {
           return {
             bla: 'blub'
           }
@@ -100,7 +100,7 @@ describe('Supershit', () => {
 
     it('registers a /foo/bar PATCH endpoint of type json', () => {
       api.route('/bar', {
-        patch() {
+        patch () {
           return {
             bla: 'blub'
           }
@@ -119,7 +119,7 @@ describe('Supershit', () => {
 
     it('registers a /foo/bar DELETE endpoint of type json', () => {
       api.route('/bar', {
-        delete() {
+        delete () {
           return {
             bla: 'blub'
           }

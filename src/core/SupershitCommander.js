@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const path = require('path')
 const Commander = require('commander').Command
@@ -8,7 +8,7 @@ const colorfy = require('colorfy')
 const log = logtopus.getLogger('supershit')
 
 class SupershitCommander {
-  constructor(conf) {
+  constructor (conf) {
     conf = conf || {}
     this.workingDir = conf.workingDir || process.cwd()
     this.options = []
@@ -21,39 +21,39 @@ class SupershitCommander {
     }
   }
 
-  action(fn) {
+  action (fn) {
     this.actionFn = fn
     return this
   }
 
-  cmd(command) {
+  cmd (command) {
     const c = command.split(' ')
     this.command = c[0]
     this.argsStr = c[1]
     return this
   }
 
-  description(desc) {
+  description (desc) {
     this.description = desc
     return this
   }
 
-  option(option, description) {
+  option (option, description) {
     this.options.push([option, description])
     return this
   }
 
-  argument(argument, description) {
+  argument (argument, description) {
     this.args.push([argument, description])
     return this
   }
 
-  version(version) {
+  version (version) {
     this.appVersion = version
     return this
   }
 
-  exec() {
+  exec () {
     const command = new Commander()
     this.__command = command
     if (this.appVersion) {
@@ -76,28 +76,26 @@ class SupershitCommander {
     if (ctx.help) {
       this.printHelp(command, ctx)
       process.exit(0)
-      return
     }
 
     const args = [ctx].concat(command.args)
     return this.actionFn.apply(this, args)
   }
 
-  getOptions(command) {
+  getOptions (command) {
     const options = {}
     for (const opt of command.options) {
-      const name = opt.long.substr(2).replace(/^no-/, '');
+      const name = opt.long.substr(2).replace(/^no-/, '')
       if (command.hasOwnProperty(name)) {
-        options[name] = opt.bool ? true : command[name];
-      }
-      else {
+        options[name] = opt.bool ? true : command[name]
+      } else {
         options[name] = opt.bool ? false : null
       }
     }
-    return options;
+    return options
   }
 
-  getAppVersion() {
+  getAppVersion () {
     if (this.appVersion) {
       return this.appVersion
     }
@@ -111,7 +109,7 @@ class SupershitCommander {
     }
   }
 
-  printHelp(command, ctx) {
+  printHelp (command, ctx) {
     const options = []
 
     const cf = colorfy().nl()
@@ -146,7 +144,6 @@ class SupershitCommander {
       optionsFill = Math.max(optionsFill, optionStr.length)
     }
 
-
     cf.txt('Options:').nl(2)
     for (const o of options) {
       cf.grey(o[0]).txt(' '.repeat(optionsFill - o[0].length + 2))
@@ -157,4 +154,4 @@ class SupershitCommander {
   }
 }
 
-module.exports = SupershitCommander;
+module.exports = SupershitCommander

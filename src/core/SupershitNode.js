@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
 const log = require('logtopus').getLogger('supershit')
 
 class SupershitNode {
-  constructor(conf) {
+  constructor (conf) {
     this.node = conf
     this.node.childs = []
   }
 
-  addChild(child) {
+  addChild (child) {
     if (!this.node.childs) {
       this.node.childs = []
     }
@@ -16,7 +16,7 @@ class SupershitNode {
     this.node.childs.push(child)
   }
 
-  cmp(cmpName, conf) {
+  cmp (cmpName, conf) {
     log.debug(`Add CMP ${cmpName}`, conf)
     const c = new SupershitNode({
       type: 'cmp',
@@ -29,19 +29,19 @@ class SupershitNode {
     return c
   }
 
-  tmpl(template, conf) {
+  tmpl (template, conf) {
     const c = new SupershitNode({
       type: 'tmpl',
       template,
       model: conf.model ? conf.model.name : undefined,
       list: conf.list ? conf.list.name : undefined
-    });
+    })
 
     this.addChild(c)
     return c
   }
 
-  html(content) {
+  html (content) {
     const c = new SupershitNode({
       type: 'html',
       content
@@ -52,13 +52,13 @@ class SupershitNode {
     return c
   }
 
-  toJSON() {
-    const nodeCopy = Object.assign({}, this.node);
-    nodeCopy.childs.map((n) => n.toJSON());
-    return nodeCopy;
+  toJSON () {
+    const nodeCopy = Object.assign({}, this.node)
+    nodeCopy.childs.map((n) => n.toJSON())
+    return nodeCopy
   }
 
-  getComponents() {
+  getComponents () {
     const components = []
     const walker = (nodes) => {
       for (const n of nodes) {

@@ -3,13 +3,13 @@ const supershit = require('../')
 const api = supershit.api('/api')
 
 api.route('/hello', {
-  get() {
+  get () {
     return { message: 'Hello World!' }
   }
 })
 
 api.route('/hello/:name', {
-  get(ctx) {
+  get (ctx) {
     const name = ctx.params.name
     return { message: `Hello ${name}!` }
   }

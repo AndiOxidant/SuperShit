@@ -1,15 +1,15 @@
-'use strict';
+'use strict'
 
 const path = require('path')
 
 const Superjoin = require('superjoin')
 
 class WebBuilder {
-  static buildJS() {
+  static buildJS () {
     const superjoin = new Superjoin({
-        workingDir: path.join(__dirname, '../../web/'),
-        main: 'web.js',
-        outfile: null
+      workingDir: path.join(__dirname, '../../web/'),
+      main: 'web.js',
+      outfile: null
     })
 
     return superjoin.build().then(() => {
@@ -18,4 +18,4 @@ class WebBuilder {
   }
 }
 
-module.exports = WebBuilder;
+module.exports = WebBuilder

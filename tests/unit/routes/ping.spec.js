@@ -19,10 +19,10 @@ describe('/ping', () => {
     apiInspect.setApi(api.Router.app)
 
     fakeShit = {
-      api() {
+      api () {
         return api
       },
-      config() {
+      config () {
         return fakeConfig.get()
       }
     }

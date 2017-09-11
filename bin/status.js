@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const supershit = require('../src/app')
 const pm2 = require('pm2')

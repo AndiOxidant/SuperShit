@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const path = require('path')
 
@@ -13,7 +13,7 @@ const WebBuilder = require('../libs/WebBuilder')
 const log = require('logtopus').getLogger('supershit')
 
 class Supershit {
-  constructor(conf) {
+  constructor (conf) {
     if (conf) {
       this.config(conf)
     }
@@ -21,7 +21,7 @@ class Supershit {
     this.__initDone = false
   }
 
-  init() {
+  init () {
     this.__initDone = true
     const config = this.config()
     log.setLevel(config.log.level)
@@ -34,7 +34,7 @@ class Supershit {
     this.loadRoutes()
   }
 
-  api(mount) {
+  api (mount) {
     if (!this.__initDone) {
       this.init()
     }
@@ -52,7 +52,7 @@ class Supershit {
    * @param  {object} conf Custom configuration
    * @return {[type]}      [description]
    */
-  app(conf) {
+  app (conf) {
     if (!this.__initDone) {
       this.init()
     }
@@ -70,13 +70,13 @@ class Supershit {
     })
 
     CoreIO.api('/api/nodes', {
-      get(req, res, next) {
+      get (req, res, next) {
         res.json(nodes.toJSON())
       }
     })
 
     CoreIO.api('/js/bundle.js', {
-      get(req, res, next) {
+      get (req, res, next) {
         WebBuilder.buildJS().then((bundle) => {
           res.type('application/javascript')
           res.send(bundle)
@@ -97,7 +97,7 @@ class Supershit {
    * @param  {string} name Command name
    * @return {object}      Returns a SupershitCommander object
    */
-  cmd(name) {
+  cmd (name) {
     const command = new SupershitCommander()
     return command.cmd(name || 'default')
   }
@@ -112,7 +112,7 @@ class Supershit {
    * @param  {object} customConf Set custom conf, overwrites predefined config
    * @return {object}            Returns a SupershitConfig object
    */
-  config(customConf) {
+  config (customConf) {
     if (this.__config) {
       if (customConf) {
         this.__config.merge(customConf)
@@ -126,11 +126,11 @@ class Supershit {
     return conf.load()
   }
 
-  resetConfig() {
+  resetConfig () {
     this.__config = null
   }
 
-  loadRoutes() {
+  loadRoutes () {
     const routes = superimport.importAll(path.join(__dirname, '../routes/'))
     routes.forEach((r) => r(this))
   }

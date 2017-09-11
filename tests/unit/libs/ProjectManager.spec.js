@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const inspect = require('inspect.js')
 const sinon = require('sinon')

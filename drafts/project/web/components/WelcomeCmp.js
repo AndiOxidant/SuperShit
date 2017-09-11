@@ -1,7 +1,7 @@
 const FireCMP = require('firecmp')
 
 class Welcome extends FireCMP.Core {
-  get tag() {
+  get tag () {
     return 'h1'
   }
 }
