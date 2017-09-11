@@ -5,6 +5,7 @@ const path = require('path')
 
 const cmdName = process.argv[2] || 'help'
 const superimport = require('superimport')
+const supershit = require('../')
 
 try {
   const cmdPaths = [
@@ -12,7 +13,11 @@ try {
     path.join(__dirname)
   ]
 
-  superimport(cmdName + '.js', cmdPaths)
+  const command = superimport(cmdName + '.js', cmdPaths)(supershit)
+  if (!command) {
+    throw new Error('Supershit comand script does not return a SupershitCommand object!')
+  }
+  command.exec(process.argv)
 } catch (err) {
   console.log('FILE', err.stack)
   console.log(`No ${cmdName} task was defined!`, err)

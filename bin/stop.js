@@ -1,22 +1,25 @@
 'use strict'
 
 const path = require('path')
-
-const supershit = require('../src/app')
 const pm2 = require('pm2')
 
-supershit.cmd('stop', () => {
-  pm2.connect((err) => {
-    if (err) {
-      console.error(err)
-      process.exit(1)
-    }
+module.exports = (supershit) => {
+  return supershit
+    .cmd('stop')
+    .description('Stopss a running supershit app')
+    .action((ctx) => {
+      pm2.connect((err) => {
+        if (err) {
+          console.error(err)
+          process.exit(1)
+        }
 
-    pm2.delete(path.join(process.cwd(), 'app/app.js'), (err, apps) => {
-      pm2.disconnect()
-      if (err) {
-        throw err
-      }
+        pm2.delete(path.join(process.cwd(), 'app/app.js'), (err, apps) => {
+          pm2.disconnect()
+          if (err) {
+            throw err
+          }
+        })
+      })
     })
-  })
-})
+}

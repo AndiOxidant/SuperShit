@@ -7,7 +7,7 @@ const colorfy = require('colorfy')
 
 const log = logtopus.getLogger('supershit')
 
-class SupershitCommander {
+class SupershitCommand {
   constructor (conf) {
     conf = conf || {}
     this.workingDir = conf.workingDir || process.cwd()
@@ -53,7 +53,7 @@ class SupershitCommander {
     return this
   }
 
-  exec () {
+  exec (argv) {
     const command = new Commander()
     this.__command = command
     if (this.appVersion) {
@@ -67,7 +67,7 @@ class SupershitCommander {
 
     command.option('-c, --no-color', 'Disable CLI colors')
     command.option('-?, --help', 'Output the help page')
-    command.parse(process.argv)
+    command.parse(argv || process.argv)
 
     const ctx = Object.assign({
 
@@ -78,7 +78,7 @@ class SupershitCommander {
       process.exit(0)
     }
 
-    const args = [ctx].concat(command.args)
+    const args = [ctx].concat(command.args.slice(1))
     return this.actionFn.apply(this, args)
   }
 
@@ -154,4 +154,4 @@ class SupershitCommander {
   }
 }
 
-module.exports = SupershitCommander
+module.exports = SupershitCommand

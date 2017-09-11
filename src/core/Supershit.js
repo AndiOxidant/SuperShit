@@ -7,9 +7,9 @@ const superimport = require('superimport')
 
 const SupershitNode = require('./SupershitNode')
 const SupershitConfig = require('./SupershitConfig')
-const SupershitCommander = require('./SupershitCommander')
+const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
-const WebBuilder = require('../libs/WebBuilder')
+const WebBuilder = require('../utils/WebBuilder')
 const log = require('logtopus').getLogger('supershit')
 
 class Supershit {
@@ -95,10 +95,10 @@ class Supershit {
    * @version 1.0.0
    *
    * @param  {string} name Command name
-   * @return {object}      Returns a SupershitCommander object
+   * @return {object}      Returns a SupershitCommand object
    */
   cmd (name) {
-    const command = new SupershitCommander()
+    const command = new SupershitCommand()
     return command.cmd(name || 'default')
   }
 
