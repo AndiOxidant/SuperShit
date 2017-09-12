@@ -32,11 +32,13 @@ Lets create a `hello` command which prints `Hello World!` on the screen.
 **Step 2:** Insert the following code:
 
 ```js
-const supershit = require('../src/app')
-
-supershit.cmd('hello').action((ctx) => {
-  console.log('Hello World!')
-})
+module.exports = (supershit) => {
+  return supershit
+    .cmd('hello')
+    .action((ctx) => {
+      console.log('Hello World!')
+    })
+}
 ```
 
 **Step 3:** Call in a command line `supershit hello` and you'll see `Hello World!` on your screen.
@@ -44,24 +46,24 @@ supershit.cmd('hello').action((ctx) => {
 A call of `supershit.cmd()` registers a CLI task and returns a `SupershitCommand` object. The `.action()` method requires an action function which get called then. The action method has one `ctx` argument followed by all command line arguments. The `ctx` object contains all options.
 
 ```js
-const supershit = require('../src/app')
-
-supershit
-  .cmd('hello <name>')
-  .option('-l, --lowercase', 'Lowercase the output')
-  .action((ctx, name) => {
-    let msg = `Hello ${name}!`
-    if (ctx.lowercase) {
-      console.log(msg.toLowerCase())
-    } else {
-      console.log(msg
-    }
-  })
+module.exports = (supershit) => {
+  return supershit
+    .cmd('hello <name>')
+    .option('-l, --lowercase', 'Lowercase the output')
+    .action((ctx, name) => {
+      let msg = `Hello ${name}!`
+      if (ctx.lowercase) {
+        console.log(msg.toLowerCase())
+      } else {
+        console.log(msg
+      }
+    })
+}
 ```
 
 ### `SupershitCommand`
 
-Each call of `supershit.cmd()` returns an instance of this class. It uses `commander` under the hood, which comes with a set of useful methods. See [commander docs](https://www.npmjs.com/package/commander) for more information.
+Each call of `supershit.cmd()` returns an instance of the SupershitCommand class.
 
 ### Options
 

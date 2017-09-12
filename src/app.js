@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const Supershit = require('./core/Supershit')
 const supershit = new Supershit()

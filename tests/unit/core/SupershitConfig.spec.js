@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
-const inspect = require('inspect.js');
-const sinon = require('sinon');
-inspect.useSinon(sinon);
+const inspect = require('inspect.js')
+const sinon = require('sinon')
+inspect.useSinon(sinon)
 
 const SupershitConfig = require('../../../src/core/SupershitConfig')
 

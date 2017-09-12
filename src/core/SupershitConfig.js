@@ -1,9 +1,8 @@
-'use strict';
+'use strict'
 
 const path = require('path')
 const superconf = require('superconf')
 const defaultConf = require('../config/defaultConfig')
-
 
 /**
  * Configuration loader module
@@ -14,14 +13,13 @@ const defaultConf = require('../config/defaultConfig')
  * @class SupershitConfig
  */
 class SupershitConfig {
-
   /**
    * SupershitConfig constructor
    *
    * @method constructor
    * @param  {object}    customConf Custom config, overwrites predefined config
    */
-  constructor(customConf) {
+  constructor (customConf) {
     this.__customConf = customConf || {}
 
     const conf = superconf.config({
@@ -38,7 +36,7 @@ class SupershitConfig {
    * @param  {array|string} files Sets config files as array or the config dir
    * @return {object}       Returns a SupershitConfig object
    */
-  load(files) {
+  load (files) {
     const opts = {
       cwd: `${this.projectDir}/config`
     }
@@ -58,14 +56,14 @@ class SupershitConfig {
     return this
   }
 
-  merge(mergeConf) {
+  merge (mergeConf) {
     const conf = superconf.config({
       dept: 1
     }).merge(this, mergeConf)
     Object.assign(this, conf)
   }
 
-  getConf() {
+  getConf () {
     const conf = {}
     for (const key of Object.keys(this)) {
       if (/^[a-zA-Z]/.test(key)) {

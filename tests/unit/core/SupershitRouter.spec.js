@@ -28,7 +28,7 @@ describe('SupershitRouter', () => {
       const a = '/api'
       const b = '/foo/bar'
 
-      const api = new SupershitRouter();
+      const api = new SupershitRouter()
 
       inspect(api.join(a, b)).isEql('/api/foo/bar')
     })
@@ -38,7 +38,7 @@ describe('SupershitRouter', () => {
       const b = 'api'
       const c = '/foo/bar'
 
-      const api = new SupershitRouter();
+      const api = new SupershitRouter()
 
       inspect(api.join(a, b, c)).isEql('/api/foo/bar')
     })
@@ -48,7 +48,7 @@ describe('SupershitRouter', () => {
       const b = '/api/'
       const c = '/foo/bar/'
 
-      const api = new SupershitRouter();
+      const api = new SupershitRouter()
 
       inspect(api.join(a, b, c)).isEql('/api/foo/bar')
     })
@@ -57,7 +57,7 @@ describe('SupershitRouter', () => {
       const a = '/api'
       const b = '/hello/:name'
 
-      const api = new SupershitRouter();
+      const api = new SupershitRouter()
 
       inspect(api.join(a, b)).isEql('/api/hello/:name')
     })

@@ -1,5 +1,5 @@
 {
-    extends: "eslint:recommended",
+    extends: "standard",
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
@@ -11,9 +11,5 @@
         "node": true,
         "mocha": true,
         "es6": true
-    },
-    "rules": {
-        "no-console": 1,
-        "no-unused-vars": [2, {"vars": "all", "args": "none"}]
     }
 }

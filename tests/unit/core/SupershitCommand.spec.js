@@ -7,22 +7,22 @@ const sinon = require('sinon')
 
 inspect.useSinon(sinon)
 
-const SupershitCommander = require('../../../src/core/SupershitCommander')
+const SupershitCommand = require('../../../src/core/SupershitCommand')
 
-describe('SupershitCommander', () => {
+describe('SupershitCommand', () => {
   describe('class', () => {
-    it('is an instance of SupershitCommander', () => {
-      const cmd = new SupershitCommander()
-      inspect(cmd).isInstanceOf(SupershitCommander)
+    it('is an instance of SupershitCommand', () => {
+      const cmd = new SupershitCommand()
+      inspect(cmd).isInstanceOf(SupershitCommand)
     })
 
     it('has a workingDir property', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd).hasKey('workingDir')
     })
 
     it('sets a custom working dir', () => {
-      const cmd = new SupershitCommander({
+      const cmd = new SupershitCommand({
         workingDir: '/foo/bla'
       })
 
@@ -30,29 +30,29 @@ describe('SupershitCommander', () => {
     })
 
     it('has a action method', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd).hasMethod('action')
     })
 
     it('has a cmd method', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd).hasMethod('cmd')
     })
 
     it('has a option method', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd).hasMethod('option')
     })
 
     it('has a version method', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd).hasMethod('version')
     })
   })
 
   describe('action()', () => {
     it('register an action method', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       const fn = sinon.stub()
       cmd.action(fn)
 
@@ -60,7 +60,7 @@ describe('SupershitCommander', () => {
     })
 
     it('returns this value', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       const fn = sinon.stub()
       inspect(cmd.action(fn)).isEqual(cmd)
     })
@@ -68,14 +68,14 @@ describe('SupershitCommander', () => {
 
   describe('cmd()', () => {
     it('register a single command', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       cmd.cmd('foo')
 
       inspect(cmd.command).isEql('foo')
     })
 
     it('register a command with one argument', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       cmd.cmd('foo <bar>')
 
       inspect(cmd.command).isEql('foo')
@@ -83,7 +83,7 @@ describe('SupershitCommander', () => {
     })
 
     it('register a command with multiple arguments', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       cmd.cmd('foo <bar> [bla...]')
 
       inspect(cmd.command).isEql('foo')
@@ -91,14 +91,14 @@ describe('SupershitCommander', () => {
     })
 
     it('returns this value', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd.cmd('buymeabeer')).isEqual(cmd)
     })
   })
 
   describe('option()', () => {
     it('register a command line option', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       cmd.option('-b, --beer', 'Set my favorite beer')
       cmd.option('-s, --size', 'Set the beer size, defaults to 1 liter')
 
@@ -109,14 +109,14 @@ describe('SupershitCommander', () => {
     })
 
     it('returns this value', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd.option('-f, --foo', 'I am superfoo')).isEqual(cmd)
     })
   })
 
   describe('argument()', () => {
     it('registers a command line argument', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       cmd.argument('[beer]', 'Set my favorite beer')
 
       inspect(cmd.args).isEql([
@@ -125,21 +125,21 @@ describe('SupershitCommander', () => {
     })
 
     it('returns this value', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd.argument('<foo>', 'I am superfoo')).isEqual(cmd)
     })
   })
 
   describe('version()', () => {
     it('define an app version', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       cmd.version('1.3.28')
 
       inspect(cmd.appVersion).isEql('1.3.28')
     })
 
     it('returns this value', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       inspect(cmd.version('-f, --foo', 'I am superfoo')).isEqual(cmd)
     })
   })
@@ -152,7 +152,8 @@ describe('SupershitCommander', () => {
       origArgv = process.argv
       process.argv = [
         process.env._,
-        path.join(__dirname, 'bin/hello')
+        path.join(__dirname, 'bin/supershit'),
+        'hello'
       ]
     })
 
@@ -162,7 +163,7 @@ describe('SupershitCommander', () => {
     })
 
     it('executes a command', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       const actionStub = sinon.stub()
 
       cmd
@@ -178,7 +179,7 @@ describe('SupershitCommander', () => {
     })
 
     it('executes a command with args', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       const actionStub = sinon.stub()
 
       cmd
@@ -195,7 +196,7 @@ describe('SupershitCommander', () => {
     })
 
     it('executes a command with args and options', () => {
-      const cmd = new SupershitCommander()
+      const cmd = new SupershitCommand()
       const actionStub = sinon.stub()
 
       cmd

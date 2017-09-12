@@ -1,12 +1,12 @@
-'use strict';
+'use strict'
 
 const CLITable = require('cli-table')
 
 class CLITools {
-  static printPM2Status(list) {
+  static printPM2Status (list) {
     const table = new CLITable({
       colAligns: ['', '', '', 'right', '', 'right', '']
-    });
+    })
 
     const lines = [['ID', 'PID', 'Status', 'Restarts', 'Uptime', 'CPU usage', 'Memory']]
     for (const inst of list) {

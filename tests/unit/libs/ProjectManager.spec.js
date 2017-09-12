@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
 const inspect = require('inspect.js')
 const sinon = require('sinon')
 inspect.useSinon(sinon)
 
-const ProjectManager = require('../../../src/libs/ProjectManager')
+const ProjectManager = require('../../../src/utils/ProjectManager')
 
 describe('ProjectManager', () => {
   describe('getProjectName', () => {
