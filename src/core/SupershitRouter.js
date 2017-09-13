@@ -10,6 +10,8 @@ class SupershitRouter {
       mount: this.mount,
       noServer: conf.noServer || false
     })
+
+    this.Server = new SupershitServer(this.Router.server)
   }
 
   /**
