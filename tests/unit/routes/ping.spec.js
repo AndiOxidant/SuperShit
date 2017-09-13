@@ -29,7 +29,7 @@ describe('/ping', () => {
   })
 
   afterEach(() => {
-    api.removeRoute('/ping')
+    api.resetRoutes()
   })
 
   describe('route enabled', () => {
@@ -37,7 +37,6 @@ describe('/ping', () => {
       pingRoute(fakeShit)
       return apiInspect.get('/ping').test((ctx) => {
         ctx.statusCode(204)
-        // ctx.contentType('text/plain')
         ctx.responseTime(50)
         inspect(ctx.text).isEqual('')
       })

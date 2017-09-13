@@ -19,7 +19,6 @@ try {
   }
   command.exec(process.argv)
 } catch (err) {
-  console.log('FILE', err.stack)
-  console.log(`No ${cmdName} task was defined!`, err)
+  console.error(`No ${cmdName} task was defined!`, err)
   process.exit(1)
 }
