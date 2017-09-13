@@ -16,7 +16,7 @@
     "colorfy": "^0.5.0",
     "commander": "^2.11.0",
     "copy-dir": "^0.3.0",
-    "coreio": "^0.2.1",
+    "coreio": "^0.2.3",
     "express-server": "^0.7.0",
     "jquery": "^3.2.1",
     "nodemon": "^1.12.0",
