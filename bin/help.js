@@ -24,9 +24,15 @@ function printModule (mod, indention, verbose) {
 }
 
 function printHeader () {
+  console.log('                    ____                            _     _ _')
+  console.log('   )\\    powerful  / ___| _   _ _ __   ___ _ __ ___| |__ (_) |_')
+  console.log('  (__)    smooth   \\___ \\| | | | \'_ \\ / _ \\ \'__/ __| \'_ \\| | __|')
+  console.log(' (____)    sexy     ___) | |_| | |_) |  __/ |  \\__ \\ | | | | |_')
+  console.log('(______)           |____/ \\__,_| .__/ \\___|_|  |___/_| |_|_|\\__|')
+  console.log('–––––––––––––––––––––––––––––– |_| ––––––––––––––––––––––––––––––')
+
   colorfy()
-    .txt('Supershit commands list')
-    .nl(2)
+    .nl()
     .txt('Usage: supershit')
     .grey('<command> [options] ')
     .nl(2)
