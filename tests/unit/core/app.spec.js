@@ -235,4 +235,13 @@ describe('Supershit', () => {
       })
     })
   })
+
+  describe('logger()', () => {
+    it('Returns a Logtopus instance', () => {
+      const logger = supershit.logger()
+      inspect(logger).isObject()
+      inspect(logger).hasMethod('info')
+      inspect(logger).hasMethod('debug')
+    })
+  })
 })

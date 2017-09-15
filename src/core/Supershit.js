@@ -4,13 +4,15 @@ const path = require('path')
 
 const CoreIO = require('coreio')
 const superimport = require('superimport')
+const logtopus = require('logtopus')
 
 const SupershitNode = require('./SupershitNode')
 const SupershitConfig = require('./SupershitConfig')
 const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
 const WebBuilder = require('../utils/WebBuilder')
-const log = require('logtopus').getLogger('supershit')
+const log = logtopus.getLogger('supershit')
+const pkg = require(path.join(process.cwd(), 'package.json'))
 
 class Supershit {
   constructor (conf) {
@@ -124,6 +126,10 @@ class Supershit {
     const conf = new SupershitConfig(customConf)
     this.__config = conf
     return conf.load()
+  }
+
+  logger () {
+    return logtopus.getLogger(pkg.name)
   }
 
   resetConfig () {
