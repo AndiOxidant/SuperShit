@@ -16,31 +16,18 @@ const pkg = require(path.join(process.cwd(), 'package.json'))
 
 class Supershit {
   constructor (conf) {
-    if (conf) {
-      this.config(conf)
-    }
-
-    this.__initDone = false
-  }
-
-  init () {
-    this.__initDone = true
-    const config = this.config()
+    const config = this.config(conf)
     log.setLevel(config.log.level)
-    log.sys('Setting loglevel to', config.log.level)
+    log.debug('Setting loglevel to', config.log.level)
 
     CoreIO.logLevel = config.log.level
     CoreIO.httpPort = config.server.port
     CoreIO.httpHost = config.server.host
 
-    this.loadRoutes()
+    CoreIO.CoreEvents.on('server:init', this.loadRoutes.bind(this))
   }
 
   api (mount) {
-    if (!this.__initDone) {
-      this.init()
-    }
-
     return new SupershitRouter(mount)
   }
 
@@ -55,10 +42,6 @@ class Supershit {
    * @return {[type]}      [description]
    */
   app (conf) {
-    if (!this.__initDone) {
-      this.init()
-    }
-
     CoreIO.htmlPage('/', {
       title: conf.title,
       scripts: [

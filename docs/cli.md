@@ -5,7 +5,22 @@ Supershit has a commandline interface. Run `npm i -g supershit`
 
 ## Commands
 
-### Create new project (draft)
+The help command shows a list of all available sub-commands, including own commands if possible.  
+Change into your project root and type `supershit help`
+
+
+### Sub Commands
+
+Command | Description
+--------|------------
+`dev` | Start app in devmode. Reloads add everytime when any source file changes
+`help` | Shows a list of all available commands
+`project` | Create new supershit project
+`start` | Starts app in cluster mode
+`stop` | Stops a running app
+
+
+### Create new project
 
 `supershit project <name> <projectDir>`
 
@@ -15,15 +30,16 @@ Creates a project under the current working dir by copying files from the drafts
 
 
 #### Arguments:
-|argument|required|description|
-|---|:---:|
-| **name** | - | Project name, uses current working dir as project name if it isn't set |
-| **projectDir** | - | Project folder |
+Argument | Required | Description
+---------|:--------:|------------
+`name` | - | Project name
+`projectDir` | - | Project folder
+
 
 ## Register own Commands
 
-Its very easy to create own CLI tasks. In your project folder is a `bin/` dir. Place CLI commands here.
-The filename should be identical with the command, otherwise supershit can't find it if you try to call it.
+Its easy to create own CLI tasks. In your project folder is a `bin/` dir for CLI commands.
+The filename should be identical with the command, otherwise Supershit can't find it during a call.
 
 Lets create a `hello` command which prints `Hello World!` on the screen.
 
@@ -55,7 +71,7 @@ module.exports = (supershit) => {
       if (ctx.lowercase) {
         console.log(msg.toLowerCase())
       } else {
-        console.log(msg
+        console.log(msg)
       }
     })
 }
@@ -75,8 +91,21 @@ Name | Description
 
 #### cmd(*str* command) - Set a command
 
-Defines a command with optional arguments. `.cmd('start <file> [logFile...]')`
+Defines a command with optional cli arguments. `.cmd('start <file> [logFile...]')`
+
+#### description(*str* description) - Define a description
+
+The description gets shown in the help pages
+
+#### version(*str* version) - Set a version number
+
+The version number gets shown by using the `--version` option
 
 #### option(*str* option, *str* description) - Add a command line option
 
 Adds a command line option, call it for each option. The option syntax is a string and takes a short and long version separated by a comma. `.option('-d,--debug', 'Enable debug mode')`
+
+#### action(*func* fn) - Defines an action function
+
+The action function gets called with a `ctx` argument followed by all cli arguments.
+Place all the logic here. Write output to stdout or use `console.log()`

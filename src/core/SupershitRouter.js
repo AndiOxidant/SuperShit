@@ -62,9 +62,18 @@ class SupershitRouter {
   }
 
   removeRoute (path) {
+    this.Router.removeRoute(path)
+  }
+
+  resetRoutes () {
     let i = 0
-    for (const layer of this.Router.app._router.stack) {
-      if (layer.path === path) {
+    while (true) {
+      const layer = this.Router.app._router.stack[i]
+      if (!layer) {
+        break
+      }
+
+      if (layer.name === 'bound dispatch') {
         this.Router.app._router.stack.splice(i, 1)
       } else {
         i += 1
