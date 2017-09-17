@@ -11,7 +11,7 @@ const CMD = path.join(__dirname, '../../../bin/supershit')
 
 const PROJECT_DIR = path.join(__dirname, '../../tmp/')
 
-describe.only('CLI', () => {
+describe('CLI', () => {
   before((done) => {
     SuperFS.deleteDir(PROJECT_DIR).then(() => done()).catch(() => {
       done()
@@ -75,11 +75,7 @@ describe.only('CLI', () => {
 
           const pkgFile = path.join(`${PROJECT_DIR}`, 'package.json')
           inspect(pkgFile).isFile()
-
-          const pkg = require(pkgFile)
-          inspect(pkg).hasProps({
-            name: 'foo'
-          })
+          inspect(pkgFile).fileContains('"name": "foo"')
         })
     })
   })

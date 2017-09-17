@@ -14,7 +14,7 @@ describe('CLI', () => {
         .cmd(`${CMD} help`)
         .test((ctx) => {
           inspect(ctx.exitCode).isEql(0)
-          inspect(ctx.text).doesContain('Supershit commands list')
+          inspect(ctx.text).doesContain('Usage: supershit')
         })
     })
   })

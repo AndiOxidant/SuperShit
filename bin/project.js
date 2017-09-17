@@ -14,14 +14,16 @@ module.exports = (supershit) => {
       const cf = colorfy()
       cf.txt('Create new Supershit project').lime(projectName).txt('in dir').grey(projectDir).print()
 
-      ProjectManager.createProject(projectName, projectDir).then((task) => {
+      ProjectManager.createProject(projectName, projectDir, {
+        overwrite: ctx.overwrite
+      }).then((task) => {
         for (const fl of task.copiedFiles) {
           const name = fl.isDir ? `${fl.relative}/` : fl.relative
           const type = fl.isDir ? 'dir ' : 'file'
           cf.txt(` create ${type}`).grey(name).nl()
 
           if (fl.fileExists) {
-            cf.orange(fl.fileOverwritted ? '(replaced)' : '(skipped)')
+            cf.orange(fl.fileOverwritten ? '(replaced)' : '(skipped)')
           }
         }
 
