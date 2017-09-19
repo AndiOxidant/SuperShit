@@ -1,3 +1,5 @@
+'use strict'
+
 const SupershitConfig = require('../../src/core/SupershitConfig')
 
 module.exports = (conf) => {

@@ -1,7 +1,7 @@
 {
     "name": "supershit-project",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "dependencies": {
         "supershit": "^0.0.1",
         "firecmp": "^0.0.1",

@@ -12,7 +12,16 @@ const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
 const WebBuilder = require('../utils/WebBuilder')
 const log = logtopus.getLogger('supershit')
-const pkg = require(path.join(process.cwd(), 'package.json'))
+
+let pkg
+try {
+  pkg = require(path.join(process.cwd(), 'package.json'))
+} catch (err) {
+  // skip error reporting
+  pkg = {
+    name: 'example-app'
+  }
+}
 
 class Supershit {
   constructor (conf) {

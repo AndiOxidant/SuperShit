@@ -1,3 +1,5 @@
+'use strict'
+
 const inspect = require('inspect.js')
 const apiInspect = require('api-inspect')
 const sinon = require('sinon')
