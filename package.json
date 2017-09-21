@@ -16,6 +16,8 @@
     "colorfy": "^0.5.0",
     "commander": "^2.11.0",
     "coreio": "^0.2.3",
+    "eslint": "4.7.1",
+    "eslint-config-standard": "10.2.1",
     "express-server": "^0.7.0",
     "nodemon": "^1.12.1",
     "npm-check-updates": "2.12.1",
