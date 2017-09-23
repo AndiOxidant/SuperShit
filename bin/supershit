@@ -28,6 +28,6 @@ try {
     })
   }
 } catch (err) {
-  console.error(`No ${cmdName} task was defined!`, err)
+  console.error(`No ${cmdName} task was defined!`, err.stack)
   process.exit(1)
 }
