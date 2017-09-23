@@ -1,27 +1,25 @@
 {
   "name": "supershit",
   "version": "0.0.0",
-  "description": "Supershit =========",
+  "description": "I peace of awsomeshit which improves your live.",
   "main": "src/app.js",
   "author": "Andi Heinkelein <andifeind@noname-media.com>",
   "license": "MIT",
   "bin": {
-    "supershit": "project.js"
+    "supershit": "bin/supershit"
   },
   "directories": {
     "doc": "docs"
   },
   "dependencies": {
     "cli-table": "0.3.1",
-    "cli-table2": "^0.2.0",
     "colorfy": "^0.5.0",
     "commander": "^2.11.0",
-    "copy-dir": "^0.3.0",
     "coreio": "^0.2.3",
+    "eslint": "4.7.1",
+    "eslint-config-standard": "10.2.1",
     "express-server": "^0.7.0",
-    "jquery": "^3.2.1",
     "nodemon": "^1.12.1",
-    "npm-check": "5.4.5",
     "npm-check-updates": "2.12.1",
     "pm2": "^2.7.0",
     "superconf": "^1.0.1",
@@ -30,22 +28,18 @@
   },
   "devDependencies": {
     "api-inspect": "^0.1.1",
-    "coffeebreak": "^0.3.2",
-    "eslint": "^4.7.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "inspect.js": "^1.8.0",
+    "@noname-media/standard": "^1.0.1",
+    "inspect.js": "1.9.0",
     "lagoon-reporter": "^0.3.4",
     "mocha": "^3.5.3",
     "shell-inspect": "^1.1.0",
-    "sinon": "^3.2.1",
+    "sinon": "3.3.0",
     "superjoin": "^0.5.0"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive tests/**/*.spec.js"
+    "test": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 1328 tests/unit/**/*.spec.js",
+    "test:integration": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 10000 tests/integration/**/*.spec.js",
+    "lint": "eslint src/ tests/ bin/ drafts/ examples/ web/"
   },
   "repository": {
     "type": "git",
