@@ -49,6 +49,7 @@ Start the example `node examples/simple-api.js` and fire a curl against your API
 curl -X GET -H "accept: application/json" http://localhost:7448/api/hello
 ```
 
+Read more about the `api()` method at [building REST APIs](./docs/api.md) page
 ### Start a server
 
 The default port is 7448. It is not necessary to start a web-server, Supershit starts it when it's required.
