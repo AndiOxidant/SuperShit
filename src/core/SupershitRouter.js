@@ -8,6 +8,7 @@ class SupershitRouter {
     this.mount = mount || ''
     this.Router = new CoreIO.Router({
       mount: this.mount,
+      reset: conf.reset,
       noServer: conf.noServer || false
     })
   }

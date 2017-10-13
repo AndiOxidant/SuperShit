@@ -50,7 +50,43 @@ api.route('/hello', {
 
 api.route('/hello', {
   get() {
-    return Promise.resolve({ message: 'Hello World!' })
+    return new Promise((resolve, reject) => {
+      resolve({ message: 'Hello World!' })
+    }
+  }
+})
+
+// or if you're using NodeJS >= 8 you could use async/await instead
+
+api.route('/hello', {
+  async get() {
+    const msg = await Promise.resolve({ message: 'Hello World!' })
+    return msg
+  }
+})
+```
+
+#### use([*str* slug,] *func* ...fn)
+
+Registers one or more a middlewares. All middlewares getting called before any routs, even they get registered after them.
+
+```js
+api.use((req, res, next) => {
+  // do something here
+  return next()
+})
+```
+
+```js
+api.use(async (req, res, next) => {
+  // do something here
+  await Promise.resolve()
+  if (!req.isAdmin) {
+    // exit chain
+    return
+  } else {
+    // continue chain
+    return next()
   }
 })
 ```
