@@ -28,21 +28,26 @@ Returns a `SupershitRouter` instance. The Router can get an optional mount path.
 
 Registers a route under `slug`. The second arg configures the route.
 
-##### get(*obj* req, *obj* res)
+##### VERB(*obj* req, *obj* res)
 
-Defines a GET route under `slug`. This method is called when a GET request has been made to `slug`. It takes two arguments.
+**VERB** can be a lowercased HTTP method. We support `GET`, `POST`, `PUT`, `PATCH` and `DELETE`.
+
+It registers a HTTP request handler under `slug`. This method gets called when a request of the same method to `slug` was made. The method knows two arguments.
 
 `req` The incoming request, its an Express.js [req](http://expressjs.com/en/4x/api.html#req) object  
 `res` The outgoing response, its an Express.js [res](http://expressjs.com/en/4x/api.html#res) object  
 
 **Return value**  
 If the return value is a `Promise` it uses the resolving value as output,
-otherwise the return value is used.
+otherwise the returned value is used.
 
 ```js
 api.route('/hello', {
-  get() {
+  get(req, res) {
     return { message: 'Hello World!' }
+  },
+  post(req, res) {
+    return db.save('user', req.body.user)
   }
 })
 
@@ -89,4 +94,48 @@ api.use(async (req, res, next) => {
     return next()
   }
 })
+```
+
+### ErrorHandling
+
+Supershit has a basic error handling. Whenever an error is thrown within a request handler the request responds with `500 Internal Server Error`
+
+```js
+api.route('/hello', {
+  get() {
+    throw new Error('Something went wrong')
+  }
+})
+```
+
+Response:
+
+```http
+GET 500 /hello
+{
+  "type": "InternalServerError",
+  "message": "Something went wrong"
+}
+```
+
+The error type can be set by throwing a specific error
+
+```js
+import { NotFoundError } from 'supershit'
+
+api.route('/hello', {
+  get() {
+    throw new NotFoundError('Item was not found!')
+  }
+})
+```
+
+Response:
+
+```http
+GET 404 /hello
+{
+  "type": "NotFoundError",
+  "message": "Item was not found!"
+}
 ```
