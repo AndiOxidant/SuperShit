@@ -11,7 +11,6 @@ const SupershitConfig = require('./SupershitConfig')
 const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
 const WebBuilder = require('../utils/WebBuilder')
-const log = logtopus.getLogger('supershit')
 
 let pkg
 try {
@@ -26,10 +25,13 @@ try {
 class Supershit {
   constructor (conf) {
     const config = this.config(conf)
-    log.setLevel(config.log.level)
-    log.debug('Setting loglevel to', config.log.level)
 
-    CoreIO.logLevel = config.log.level
+    // initialize logger
+    const log = logtopus.getInstance(pkg.name, config.log)
+    log.setLevel(config.log.level)
+    log.sys('Setting loglevel to', config.log.level)
+
+    CoreIO.logLevel = config.debugLevel.level
     CoreIO.httpPort = config.server.port
     CoreIO.httpHost = config.server.host
 
@@ -120,6 +122,12 @@ class Supershit {
     return conf.load()
   }
 
+  /**
+   * Returns a logger instance
+   *
+   * @method  logger
+   * @returns {object} Returns a Logtopus logger instance
+   */
   logger () {
     return logtopus.getLogger(pkg.name)
   }

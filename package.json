@@ -13,27 +13,29 @@
   },
   "dependencies": {
     "cli-table": "0.3.1",
-    "colorfy": "^0.5.0",
+    "co": "^4.6.0",
+    "colorfy": "^1.0.0",
     "commander": "^2.11.0",
     "coreio": "^0.2.3",
-    "eslint": "4.7.1",
-    "eslint-config-standard": "10.2.1",
+    "eslint": "^4.9.0",
     "express-server": "^0.7.0",
+    "logtopus": "^0.3.0",
     "nodemon": "^1.12.1",
-    "npm-check-updates": "2.12.1",
-    "pm2": "^2.7.0",
+    "npm-check-updates": "^2.13.0",
+    "pm2": "^2.7.2",
     "superconf": "^1.0.1",
     "superfs": "^0.7.0",
-    "superimport": "^1.0.1"
+    "superimport": "^1.0.1",
+    "xqcore": "^0.14.0"
   },
   "devDependencies": {
+    "@noname-media/eslint-config-standard": "^1.1.0",
     "api-inspect": "^0.1.1",
-    "@noname-media/standard": "^1.0.1",
     "inspect.js": "1.9.0",
     "lagoon-reporter": "^0.3.4",
-    "mocha": "^3.5.3",
+    "mocha": "^4.0.1",
     "shell-inspect": "^1.1.0",
-    "sinon": "3.3.0",
+    "sinon": "^4.0.1",
     "superjoin": "^0.5.0"
   },
   "scripts": {
