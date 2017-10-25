@@ -7,14 +7,14 @@ const APIError = require('./APIError')
  *
  * Creates a 400 Bad Request error
  *
- * @class BadRequest
+ * @class BadRequestError
  * @extends Error
  */
-class BadRequest extends APIError {
-  constructor () {
-    super('Bad Request')
+class BadRequestError extends APIError {
+  constructor (text) {
+    super('Bad Request', text)
     this.status = 400
   }
 }
 
-module.exports = BadRequest
+module.exports = BadRequestError

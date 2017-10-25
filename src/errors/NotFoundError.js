@@ -11,8 +11,8 @@ const APIError = require('./APIError')
  * @extends Error
  */
 class NotFoundError extends APIError {
-  constructor () {
-    super('Not Found')
+  constructor (text) {
+    super('Not Found', text)
     this.status = 404
   }
 }

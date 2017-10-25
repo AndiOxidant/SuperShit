@@ -11,8 +11,8 @@ const APIError = require('./APIError')
  * @extends Error
  */
 class NotAcceptableError extends APIError {
-  constructor () {
-    super('Not Acceptable')
+  constructor (text) {
+    super('Not Acceptable', text)
     this.status = 406
   }
 }

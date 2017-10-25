@@ -7,14 +7,14 @@ const APIError = require('./APIError')
  *
  * Creates a 502 Gateway Timeout error
  *
- * @class GatewayTimeout
+ * @class GatewayTimeoutError
  * @extends Error
  */
-class GatewayTimeout extends APIError {
-  constructor () {
-    super('Gateway Timeout')
+class GatewayTimeoutError extends APIError {
+  constructor (text) {
+    super('Gateway Timeout', text)
     this.status = 502
   }
 }
 
-module.exports = GatewayTimeout
+module.exports = GatewayTimeoutError

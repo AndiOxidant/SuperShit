@@ -7,14 +7,14 @@ const APIError = require('./APIError')
  *
  * Creates a 403 Forbidden error
  *
- * @class Forbidden
+ * @class ForbiddenError
  * @extends Error
  */
-class Forbidden extends APIError {
-  constructor () {
-    super('Forbidden')
+class ForbiddenError extends APIError {
+  constructor (text) {
+    super('Forbidden', text)
     this.status = 403
   }
 }
 
-module.exports = Forbidden
+module.exports = ForbiddenError
