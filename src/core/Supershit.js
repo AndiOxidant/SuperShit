@@ -114,7 +114,7 @@ class Supershit {
         this.__config.merge(customConf)
       }
 
-      return this.__config
+      return this.__config.getConfig()
     }
 
     const conf = new SupershitConfig(customConf)

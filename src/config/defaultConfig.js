@@ -7,7 +7,7 @@ const defaultConf = {
     level: process.env.NODE_ENV === 'test' ? 'error' : 'sys',
     logger: {
       console: {
-        noColor: false
+        colors: true
       }
     }
   },

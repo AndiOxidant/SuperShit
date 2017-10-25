@@ -2,9 +2,10 @@ Configuration
 =============
 
 Supershit uses [superconf](https://npmjs.org/packages/superconf) to handle configurations.  
-Configurations getting load from `config/${process.env.NODE_ENV}.json`. The default environment is `development`. A configuration can be either a `.json` `.cson` or  a `.yml` file.
+Configurations getting load from `config/${process.env.NODE_ENV}.json`. The default environment is `development`. A configuration can be either a `.json` `.cson` or  a `.yml` file. The default config will be used if no config was found.
 
-## Usage
+Usage
+-----
 
 ```js
 const supershit = require('supershit')
@@ -13,8 +14,29 @@ const supershit = require('supershit')
 const config = supershit.config()
 ```
 
-## Methods
+A call to `supershit.config()` loads config from project config file and stores it in an internal cache. All following calls return the cached config.
 
-### `config([customConfig]) object` - Get current configuration
+The default config is:
 
-Loads a config from `$PROJECT_DIR/config/`. The optional `customConf` parameter overwrites predefined configurations. It returns a configuration object.
+```js
+{
+  server: {
+    port: 7448,
+    host: '0.0.0.0'
+  },
+  log: {
+    level: 'sys',
+    logger: {
+      console: {
+        noColor: false
+      }
+    }
+  },
+  debugLevel: 'sys',
+  pingRoute: {
+    enabled: true,
+    status: 204,
+    message: ''
+  }
+}
+```

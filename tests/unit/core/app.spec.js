@@ -146,7 +146,7 @@ describe('Supershit', () => {
   describe('config', () => {
     it('load configs from a config file', () => {
       const config = supershit.config()
-      inspect(config).isInstanceOf(SupershitConfig)
+      inspect(config).isObject()
     })
 
     it('load configs gets cached', () => {

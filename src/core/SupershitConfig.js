@@ -21,12 +21,11 @@ class SupershitConfig {
    */
   constructor (customConf) {
     this.__customConf = customConf || {}
+    this.__config = {}
 
-    const conf = superconf.config({
+    this.__config = superconf.config({
       dept: 1
     }).merge(defaultConf, this.__customConf)
-
-    Object.assign(this, conf)
   }
 
   /**
@@ -50,27 +49,21 @@ class SupershitConfig {
     const loadedConf = superconf(process.env.NODE_ENV || 'development', opts)
     const conf = superconf.config({
       dept: 1
-    }).merge(loadedConf || {}, this.getConf(), this.__customConf)
+    }).merge(loadedConf || {}, this.__config, this.__customConf)
 
-    Object.assign(this, conf)
-    return this
+    Object.assign(this.__config, conf)
+    return this.__config
   }
 
   merge (mergeConf) {
     const conf = superconf.config({
       dept: 1
-    }).merge(this, mergeConf)
-    Object.assign(this, conf)
+    }).merge(this.__config, mergeConf)
+    Object.assign(this.__config, conf)
   }
 
-  getConf () {
-    const conf = {}
-    for (const key of Object.keys(this)) {
-      if (/^[a-zA-Z]/.test(key)) {
-        conf[key] = this[key]
-      }
-    }
-    return conf
+  getConfig () {
+    return this.__config
   }
 }
 
