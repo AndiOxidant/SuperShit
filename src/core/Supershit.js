@@ -12,6 +12,13 @@ const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
 const WebBuilder = require('../utils/WebBuilder')
 
+const API_ERROR_LEVELS = {
+  'off': 0,
+  'sys': 1,
+  'info': 2,
+  'debug': 3
+}
+
 let pkg
 try {
   pkg = require(path.join(process.cwd(), 'package.json'))
@@ -31,9 +38,10 @@ class Supershit {
     log.setLevel(config.log.level)
     log.sys('Setting loglevel to', config.log.level)
 
-    CoreIO.logLevel = config.debugLevel.level
+    CoreIO.logLevel = config.debug.level
     CoreIO.httpPort = config.server.port
     CoreIO.httpHost = config.server.host
+    CoreIO.errorLevel = API_ERROR_LEVELS[config.apiError.level]
 
     CoreIO.CoreEvents.on('server:init', this.loadRoutes.bind(this))
   }

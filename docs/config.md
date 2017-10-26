@@ -40,3 +40,70 @@ The default config is:
   }
 }
 ```
+
+Config Properties
+-----------------
+
+### apiError
+
+#### *str* level
+
+**Allowed values:** error, info, debug
+
+Defines the output of a HTTP error response
+
+`error` returns error without custom message  
+`text` returns error with custom message  
+`debug` returns error message and stacktrace  
+
+**Default:** `error`
+
+##### Example
+
+```js
+apiError: {
+  level: 'info'
+}
+```
+
+### log
+
+#### *str* level
+
+**Default:** `sys`
+
+Defines a log level. See [Logger](./logger.md) page for all allowed levels
+
+#### *obj* logger
+
+Logger transport configuration. Was adopt from the Logtopus config. Please refer to the [Logtopus](https://github.com/Andifeind/logtopus) docs for more details.
+
+#### Example
+
+```js
+log: {
+  level:'debug',
+  logger: {
+    console: {
+      colors: true
+    },
+    file: {
+      logfile: './logs/app.log'
+    }
+  }
+}
+```
+
+### server
+
+#### *num* port
+
+Port for the web-server
+
+**Default** `7448`
+
+#### *str* host
+
+Host for the web-server
+
+**Default** `0.0.0.0`
