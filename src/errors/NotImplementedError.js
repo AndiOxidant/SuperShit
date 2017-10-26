@@ -7,14 +7,14 @@ const APIError = require('./APIError')
  *
  * Creates a 501 Not Implemented error
  *
- * @class NotImplemented
+ * @class NotImplementedError
  * @extends Error
  */
-class NotImplemented extends APIError {
-  constructor () {
-    super('Not Implemented')
+class NotImplementedError extends APIError {
+  constructor (text) {
+    super('Not Implemented', text)
     this.status = 501
   }
 }
 
-module.exports = NotImplemented
+module.exports = NotImplementedError

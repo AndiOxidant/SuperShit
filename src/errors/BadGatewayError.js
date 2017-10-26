@@ -7,14 +7,14 @@ const APIError = require('./APIError')
  *
  * Creates a 502 Bad Gateway error
  *
- * @class BadGateway
+ * @class BadGatewayError
  * @extends Error
  */
-class BadGateway extends APIError {
-  constructor () {
-    super('Bad Gateway')
+class BadGatewayError extends APIError {
+  constructor (text) {
+    super('Bad Gateway', text)
     this.status = 502
   }
 }
 
-module.exports = BadGateway
+module.exports = BadGatewayError

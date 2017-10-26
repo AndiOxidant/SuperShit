@@ -15,7 +15,8 @@ describe('/ping', () => {
 
   beforeEach(() => {
     api = new SupershitRouter('', {
-      noServer: true
+      noServer: true,
+      reset: true
     })
 
     apiInspect.setApi(api.Router.app)
@@ -28,10 +29,6 @@ describe('/ping', () => {
         return fakeConfig.get()
       }
     }
-  })
-
-  afterEach(() => {
-    api.resetRoutes()
   })
 
   describe('route enabled', () => {

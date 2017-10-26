@@ -7,14 +7,14 @@ const APIError = require('./APIError')
  *
  * Creates a 503 Service Unavailable error
  *
- * @class ServiceUnavailable
+ * @class ServiceUnavailableError
  * @extends Error
  */
-class ServiceUnavailable extends APIError {
-  constructor () {
-    super('Service Unavailable')
+class ServiceUnavailableError extends APIError {
+  constructor (text) {
+    super('Service Unavailable', text)
     this.status = 503
   }
 }
 
-module.exports = ServiceUnavailable
+module.exports = ServiceUnavailableError

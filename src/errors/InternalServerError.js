@@ -11,8 +11,8 @@ const APIError = require('./APIError')
  * @extends Error
  */
 class InternalServerError extends APIError {
-  constructor () {
-    super('Internal Server Error')
+  constructor (text) {
+    super('Internal Server Error', text)
     this.status = 500
   }
 }

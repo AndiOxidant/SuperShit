@@ -7,14 +7,14 @@ const APIError = require('./APIError')
  *
  * Creates a 401 Unauthorized error
  *
- * @class Unauthorized
+ * @class UnauthorizedError
  * @extends Error
  */
-class Unauthorized extends APIError {
-  constructor () {
-    super('Unauthorized')
+class UnauthorizedError extends APIError {
+  constructor (text) {
+    super('Unauthorized', text)
     this.status = 401
   }
 }
 
-module.exports = Unauthorized
+module.exports = UnauthorizedError

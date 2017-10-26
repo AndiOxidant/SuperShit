@@ -11,7 +11,13 @@ const SupershitConfig = require('./SupershitConfig')
 const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
 const WebBuilder = require('../utils/WebBuilder')
-const log = logtopus.getLogger('supershit')
+
+const API_ERROR_LEVELS = {
+  'off': 0,
+  'sys': 1,
+  'info': 2,
+  'debug': 3
+}
 
 let pkg
 try {
@@ -26,12 +32,16 @@ try {
 class Supershit {
   constructor (conf) {
     const config = this.config(conf)
-    log.setLevel(config.log.level)
-    log.debug('Setting loglevel to', config.log.level)
 
-    CoreIO.logLevel = config.log.level
+    // initialize logger
+    const log = logtopus.getInstance(pkg.name, config.log)
+    log.setLevel(config.log.level)
+    log.sys('Setting loglevel to', config.log.level)
+
+    CoreIO.logLevel = config.debug.level
     CoreIO.httpPort = config.server.port
     CoreIO.httpHost = config.server.host
+    CoreIO.errorLevel = API_ERROR_LEVELS[config.apiError.level]
 
     CoreIO.CoreEvents.on('server:init', this.loadRoutes.bind(this))
   }
@@ -112,7 +122,7 @@ class Supershit {
         this.__config.merge(customConf)
       }
 
-      return this.__config
+      return this.__config.getConfig()
     }
 
     const conf = new SupershitConfig(customConf)
@@ -120,6 +130,12 @@ class Supershit {
     return conf.load()
   }
 
+  /**
+   * Returns a logger instance
+   *
+   * @method  logger
+   * @returns {object} Returns a Logtopus logger instance
+   */
   logger () {
     return logtopus.getLogger(pkg.name)
   }
