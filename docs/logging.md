@@ -6,21 +6,6 @@ We use the great [Logtopus](https://github.com/Andifeind/logtopus) logger which 
 
 Usage
 -----
-
-The logger has logging methods to log in different levels. A higher listed level logs in all lower listed levels. For example, if level was set to `res`, logs of `res()`, `req()`, `sys()`, `warn()` and `error()` getting logged, but not `debug()` and `info()`.
-
-Method    | Level | Description
-----------|-------|------------
-`debug()` | debug | Debug log
-`info()`  | info  | Info log
-`res()`   | res   | Logs a http response
-`req()`   | req   | Logs a http request
-`sys()`   | sys   | System log
-`warn()`  | warn  | Logs a warning
-`error()` | error | Logs an error
-
-All log methods expecting a log message as its first parameter. All following arguments are interpret as data.
-
 ```js
 import supershit from 'supershit'
 
@@ -34,6 +19,22 @@ log.error('App crashed!') // gets logged
 // use data arguments
 log.sys('Listening on port:', 7448)
 ```
+
+The `suershit.logger()` method returns a instance of the `Logtopus` logger. It comes with some methods. See [Logging](https://github.com/andifeind/logtopuss) page for more about logging.
+
+The logger has logging methods to log in different levels. A higher listed level logs in all lower listed levels. For example, if level is `res`, logs of `res()`, `req()`, `sys()`, `warn()` and `error()` getting logged, but not `debug()` and `info()`.
+
+Method    | Level | Description
+----------|-------|------------
+`debug()` | debug | Debug log
+`info()`  | info  | Info log
+`res()`   | res   | Logs a http response
+`req()`   | req   | Logs a http request
+`sys()`   | sys   | System log
+`warn()`  | warn  | Logs a warning
+`error()` | error | Logs an error
+
+All log methods expecting a log message as its first parameter. All following arguments are interpret as data.
 
 Configuration
 -------------

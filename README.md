@@ -28,34 +28,41 @@ api.route('/hello', {
 })
 ```
 
-Start the example `node examples/simple-api.js` and fire a curl against your API.
+You'll find this example in `examples/simple-api.js` folder.
+Start the example by using the command `node examples/simple-api.js` and fire a curl to the API.
 
 ```shell
 curl -X GET -H "accept: application/json" http://localhost:7448/api/hello
+
+# Response
+< HTTP/1.1 200 OK
+< Access-Control-Allow-Origin: *
+< Content-Type: application/json; charset=utf-8
+< Content-Length: 26
+{"message":"Hello World!"}
 ```
+
 
 Read more about the `api()` method at [REST API](./docs/api.md) page
 ### Start a server
 
-The default port is 7448. Supershit starts a webserver when it's required. Use the start command to start the app in clustermode `supershit start` or for development use the dev command `supershit dev`, it reloads the app everytime when any source file changes.
+The default port is 7448. Supershit starts a webserver when it's required. Use the start command `supershit start` to start the app in clustermode or for development the dev command `supershit dev`, it reloads the app everytime when a source file changes.
 
 Refer to [CLI](./docs/commands.md) page to get a list of all supported commands.
 
-## Logging
+## Config
 
-Everybody love logs, and we know that. [Logtopus](https://github.com/Andifeind/logtopus) is a very flexible logger module for Node.js and comes with different loggers. Place the logger configuration in the project config by using the key `log`. Paste a Logtopus config here as it's described in their docs.
+Supershit reads config from `config/${process.env.NODE_ENV}.json`. A config file can be either a `.json`, `.cson` or `.yaml` file.
 
-```coffee
-log:
-  level: 'debug'
-  logger:
-    console:
-      colors: true
-    file:
-      logfile: 'logs/supershit.log'
+```js
+// load config from config files
+const config = supershit.config()
 ```
 
-Within your code, after you have instantiate a Logger instance you can use a few logging methods.
+Read more about config at the [Config](./docs/config.md) page.
+
+
+## Logging
 
 ```js
 const log = supershit.logger()
@@ -66,4 +73,4 @@ log.info('App started successful,', {
 log.debug('Process id:,', process.pid)
 ```
 
-The `suershit.logger()` method returns a instance of the `Logtopus` logger. It comes with a few methods. See [Logging](https://github.com/andifeind/logtopuss) page for more about logging.
+Read more about logging at the [Logging](./docs/logging.md) page.
