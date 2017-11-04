@@ -17,7 +17,9 @@ Command | Description
 `help` | Shows a list of all available commands
 `project` | Create new supershit project
 `start` | Start app in cluster mode
+`restart` | Restart app in cluster mode
 `stop` | Stop a running app
+`status` | Show app status
 
 
 ### Create new project
@@ -34,6 +36,50 @@ Argument | Required | Description
 ---------|:--------:|------------
 `name` | - | Project name
 `projectDir` | - | Project folder
+
+
+### Start app
+
+`supershit start [options]`
+
+Start a supershit-app in clustermode. It spawns 4 instances per default.
+Uses current working dir as project dir.
+
+#### Arguments:
+Argument | Required | Description
+---------|:--------:|------------
+`instances` | - | Start [number] instances
+
+
+### Restart app
+
+`supershit resstart [options]`
+
+Restart a running supershit-app.
+
+#### Arguments:
+This task hasn't got any arguments.
+
+### Stop app
+
+`supershit stop [options]`
+
+Stops a running supershit-app.
+Uses current working dir as project dir.
+
+#### Arguments:
+This task hasn't got any arguments.
+
+
+### Show app status
+
+`supershit status [options]`
+
+Shows status of a current running supershit-app.
+
+#### Arguments:
+This task hasn't got any arguments.
+
 
 
 ## Register own Commands
