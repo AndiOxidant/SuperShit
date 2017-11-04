@@ -11,6 +11,7 @@ const SupershitConfig = require('./SupershitConfig')
 const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
 const SupershitModel = require('./SupershitModel')
+const SupershitService = require('./SupershitService')
 const SupershitList = require('./SupershitList')
 const WebBuilder = require('../utils/WebBuilder')
 
@@ -157,6 +158,17 @@ class Supershit {
     return CoreIO.List.inherit(name, conf)
   }
 
+  /**
+   * Create a SupershitService instance
+   *
+   * @param  {string} name List name
+   * @param  {object} conf List configuration
+   * @return {object}      Returns a SupershitService class
+   */
+  service (name, conf) {
+    return CoreIO.Service.inherit(name, conf)
+  }
+
   resetConfig () {
     this.__config = null
   }
@@ -187,3 +199,4 @@ class Supershit {
 module.exports = Supershit
 module.exports.SupershitModel = SupershitModel
 module.exports.SupershitList = SupershitList
+module.exports.SupershitService = SupershitService
