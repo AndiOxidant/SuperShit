@@ -244,4 +244,34 @@ describe('Supershit', () => {
       inspect(logger).hasMethod('debug')
     })
   })
+
+  describe('model()', () => {
+    it('returns a SupershitModel class', () => {
+      const Model = supershit.model('test', {})
+      inspect(Model).isFunction()
+    })
+
+    it('instanciates a Supershit modelclass', () => {
+      const Model = supershit.model('test', {})
+
+      const model = new Model()
+      inspect(model).isObject()
+      inspect(model).hasMethod('get')
+      inspect(model).hasMethod('set')
+    })
+
+    it('instanciates a SupershitModel class with preset data', () => {
+      const Model = supershit.model('test', {})
+
+      const model = new Model({
+        foo: 'Foo'
+      })
+
+      const data = model.get()
+      inspect(data).isObject()
+      inspect(data).isEql({
+        foo: 'Foo'
+      })
+    })
+  })
 })
