@@ -10,6 +10,7 @@ const SupershitNode = require('./SupershitNode')
 const SupershitConfig = require('./SupershitConfig')
 const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
+const SupershitModel = require('./SupershitModel')
 const WebBuilder = require('../utils/WebBuilder')
 
 const API_ERROR_LEVELS = {
@@ -138,6 +139,17 @@ class Supershit {
    */
   logger () {
     return logtopus.getLogger(pkg.name)
+  }
+
+  /**
+   * Create a SupershitModel
+   *
+   * @param  {string} name Model name
+   * @param  {object} conf Model configuration
+   * @return {object}      Returns a SupershitModel class
+   */
+  model (name, conf) {
+    return CoreIO.Model.inherit(name, conf)
   }
 
   resetConfig () {
