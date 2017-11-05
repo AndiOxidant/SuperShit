@@ -16,10 +16,10 @@
     "co": "^4.6.0",
     "colorfy": "^1.0.0",
     "commander": "^2.11.0",
-    "coreio": "^0.2.3",
-    "eslint": "^4.9.0",
+    "coreio": "^0.3.1",
+    "eslint": "^4.10.0",
     "express-server": "^0.7.0",
-    "logtopus": "^0.3.0",
+    "logtopus": "^1.0.1",
     "nodemon": "^1.12.1",
     "npm-check-updates": "^2.13.0",
     "pm2": "^2.7.2",
@@ -35,7 +35,7 @@
     "lagoon-reporter": "^0.3.4",
     "mocha": "^4.0.1",
     "shell-inspect": "^1.1.0",
-    "sinon": "^4.0.1",
+    "sinon": "^4.1.1",
     "superjoin": "^0.5.0"
   },
   "scripts": {
