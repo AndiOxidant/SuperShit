@@ -6,28 +6,37 @@ inspect.useSinon(sinon)
 
 const shellInspect = require('shell-inspect')
 const CMD = path.join(__dirname, '../../../bin/supershit')
+const WORKING_DIR = path.join(__dirname, '../../fixtures/')
+const LOGFILE = path.join(WORKING_DIR, 'logs/test.log')
 
-describe('CLI', () => {
+describe.only('CLI', () => {
+  before(() => {
+    inspect.removeFile(LOGFILE)
+  })
+
   describe('start command', () => {
     it('should start an app', () => {
       return shellInspect
-        .cwd(path.join(__dirname, '../../fixtures/'))
+        .cwd(WORKING_DIR)
         .cmd(`${CMD} start`)
         .test((ctx) => {
-          // console.log(ctx.text)
           inspect(ctx.exitCode).isEql(0)
-          // inspect(ctx.text).doesContain('Usage: supershit')
         })
+    })
+
+    it('should have started 4 instances', function () {
+      this.retries(100)
+      inspect(LOGFILE).isFile()
+      inspect(inspect.readFile(LOGFILE)).isEql(':T:T:T:T')
     })
   })
 
   describe('status command', () => {
     it('should show a status view', () => {
       return shellInspect
-        .cwd(path.join(__dirname, '../../fixtures/'))
+        .cwd(WORKING_DIR)
         .cmd(`${CMD} status`)
         .test((ctx) => {
-          // console.log(ctx.text)
           inspect(ctx.exitCode).isEql(0)
         })
     })
@@ -36,12 +45,18 @@ describe('CLI', () => {
   describe('restart command', () => {
     it('should restart an app', () => {
       return shellInspect
-        .cwd(path.join(__dirname, '../../fixtures/'))
+        .cwd(WORKING_DIR)
         .cmd(`${CMD} restart`)
         .test((ctx) => {
           // console.log(ctx.text)
           inspect(ctx.exitCode).isEql(0)
         })
+    })
+
+    it('should have started 4 instances', function () {
+      this.retries(100)
+      inspect(LOGFILE).isFile()
+      inspect(inspect.readFile(LOGFILE)).isEql(':T:T:T:T:T:T:T:T')
     })
   })
 
