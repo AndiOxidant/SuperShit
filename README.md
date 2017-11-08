@@ -3,13 +3,19 @@ Supershit
 
 Lightweight search-engine friendly single-page web framework
 
+
+Requirements
+------------
+
+NodeJS >= 8
+
+
 Installation
 ------------
 
 ```shell
 npm i supershit -g
 ```
-
 
 How to use
 ----------
