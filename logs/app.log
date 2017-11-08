@@ -1,9 +1,0 @@
-[2017-11-05T20:19:30.647Z] sys: Register route GET /ping
-[2017-11-05T20:19:30.652Z] sys: Register route GET /foo/bar
-[2017-11-05T20:19:30.677Z] sys: Register route POST /foo/bar
-[2017-11-05T20:19:30.688Z] sys: Register route PUT /foo/bar
-[2017-11-05T20:19:30.691Z] sys: Register route PATCH /foo/bar
-[2017-11-05T20:19:30.693Z] sys: Register route DELETE /foo/bar
-[2017-11-05T20:19:30.698Z] sys: Register route GET /ping
-[2017-11-05T20:19:30.700Z] sys: Register route GET /ping
-[2017-11-05T20:19:30.701Z] sys: Register route GET /ping
