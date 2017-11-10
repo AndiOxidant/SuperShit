@@ -163,3 +163,4 @@ class Supershit {
 }
 
 module.exports = Supershit
+module.exports.SupershitModel = SupershitModel

@@ -10,4 +10,4 @@ class SupershitModel extends CoreIO.Model {
   }
 }
 
-module.expports = SupershitModel
+module.exports = SupershitModel

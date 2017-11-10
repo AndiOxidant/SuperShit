@@ -251,6 +251,12 @@ describe('Supershit', () => {
       inspect(Model).isFunction()
     })
 
+    it('has a SupershitModel property', () => {
+      inspect.print(supershit)
+      inspect(supershit).hasKey('SupershitModel')
+      inspect(supershit.SupershitModel).isClass()
+    })
+
     it('instanciates a Supershit modelclass', () => {
       const Model = supershit.model('test', {})
 

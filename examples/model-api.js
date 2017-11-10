@@ -3,16 +3,18 @@ const api = supershit.api('/api')
 
 const Model = supershit.model('hello', {
   schema: {
+    id: { type: 'num' },
     message: { type: 'str', min: 3, max: 255 },
     type: { type: 'string' }
-  },
-  defaults: {
-    message: 'Hello World!',
-    type: 'greeting'
   }
 })
 
+const model = new Model({
+  message: 'Hello World!',
+  type: 'greeting'
+})
+
 api.route('/hello', {
-  allow: 'READ',
-  model: Model
+  model,
+  static: true
 })

@@ -49,3 +49,28 @@ const myModel = new MyModel({
 // get all model data
 myModel.get()
 ```
+
+## Model API
+
+Models are data containers, lets use it to create a API with it.
+
+```js
+const myModel = new MyModel({
+  foo: 'Foo',
+  bar: 'Bar'
+})
+
+const api = supershit.api('/api')
+api.route('/foo', {
+  model: myModels
+})
+```
+
+The example registers a GET route under path `/api/foo`.
+A call to it returns the model data.
+
+Try the curl: `curl -X GET http://localhost:7448/api/foo -H "accepts: application/json"`
+
+```http
+
+```
