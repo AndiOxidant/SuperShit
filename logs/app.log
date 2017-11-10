@@ -1,0 +1,21 @@
+[2017-11-09T09:27:46.314Z] sys: Register route GET /ping
+[2017-11-09T09:27:46.320Z] sys: Register route GET /foo/bar
+[2017-11-09T09:27:46.352Z] sys: Register route POST /foo/bar
+[2017-11-09T09:27:46.366Z] sys: Register route PUT /foo/bar
+[2017-11-09T09:27:46.369Z] sys: Register route PATCH /foo/bar
+[2017-11-09T09:27:46.372Z] sys: Register route DELETE /foo/bar
+[2017-11-09T09:27:46.379Z] sys: Register route GET /ping
+[2017-11-09T09:27:46.382Z] sys: Register route GET /ping
+[2017-11-09T09:27:46.384Z] sys: Register route GET /ping
+[2017-11-09T11:59:34.813Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-09T11:59:34.817Z] sys: Register route GET /ping
+[2017-11-09T11:59:34.819Z] sys: Register route GET /api/hello/:id
+[2017-11-09T12:00:46.866Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-09T12:00:46.870Z] sys: Register route GET /ping
+[2017-11-09T12:00:46.872Z] sys: Register route GET /api/hello/:id
+[2017-11-09T12:01:27.746Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-09T12:01:27.750Z] sys: Register route GET /ping
+[2017-11-09T12:01:27.752Z] sys: Register route GET /api/hello/:id
+[2017-11-09T12:02:28.089Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-09T12:02:28.094Z] sys: Register route GET /ping
+[2017-11-09T12:02:28.095Z] sys: Register route GET /api/hello/:id
