@@ -71,9 +71,46 @@ api.route('/hello', {
 })
 ```
 
+##### *obj* model
+
+Connect a model instance or class with a route. It registers a path depending on `allow` and `static` option.
+
+It registers a `GET` route under slug `/${slug}/:id`. If static is set to true, no `/:id` part would be add. The `allow` option can be used to register `POST`, `PUT` or `DELETE routes.
+
+```js
+api.route('/user', {
+  model: UserModel,
+  allow: ['READ', 'CREATE']
+})
+```
+
+registers:  
+
+`GET /api/user/:id` to return a user  
+`POST /api/user/` to create a user`  
+
+##### *bool*  static
+
+If static is true and `model` is using the slug won't be a dynamic route.
+The registered path is `/${slug}` and it always returns the same model.
+
+##### *arr* allow
+
+Set route methods. Possible values are: `READ`, `CREATE`, `UPDATE` and `DELETE`
+
+Flag | Method
+-----|-------
+READ | `GET /${slug}/:id` Get a dataset (default)
+CREATE | `POST /${slug}` Create a dataset
+REPLACE | `PUT /${slug}/:id` Replace a dataset
+CHANGE | `PATCH /${slug}/:id` Change a dataset or subset
+DELETE | `DELETE /${slug}/:id` Delete a dataset
+UPDATE | REPLACE and CHANGE
+CRUD | CREATE, READ, UPDATE and DELETE
+
 #### use([*str* slug,] *func* ...fn)
 
-Registers one or more a middlewares. All middlewares getting called before any routs, even they get registered after them.
+Registers one or more middlewares. All middlewares getting called before any routs, even they get registered after them.
 
 ```js
 api.use((req, res, next) => {

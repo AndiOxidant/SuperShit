@@ -44,25 +44,25 @@ The default config is:
 Config Properties
 -----------------
 
-### apiError
+### api
 
-#### *str* level
+#### *str* errorLevel
 
-**Allowed values:** error, info, debug
+**Allowed values:** sys, info, debug
 
 Defines the output of a HTTP error response
 
-`error` returns error without custom message  
-`text` returns error with custom message  
-`debug` returns error message and stacktrace  
+`sys` returns error without custom message  
+`info` returns error with custom message  
+`debug` returns error message and stack trace  
 
-**Default:** `error`
+**Default:** `sys`
 
 ##### Example
 
 ```js
-apiError: {
-  level: 'info'
+api: {
+  errorLevel: 'info'
 }
 ```
 

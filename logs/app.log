@@ -19,3 +19,796 @@
 [2017-11-09T12:02:28.089Z] sys: Listen on port 7448 0.0.0.0
 [2017-11-09T12:02:28.094Z] sys: Register route GET /ping
 [2017-11-09T12:02:28.095Z] sys: Register route GET /api/hello/:id
+[2017-11-10T19:49:05.916Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:49:05.919Z] sys: Register route GET /ping
+[2017-11-10T19:49:24.364Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:49:24.367Z] sys: Register route GET /ping
+[2017-11-10T19:49:36.583Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:49:36.586Z] sys: Register route GET /ping
+[2017-11-10T19:49:50.764Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:49:50.767Z] sys: Register route GET /ping
+[2017-11-10T19:51:13.980Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:51:13.984Z] sys: Register route GET /ping
+[2017-11-10T19:52:20.725Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:52:20.728Z] sys: Register route GET /ping
+[2017-11-10T19:52:49.191Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:52:49.194Z] sys: Register route GET /ping
+[2017-11-10T19:53:22.773Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T19:53:22.777Z] sys: Register route GET /ping
+[2017-11-10T19:53:22.779Z] sys: Register route GET /api/hello/:id
+[2017-11-10T20:10:01.252Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T20:10:01.255Z] sys: Register route GET /ping
+[2017-11-10T20:10:01.257Z] sys: Register route GET /api/hello
+[2017-11-10T22:13:21.349Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:13:21.353Z] sys: Register route GET /ping
+[2017-11-10T22:13:21.355Z] sys: Register route GET /api/hello
+[2017-11-10T22:32:31.692Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:32:31.695Z] sys: Register route GET /ping
+[2017-11-10T22:32:31.697Z] sys: Register route GET /api/hello
+[2017-11-10T22:32:31.698Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:32:31.698Z] sys: Register route POST /api/fruits
+[2017-11-10T22:32:31.698Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:32:31.698Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:32:31.698Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:37:17.546Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:37:17.551Z] sys: Register route GET /ping
+[2017-11-10T22:37:17.553Z] sys: Register route GET /api/hello
+[2017-11-10T22:37:17.553Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:37:17.554Z] sys: Register route POST /api/fruits
+[2017-11-10T22:37:17.554Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:37:17.554Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:37:17.554Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:48:08.765Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:48:08.768Z] sys: Register route GET /ping
+[2017-11-10T22:48:08.771Z] sys: Register route GET /api/hello
+[2017-11-10T22:48:08.771Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:48:08.771Z] sys: Register route POST /api/fruits
+[2017-11-10T22:48:08.771Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:48:08.771Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:48:08.772Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:52:46.121Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:52:46.125Z] sys: Register route GET /ping
+[2017-11-10T22:52:46.127Z] sys: Register route GET /api/hello
+[2017-11-10T22:52:46.128Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:52:46.128Z] sys: Register route POST /api/fruits
+[2017-11-10T22:52:46.128Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:52:46.128Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:52:46.128Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:55:00.831Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:55:00.834Z] sys: Register route GET /ping
+[2017-11-10T22:55:00.837Z] sys: Register route GET /api/hello
+[2017-11-10T22:55:00.837Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:55:00.837Z] sys: Register route POST /api/fruits
+[2017-11-10T22:55:00.838Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:55:00.838Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:55:00.838Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:56:06.578Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:56:06.582Z] sys: Register route GET /ping
+[2017-11-10T22:56:06.584Z] sys: Register route GET /api/hello
+[2017-11-10T22:56:06.584Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:56:06.585Z] sys: Register route POST /api/fruits
+[2017-11-10T22:56:06.585Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:56:06.585Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:56:06.585Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:57:52.793Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:57:52.797Z] sys: Register route GET /ping
+[2017-11-10T22:57:52.799Z] sys: Register route GET /api/hello
+[2017-11-10T22:57:52.799Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:57:52.800Z] sys: Register route POST /api/fruits
+[2017-11-10T22:57:52.800Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:57:52.800Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:57:52.800Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:58:18.117Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:58:18.120Z] sys: Register route GET /ping
+[2017-11-10T22:58:18.123Z] sys: Register route GET /api/hello
+[2017-11-10T22:58:18.123Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:58:18.123Z] sys: Register route POST /api/fruits
+[2017-11-10T22:58:18.123Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:58:18.123Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:58:18.124Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T22:59:06.548Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T22:59:06.551Z] sys: Register route GET /ping
+[2017-11-10T22:59:06.554Z] sys: Register route GET /api/hello
+[2017-11-10T22:59:06.554Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T22:59:06.554Z] sys: Register route POST /api/fruits
+[2017-11-10T22:59:06.554Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T22:59:06.555Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T22:59:06.555Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:00:46.563Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:00:46.567Z] sys: Register route GET /ping
+[2017-11-10T23:00:46.569Z] sys: Register route GET /api/hello
+[2017-11-10T23:00:46.569Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:00:46.569Z] sys: Register route POST /api/fruits
+[2017-11-10T23:00:46.569Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:00:46.570Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:00:46.570Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:01:38.949Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:01:38.952Z] sys: Register route GET /ping
+[2017-11-10T23:01:38.955Z] sys: Register route GET /api/hello
+[2017-11-10T23:01:38.955Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:01:38.955Z] sys: Register route POST /api/fruits
+[2017-11-10T23:01:38.955Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:01:38.956Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:01:38.956Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:02:01.021Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:02:01.025Z] sys: Register route GET /ping
+[2017-11-10T23:02:01.027Z] sys: Register route GET /api/hello
+[2017-11-10T23:02:01.028Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:02:01.028Z] sys: Register route POST /api/fruits
+[2017-11-10T23:02:01.028Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:02:01.028Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:02:01.028Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:03:14.149Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:03:14.152Z] sys: Register route GET /ping
+[2017-11-10T23:03:14.155Z] sys: Register route GET /api/hello
+[2017-11-10T23:03:14.155Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:03:14.155Z] sys: Register route POST /api/fruits
+[2017-11-10T23:03:14.155Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:03:14.156Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:03:14.156Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:04:58.641Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:04:58.644Z] sys: Register route GET /ping
+[2017-11-10T23:04:58.646Z] sys: Register route GET /api/hello
+[2017-11-10T23:04:58.647Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:04:58.647Z] sys: Register route POST /api/fruits
+[2017-11-10T23:04:58.647Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:04:58.647Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:04:58.647Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:05:17.786Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:05:17.790Z] sys: Register route GET /ping
+[2017-11-10T23:05:17.792Z] sys: Register route GET /api/hello
+[2017-11-10T23:05:17.793Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:05:17.793Z] sys: Register route POST /api/fruits
+[2017-11-10T23:05:17.793Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:05:17.793Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:05:17.793Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:06:26.662Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:06:26.666Z] sys: Register route GET /ping
+[2017-11-10T23:06:26.669Z] sys: Register route GET /api/hello
+[2017-11-10T23:06:26.669Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:06:26.669Z] sys: Register route POST /api/fruits
+[2017-11-10T23:06:26.669Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:06:26.669Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:06:26.669Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:06:54.319Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:06:54.322Z] sys: Register route GET /ping
+[2017-11-10T23:06:54.325Z] sys: Register route GET /api/hello
+[2017-11-10T23:06:54.325Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:06:54.325Z] sys: Register route POST /api/fruits
+[2017-11-10T23:06:54.325Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:06:54.325Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:06:54.325Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:07:17.198Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:07:17.202Z] sys: Register route GET /ping
+[2017-11-10T23:07:17.204Z] sys: Register route GET /api/hello
+[2017-11-10T23:07:17.204Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:07:17.204Z] sys: Register route POST /api/fruits
+[2017-11-10T23:07:17.205Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:07:17.205Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:07:17.205Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:25:11.236Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:25:11.240Z] sys: Register route GET /ping
+[2017-11-10T23:25:11.243Z] sys: Register route GET /api/hello
+[2017-11-10T23:25:11.243Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:25:11.243Z] sys: Register route POST /api/fruits
+[2017-11-10T23:25:11.243Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:25:11.243Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:25:11.244Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:26:18.065Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:26:18.069Z] sys: Register route GET /ping
+[2017-11-10T23:26:18.071Z] sys: Register route GET /api/hello
+[2017-11-10T23:26:18.071Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:26:18.071Z] sys: Register route POST /api/fruits
+[2017-11-10T23:26:18.072Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:26:18.072Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:26:18.072Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:29:02.673Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:29:02.677Z] sys: Register route GET /ping
+[2017-11-10T23:29:02.679Z] sys: Register route GET /api/hello
+[2017-11-10T23:29:02.679Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:29:02.680Z] sys: Register route POST /api/fruits
+[2017-11-10T23:29:02.680Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:29:02.680Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:29:02.680Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:29:51.483Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:29:51.486Z] sys: Register route GET /ping
+[2017-11-10T23:29:51.488Z] sys: Register route GET /api/hello
+[2017-11-10T23:29:51.489Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:29:51.489Z] sys: Register route POST /api/fruits
+[2017-11-10T23:29:51.489Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:29:51.489Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:29:51.489Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:33:26.096Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:33:26.100Z] sys: Register route GET /ping
+[2017-11-10T23:33:26.102Z] sys: Register route GET /api/hello
+[2017-11-10T23:33:26.102Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:33:26.103Z] sys: Register route POST /api/fruits
+[2017-11-10T23:33:26.103Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:33:26.103Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:33:26.103Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-10T23:35:11.809Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-10T23:35:11.813Z] sys: Register route GET /ping
+[2017-11-10T23:35:11.815Z] sys: Register route GET /api/hello
+[2017-11-10T23:35:11.816Z] sys: Register route GET /api/fruits/:id
+[2017-11-10T23:35:11.816Z] sys: Register route POST /api/fruits
+[2017-11-10T23:35:11.816Z] sys: Register route PUT /api/fruits/:id
+[2017-11-10T23:35:11.816Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-10T23:35:11.816Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:23:06.976Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:23:06.980Z] sys: Register route GET /ping
+[2017-11-11T09:23:06.983Z] sys: Register route GET /api/hello
+[2017-11-11T09:23:06.984Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:23:06.984Z] sys: Register route POST /api/fruits
+[2017-11-11T09:23:06.984Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:23:06.984Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:23:06.985Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:31:09.539Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:31:09.542Z] sys: Register route GET /ping
+[2017-11-11T09:31:09.545Z] sys: Register route GET /api/hello
+[2017-11-11T09:31:09.545Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:31:09.545Z] sys: Register route POST /api/fruits
+[2017-11-11T09:31:09.545Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:31:09.545Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:31:09.546Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:31:39.517Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:31:39.520Z] sys: Register route GET /ping
+[2017-11-11T09:31:39.522Z] sys: Register route GET /api/hello
+[2017-11-11T09:31:39.523Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:31:39.523Z] sys: Register route POST /api/fruits
+[2017-11-11T09:31:39.523Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:31:39.523Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:31:39.523Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:33:28.720Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:33:28.723Z] sys: Register route GET /ping
+[2017-11-11T09:33:28.726Z] sys: Register route GET /api/hello
+[2017-11-11T09:33:28.726Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:33:28.726Z] sys: Register route POST /api/fruits
+[2017-11-11T09:33:28.726Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:33:28.726Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:33:28.727Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:35:11.905Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:35:11.908Z] sys: Register route GET /ping
+[2017-11-11T09:35:11.911Z] sys: Register route GET /api/hello
+[2017-11-11T09:35:11.911Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:35:11.911Z] sys: Register route POST /api/fruits
+[2017-11-11T09:35:11.911Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:35:11.912Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:35:11.912Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:35:48.519Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:35:48.522Z] sys: Register route GET /ping
+[2017-11-11T09:35:48.525Z] sys: Register route GET /api/hello
+[2017-11-11T09:35:48.525Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:35:48.525Z] sys: Register route POST /api/fruits
+[2017-11-11T09:35:48.525Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:35:48.526Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:35:48.526Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:36:59.260Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:36:59.264Z] sys: Register route GET /ping
+[2017-11-11T09:36:59.266Z] sys: Register route GET /api/hello
+[2017-11-11T09:36:59.266Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:36:59.267Z] sys: Register route POST /api/fruits
+[2017-11-11T09:36:59.267Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:36:59.267Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:36:59.267Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:37:49.342Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:37:49.345Z] sys: Register route GET /ping
+[2017-11-11T09:37:49.347Z] sys: Register route GET /api/hello
+[2017-11-11T09:37:49.348Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:37:49.348Z] sys: Register route POST /api/fruits
+[2017-11-11T09:37:49.348Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:37:49.348Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:37:49.348Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T09:41:52.955Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T09:41:52.959Z] sys: Register route GET /ping
+[2017-11-11T09:41:52.961Z] sys: Register route GET /api/hello
+[2017-11-11T09:41:52.962Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T09:41:52.962Z] sys: Register route POST /api/fruits
+[2017-11-11T09:41:52.962Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T09:41:52.962Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T09:41:52.962Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T12:15:26.367Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T12:15:26.371Z] sys: Register route GET /ping
+[2017-11-11T12:15:26.373Z] sys: Register route GET /api/hello
+[2017-11-11T12:15:26.374Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T12:15:26.374Z] sys: Register route POST /api/fruits
+[2017-11-11T12:15:26.374Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T12:15:26.374Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T12:15:26.374Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T12:16:13.709Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T12:16:13.713Z] sys: Register route GET /ping
+[2017-11-11T12:16:13.715Z] sys: Register route GET /api/hello
+[2017-11-11T12:16:13.715Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T12:16:13.715Z] sys: Register route POST /api/fruits
+[2017-11-11T12:16:13.716Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T12:16:13.716Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T12:16:13.716Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T12:21:05.174Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T12:21:05.177Z] sys: Register route GET /ping
+[2017-11-11T12:21:05.180Z] sys: Register route GET /api/hello
+[2017-11-11T12:21:05.180Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T12:21:05.180Z] sys: Register route POST /api/fruits
+[2017-11-11T12:21:05.180Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T12:21:05.180Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T12:21:05.181Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T12:22:10.126Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T12:22:10.129Z] sys: Register route GET /ping
+[2017-11-11T12:22:10.132Z] sys: Register route GET /api/hello
+[2017-11-11T12:22:10.132Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T12:22:10.132Z] sys: Register route POST /api/fruits
+[2017-11-11T12:22:10.132Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T12:22:10.133Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T12:22:10.133Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T12:23:14.045Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T12:23:14.049Z] sys: Register route GET /ping
+[2017-11-11T12:23:14.051Z] sys: Register route GET /api/hello
+[2017-11-11T12:23:14.051Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T12:23:14.052Z] sys: Register route POST /api/fruits
+[2017-11-11T12:23:14.052Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T12:23:14.052Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T12:23:14.052Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:05:53.196Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:05:53.200Z] sys: Register route GET /ping
+[2017-11-11T13:05:53.203Z] sys: Register route GET /api/hello
+[2017-11-11T13:05:53.204Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:05:53.204Z] sys: Register route POST /api/fruits
+[2017-11-11T13:05:53.204Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:05:53.204Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:05:53.205Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:06:54.258Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:06:54.262Z] sys: Register route GET /ping
+[2017-11-11T13:06:54.264Z] sys: Register route GET /api/hello
+[2017-11-11T13:06:54.264Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:06:54.264Z] sys: Register route POST /api/fruits
+[2017-11-11T13:06:54.264Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:06:54.265Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:06:54.265Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:07:29.864Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:07:29.867Z] sys: Register route GET /ping
+[2017-11-11T13:07:29.869Z] sys: Register route GET /api/hello
+[2017-11-11T13:07:29.870Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:07:29.870Z] sys: Register route POST /api/fruits
+[2017-11-11T13:07:29.870Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:07:29.870Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:07:29.870Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:08:25.211Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:08:25.214Z] sys: Register route GET /ping
+[2017-11-11T13:08:25.217Z] sys: Register route GET /api/hello
+[2017-11-11T13:08:25.217Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:08:25.217Z] sys: Register route POST /api/fruits
+[2017-11-11T13:08:25.217Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:08:25.217Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:08:25.218Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:12:03.011Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:12:03.014Z] sys: Register route GET /ping
+[2017-11-11T13:12:03.016Z] sys: Register route GET /api/hello
+[2017-11-11T13:12:03.016Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:12:03.017Z] sys: Register route POST /api/fruits
+[2017-11-11T13:12:03.017Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:12:03.017Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:12:03.017Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:12:36.395Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:12:36.398Z] sys: Register route GET /ping
+[2017-11-11T13:12:36.401Z] sys: Register route GET /api/hello
+[2017-11-11T13:12:36.401Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:12:36.401Z] sys: Register route POST /api/fruits
+[2017-11-11T13:12:36.401Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:12:36.402Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:12:36.402Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:14:46.378Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:14:46.381Z] sys: Register route GET /ping
+[2017-11-11T13:14:46.384Z] sys: Register route GET /api/hello
+[2017-11-11T13:14:46.384Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:14:46.384Z] sys: Register route POST /api/fruits
+[2017-11-11T13:14:46.384Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:14:46.385Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:14:46.385Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:15:49.929Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:15:49.933Z] sys: Register route GET /ping
+[2017-11-11T13:15:49.935Z] sys: Register route GET /api/hello
+[2017-11-11T13:15:49.935Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:15:49.935Z] sys: Register route POST /api/fruits
+[2017-11-11T13:15:49.936Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:15:49.936Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:15:49.936Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:16:43.137Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:16:43.140Z] sys: Register route GET /ping
+[2017-11-11T13:16:43.143Z] sys: Register route GET /api/hello
+[2017-11-11T13:16:43.143Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:16:43.143Z] sys: Register route POST /api/fruits
+[2017-11-11T13:16:43.143Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:16:43.143Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:16:43.144Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:16:58.102Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:16:58.105Z] sys: Register route GET /ping
+[2017-11-11T13:16:58.108Z] sys: Register route GET /api/hello
+[2017-11-11T13:16:58.108Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:16:58.108Z] sys: Register route POST /api/fruits
+[2017-11-11T13:16:58.108Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:16:58.109Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:16:58.109Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:23:12.108Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:23:12.111Z] sys: Register route GET /ping
+[2017-11-11T13:23:12.114Z] sys: Register route GET /api/hello
+[2017-11-11T13:23:12.114Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:23:12.114Z] sys: Register route POST /api/fruits
+[2017-11-11T13:23:12.115Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:23:12.115Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:23:12.115Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:23:55.720Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:23:55.723Z] sys: Register route GET /ping
+[2017-11-11T13:23:55.725Z] sys: Register route GET /api/hello
+[2017-11-11T13:23:55.726Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:23:55.726Z] sys: Register route POST /api/fruits
+[2017-11-11T13:23:55.726Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:23:55.726Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:23:55.726Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:24:27.873Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:24:27.876Z] sys: Register route GET /ping
+[2017-11-11T13:24:27.878Z] sys: Register route GET /api/hello
+[2017-11-11T13:24:27.879Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:24:27.879Z] sys: Register route POST /api/fruits
+[2017-11-11T13:24:27.879Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:24:27.879Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:24:27.879Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:25:43.536Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:25:43.540Z] sys: Register route GET /ping
+[2017-11-11T13:25:43.542Z] sys: Register route GET /api/hello
+[2017-11-11T13:25:43.542Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:25:43.542Z] sys: Register route POST /api/fruits
+[2017-11-11T13:25:43.543Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:25:43.543Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:25:43.543Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:25:55.713Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:25:55.717Z] sys: Register route GET /ping
+[2017-11-11T13:25:55.720Z] sys: Register route GET /api/hello
+[2017-11-11T13:25:55.720Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:25:55.720Z] sys: Register route POST /api/fruits
+[2017-11-11T13:25:55.720Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:25:55.720Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:25:55.721Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:26:12.916Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:26:12.919Z] sys: Register route GET /ping
+[2017-11-11T13:26:12.921Z] sys: Register route GET /api/hello
+[2017-11-11T13:26:12.922Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:26:12.922Z] sys: Register route POST /api/fruits
+[2017-11-11T13:26:12.922Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:26:12.922Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:26:12.922Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:28:43.517Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:28:43.520Z] sys: Register route GET /ping
+[2017-11-11T13:28:43.523Z] sys: Register route GET /api/hello
+[2017-11-11T13:28:43.523Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:28:43.523Z] sys: Register route POST /api/fruits
+[2017-11-11T13:28:43.523Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:28:43.524Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:28:43.524Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:30:45.106Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:30:45.109Z] sys: Register route GET /ping
+[2017-11-11T13:30:45.112Z] sys: Register route GET /api/hello
+[2017-11-11T13:30:45.112Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:30:45.112Z] sys: Register route POST /api/fruits
+[2017-11-11T13:30:45.112Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:30:45.113Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:30:45.113Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T13:34:25.443Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T13:34:25.447Z] sys: Register route GET /ping
+[2017-11-11T13:34:25.449Z] sys: Register route GET /api/hello
+[2017-11-11T13:34:25.449Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T13:34:25.449Z] sys: Register route POST /api/fruits
+[2017-11-11T13:34:25.450Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T13:34:25.450Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T13:34:25.450Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:05:04.592Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:05:04.595Z] sys: Register route GET /ping
+[2017-11-11T14:05:04.597Z] sys: Register route GET /api/hello
+[2017-11-11T14:05:04.598Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:05:04.598Z] sys: Register route POST /api/fruits
+[2017-11-11T14:05:04.598Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:05:04.598Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:05:04.598Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:07:48.281Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:07:48.285Z] sys: Register route GET /ping
+[2017-11-11T14:07:48.288Z] sys: Register route GET /api/hello
+[2017-11-11T14:07:48.288Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:07:48.288Z] sys: Register route POST /api/fruits
+[2017-11-11T14:07:48.289Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:07:48.289Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:07:48.289Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:24:17.649Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:24:17.652Z] sys: Register route GET /ping
+[2017-11-11T14:24:17.654Z] sys: Register route GET /api/hello
+[2017-11-11T14:24:17.655Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:24:17.655Z] sys: Register route POST /api/fruits
+[2017-11-11T14:24:17.655Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:24:17.655Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:24:17.655Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:25:09.978Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:25:09.981Z] sys: Register route GET /ping
+[2017-11-11T14:25:09.983Z] sys: Register route GET /api/hello
+[2017-11-11T14:25:09.984Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:25:09.984Z] sys: Register route POST /api/fruits
+[2017-11-11T14:25:09.984Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:25:09.984Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:25:09.984Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:25:24.866Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:25:24.869Z] sys: Register route GET /ping
+[2017-11-11T14:25:24.871Z] sys: Register route GET /api/hello
+[2017-11-11T14:25:24.871Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:25:24.871Z] sys: Register route POST /api/fruits
+[2017-11-11T14:25:24.872Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:25:24.872Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:25:24.872Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:25:45.240Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:25:45.243Z] sys: Register route GET /ping
+[2017-11-11T14:25:45.246Z] sys: Register route GET /api/hello
+[2017-11-11T14:25:45.246Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:25:45.246Z] sys: Register route POST /api/fruits
+[2017-11-11T14:25:45.246Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:25:45.246Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:25:45.246Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:25:57.383Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:25:57.386Z] sys: Register route GET /ping
+[2017-11-11T14:25:57.389Z] sys: Register route GET /api/hello
+[2017-11-11T14:25:57.389Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:25:57.389Z] sys: Register route POST /api/fruits
+[2017-11-11T14:25:57.389Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:25:57.390Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:25:57.390Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:26:06.582Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:26:06.585Z] sys: Register route GET /ping
+[2017-11-11T14:26:06.587Z] sys: Register route GET /api/hello
+[2017-11-11T14:26:06.588Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:26:06.588Z] sys: Register route POST /api/fruits
+[2017-11-11T14:26:06.588Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:26:06.588Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:26:06.588Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:26:30.048Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:26:30.051Z] sys: Register route GET /ping
+[2017-11-11T14:26:30.053Z] sys: Register route GET /api/hello
+[2017-11-11T14:26:30.054Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:26:30.054Z] sys: Register route POST /api/fruits
+[2017-11-11T14:26:30.054Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:26:30.054Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:26:30.054Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:27:03.605Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:27:03.609Z] sys: Register route GET /ping
+[2017-11-11T14:27:03.611Z] sys: Register route GET /api/hello
+[2017-11-11T14:27:03.612Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:27:03.612Z] sys: Register route POST /api/fruits
+[2017-11-11T14:27:03.612Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:27:03.612Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:27:03.612Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T14:27:35.939Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T14:27:35.944Z] sys: Register route GET /ping
+[2017-11-11T14:27:35.946Z] sys: Register route GET /api/hello
+[2017-11-11T14:27:35.947Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T14:27:35.947Z] sys: Register route POST /api/fruits
+[2017-11-11T14:27:35.947Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T14:27:35.947Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T14:27:35.947Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T17:46:00.893Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T17:46:00.898Z] sys: Register route GET /ping
+[2017-11-11T17:46:00.900Z] sys: Register route GET /api/hello
+[2017-11-11T17:46:00.900Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T17:46:00.901Z] sys: Register route POST /api/fruits
+[2017-11-11T17:46:00.901Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T17:46:00.901Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T17:46:00.901Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T17:47:24.448Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T17:47:24.453Z] sys: Register route GET /ping
+[2017-11-11T17:47:37.560Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T17:47:37.564Z] sys: Register route GET /ping
+[2017-11-11T17:47:37.567Z] sys: Register route GET /api/hello
+[2017-11-11T17:47:37.568Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T17:47:37.569Z] sys: Register route POST /api/fruits
+[2017-11-11T17:47:37.569Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T17:47:37.569Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T17:47:37.569Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T17:50:31.646Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T17:50:31.651Z] sys: Register route GET /ping
+[2017-11-11T17:50:31.653Z] sys: Register route GET /api/hello
+[2017-11-11T17:50:31.653Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T17:50:31.654Z] sys: Register route POST /api/fruits
+[2017-11-11T17:50:31.654Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T17:50:31.654Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T17:50:31.654Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T17:51:49.045Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T17:51:49.049Z] sys: Register route GET /ping
+[2017-11-11T17:51:49.051Z] sys: Register route GET /api/hello
+[2017-11-11T17:51:49.052Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T17:51:49.052Z] sys: Register route POST /api/fruits
+[2017-11-11T17:51:49.052Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T17:51:49.052Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T17:51:49.052Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T17:55:40.922Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T17:55:40.927Z] sys: Register route GET /ping
+[2017-11-11T17:55:40.929Z] sys: Register route GET /api/hello
+[2017-11-11T17:55:40.929Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T17:55:40.930Z] sys: Register route POST /api/fruits
+[2017-11-11T17:55:40.930Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T17:55:40.930Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T17:55:40.930Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T17:59:22.031Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T17:59:22.035Z] sys: Register route GET /ping
+[2017-11-11T17:59:22.038Z] sys: Register route GET /api/hello
+[2017-11-11T17:59:22.038Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T17:59:22.038Z] sys: Register route POST /api/fruits
+[2017-11-11T17:59:22.039Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T17:59:22.039Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T17:59:22.039Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:09:42.572Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:09:42.576Z] sys: Register route GET /ping
+[2017-11-11T18:09:42.579Z] sys: Register route GET /api/hello
+[2017-11-11T18:09:42.579Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:09:42.579Z] sys: Register route POST /api/fruits
+[2017-11-11T18:09:42.580Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:09:42.580Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:09:42.580Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:22:49.225Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:22:49.231Z] sys: Register route GET /ping
+[2017-11-11T18:22:49.234Z] sys: Register route GET /api/hello
+[2017-11-11T18:22:49.234Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:22:49.234Z] sys: Register route POST /api/fruits
+[2017-11-11T18:22:49.234Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:22:49.235Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:22:49.235Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:24:09.250Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:24:09.255Z] sys: Register route GET /ping
+[2017-11-11T18:24:09.257Z] sys: Register route GET /api/hello
+[2017-11-11T18:24:09.258Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:24:09.258Z] sys: Register route POST /api/fruits
+[2017-11-11T18:24:09.258Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:24:09.258Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:24:09.258Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:25:13.396Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:25:13.401Z] sys: Register route GET /ping
+[2017-11-11T18:25:13.403Z] sys: Register route GET /api/hello
+[2017-11-11T18:25:13.404Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:25:13.404Z] sys: Register route POST /api/fruits
+[2017-11-11T18:25:13.404Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:25:13.404Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:25:13.404Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:32:31.995Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:32:31.999Z] sys: Register route GET /ping
+[2017-11-11T18:32:32.002Z] sys: Register route GET /api/hello
+[2017-11-11T18:32:32.002Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:32:32.003Z] sys: Register route POST /api/fruits
+[2017-11-11T18:32:32.003Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:32:32.003Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:32:32.003Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:33:35.876Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:33:35.880Z] sys: Register route GET /ping
+[2017-11-11T18:33:35.883Z] sys: Register route GET /api/hello
+[2017-11-11T18:33:35.883Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:33:35.884Z] sys: Register route POST /api/fruits
+[2017-11-11T18:33:35.884Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:33:35.884Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:33:35.884Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:33:53.191Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:33:53.196Z] sys: Register route GET /ping
+[2017-11-11T18:33:53.199Z] sys: Register route GET /api/hello
+[2017-11-11T18:33:53.199Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:33:53.199Z] sys: Register route POST /api/fruits
+[2017-11-11T18:33:53.199Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:33:53.199Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:33:53.200Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:35:52.346Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:35:52.350Z] sys: Register route GET /ping
+[2017-11-11T18:35:52.353Z] sys: Register route GET /api/hello
+[2017-11-11T18:35:52.353Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:35:52.353Z] sys: Register route POST /api/fruits
+[2017-11-11T18:35:52.353Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:35:52.354Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:35:52.354Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:37:27.491Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:37:27.495Z] sys: Register route GET /ping
+[2017-11-11T18:37:27.497Z] sys: Register route GET /api/hello
+[2017-11-11T18:37:27.498Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:37:27.498Z] sys: Register route POST /api/fruits
+[2017-11-11T18:37:27.498Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:37:27.498Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:37:27.498Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:38:24.008Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:38:24.012Z] sys: Register route GET /ping
+[2017-11-11T18:38:24.014Z] sys: Register route GET /api/hello
+[2017-11-11T18:38:24.015Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:38:24.015Z] sys: Register route POST /api/fruits
+[2017-11-11T18:38:24.015Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:38:24.015Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:38:24.015Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:38:24.624Z] warn: Data are incorrect in model.set() {}
+[2017-11-11T18:38:24.625Z] warn: Validation error [{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"id"},{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"name"}]
+[2017-11-11T18:38:40.255Z] warn: Validation error [{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"id"}]
+[2017-11-11T18:39:30.130Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:39:30.135Z] sys: Register route GET /ping
+[2017-11-11T18:39:30.137Z] sys: Register route GET /api/hello
+[2017-11-11T18:39:30.137Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:39:30.138Z] sys: Register route POST /api/fruits
+[2017-11-11T18:39:30.138Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:39:30.138Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:39:30.138Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:39:33.041Z] warn: Validation error [{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"id"}]
+[2017-11-11T18:40:16.930Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:40:16.935Z] sys: Register route GET /ping
+[2017-11-11T18:40:16.938Z] sys: Register route GET /api/hello
+[2017-11-11T18:40:16.938Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:40:16.939Z] sys: Register route POST /api/fruits
+[2017-11-11T18:40:16.939Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:40:16.939Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:40:16.939Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:42:15.140Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:42:15.144Z] sys: Register route GET /ping
+[2017-11-11T18:42:15.147Z] sys: Register route GET /api/hello
+[2017-11-11T18:42:15.147Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:42:15.147Z] sys: Register route POST /api/fruits
+[2017-11-11T18:42:15.147Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:42:15.148Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:42:15.148Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:48:34.102Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:48:34.106Z] sys: Register route GET /ping
+[2017-11-11T18:48:34.109Z] sys: Register route GET /api/hello
+[2017-11-11T18:48:34.109Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:48:34.109Z] sys: Register route POST /api/fruits
+[2017-11-11T18:48:34.109Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:48:34.110Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:48:34.110Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:48:37.668Z] warn: Data are incorrect in model.set() {}
+[2017-11-11T18:48:37.668Z] warn: Validation error [{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"id"},{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"name"}]
+[2017-11-11T18:48:55.832Z] warn: Data are incorrect in model.set() {}
+[2017-11-11T18:48:55.833Z] warn: Validation error [{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"id"},{"msg":"Property is undefined or null, but it's required","errCode":10,"property":"name"}]
+[2017-11-11T18:52:36.695Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:52:36.700Z] sys: Register route GET /ping
+[2017-11-11T18:52:36.702Z] sys: Register route GET /api/hello
+[2017-11-11T18:52:36.703Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:52:36.703Z] sys: Register route POST /api/fruits
+[2017-11-11T18:52:36.703Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:52:36.703Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:52:36.703Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T18:52:55.955Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T18:52:55.959Z] sys: Register route GET /ping
+[2017-11-11T18:52:55.962Z] sys: Register route GET /api/hello
+[2017-11-11T18:52:55.962Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T18:52:55.962Z] sys: Register route POST /api/fruits
+[2017-11-11T18:52:55.962Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T18:52:55.962Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T18:52:55.963Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T19:14:03.248Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T19:14:03.252Z] sys: Register route GET /ping
+[2017-11-11T19:14:03.255Z] sys: Register route GET /api/hello
+[2017-11-11T19:14:03.255Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T19:14:03.255Z] sys: Register route POST /api/fruits
+[2017-11-11T19:14:03.255Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T19:14:03.255Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T19:14:03.255Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T19:40:40.546Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T19:40:40.551Z] sys: Register route GET /ping
+[2017-11-11T19:40:40.554Z] sys: Register route GET /api/hello
+[2017-11-11T19:40:40.554Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T19:40:40.555Z] sys: Register route POST /api/fruits
+[2017-11-11T19:40:40.555Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T19:40:40.555Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T19:40:40.555Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T19:41:20.167Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T19:41:20.171Z] sys: Register route GET /ping
+[2017-11-11T19:41:20.174Z] sys: Register route GET /api/hello
+[2017-11-11T19:41:20.174Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T19:41:20.174Z] sys: Register route POST /api/fruits
+[2017-11-11T19:41:20.174Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T19:41:20.174Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T19:41:20.175Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T19:41:54.973Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T19:41:54.978Z] sys: Register route GET /ping
+[2017-11-11T19:41:54.980Z] sys: Register route GET /api/hello
+[2017-11-11T19:41:54.980Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T19:41:54.980Z] sys: Register route POST /api/fruits
+[2017-11-11T19:41:54.981Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T19:41:54.981Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T19:41:54.981Z] sys: Register route DELETE /api/fruits/:id
+[2017-11-11T19:42:29.766Z] sys: Listen on port 7448 0.0.0.0
+[2017-11-11T19:42:29.770Z] sys: Register route GET /ping
+[2017-11-11T19:42:29.773Z] sys: Register route GET /api/hello
+[2017-11-11T19:42:29.773Z] sys: Register route GET /api/fruits/:id
+[2017-11-11T19:42:29.773Z] sys: Register route POST /api/fruits
+[2017-11-11T19:42:29.773Z] sys: Register route PUT /api/fruits/:id
+[2017-11-11T19:42:29.774Z] sys: Register route PATCH /api/fruits/:id
+[2017-11-11T19:42:29.774Z] sys: Register route DELETE /api/fruits/:id

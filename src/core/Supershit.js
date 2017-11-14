@@ -32,17 +32,7 @@ try {
 
 class Supershit {
   constructor (conf) {
-    const config = this.config(conf)
-
-    // initialize logger
-    const log = logtopus.getInstance(pkg.name, config.log)
-    log.setLevel(config.log.level)
-    log.sys('Setting loglevel to', config.log.level)
-
-    CoreIO.logLevel = config.debug.level
-    CoreIO.httpPort = config.server.port
-    CoreIO.httpHost = config.server.host
-    CoreIO.errorLevel = API_ERROR_LEVELS[config.apiError.level]
+    this.config(conf)
 
     CoreIO.CoreEvents.on('server:init', this.loadRoutes.bind(this))
   }
@@ -121,14 +111,17 @@ class Supershit {
     if (this.__config) {
       if (customConf) {
         this.__config.merge(customConf)
+        this.configAll()
       }
 
       return this.__config.getConfig()
     }
 
     const conf = new SupershitConfig(customConf)
+    conf.load()
     this.__config = conf
-    return conf.load()
+    this.configAll()
+    return conf
   }
 
   /**
@@ -159,6 +152,23 @@ class Supershit {
   loadRoutes () {
     const routes = superimport.importAll(path.join(__dirname, '../routes/'))
     routes.forEach((r) => r(this))
+  }
+
+  configAll () {
+    const conf = this.__config.getConfig()
+    CoreIO.logLevel = conf.debug.level
+    CoreIO.httpPort = conf.server.port
+    CoreIO.httpHost = conf.server.host
+    CoreIO.errorLevel = API_ERROR_LEVELS[conf.api.errorLevel]
+    CoreIO.prettyPrint = conf.api.pretty
+    CoreIO.showParseTime = conf.api.parseTime
+
+    // initialize logger
+    const log = logtopus.getInstance(pkg.name, conf.log)
+    if (log.__logLevel !== conf.log.level) {
+      log.setLevel(conf.log.level)
+      log.sys('Setting loglevel to', conf.log.level)
+    }
   }
 }
 

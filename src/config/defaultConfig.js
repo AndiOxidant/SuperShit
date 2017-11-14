@@ -14,14 +14,10 @@ const defaultConf = {
   debug: {
     level: 'sys'
   },
-
-  /**
-   * API error output
-   *
-   * @type {Object}
-   */
-  apiError: {
-    level: 'error'
+  api: {
+    errorLevel: 'error',
+    pretty: false,
+    parseTime: false
   },
   pingRoute: {
     enabled: true,
