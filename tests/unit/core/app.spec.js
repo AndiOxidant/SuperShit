@@ -252,7 +252,6 @@ describe('Supershit', () => {
     })
 
     it('has a SupershitModel property', () => {
-      inspect.print(supershit)
       inspect(supershit).hasKey('SupershitModel')
       inspect(supershit.SupershitModel).isClass()
     })
@@ -278,6 +277,41 @@ describe('Supershit', () => {
       inspect(data).isEql({
         foo: 'Foo'
       })
+    })
+  })
+
+  describe('list()', () => {
+    it('returns a SupershitList class', () => {
+      const List = supershit.list('test', {})
+      inspect(List).isFunction()
+    })
+
+    it('has a SupershitList property', () => {
+      inspect(supershit).hasKey('SupershitList')
+      inspect(supershit.SupershitList).isClass()
+    })
+
+    it('instanciates a Supershit listclass', () => {
+      const List = supershit.list('test', {})
+
+      const list = new List()
+      inspect(list).isObject()
+      inspect(list).hasMethod('push')
+      inspect(list).hasMethod('shift')
+    })
+
+    it('instanciates a SupershitList class with preset data', () => {
+      const List = supershit.list('test', {})
+
+      const list = new List({
+        foo: 'Foo'
+      })
+
+      const data = list.toArray()
+      inspect(data).isArray()
+      inspect(data).isEql([{
+        foo: 'Foo'
+      }])
     })
   })
 })

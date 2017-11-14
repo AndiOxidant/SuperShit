@@ -11,6 +11,7 @@ const SupershitConfig = require('./SupershitConfig')
 const SupershitCommand = require('./SupershitCommand')
 const SupershitRouter = require('./SupershitRouter')
 const SupershitModel = require('./SupershitModel')
+const SupershitList = require('./SupershitList')
 const WebBuilder = require('../utils/WebBuilder')
 
 const API_ERROR_LEVELS = {
@@ -121,7 +122,7 @@ class Supershit {
     conf.load()
     this.__config = conf
     this.configAll()
-    return conf
+    return conf.getConfig()
   }
 
   /**
@@ -135,7 +136,7 @@ class Supershit {
   }
 
   /**
-   * Create a SupershitModel
+   * Create a SupershitModel instance
    *
    * @param  {string} name Model name
    * @param  {object} conf Model configuration
@@ -143,6 +144,17 @@ class Supershit {
    */
   model (name, conf) {
     return CoreIO.Model.inherit(name, conf)
+  }
+
+  /**
+   * Create a SupershitList instance
+   *
+   * @param  {string} name List name
+   * @param  {object} conf List configuration
+   * @return {object}      Returns a SupershitList class
+   */
+  list (name, conf) {
+    return CoreIO.List.inherit(name, conf)
   }
 
   resetConfig () {
@@ -174,3 +186,4 @@ class Supershit {
 
 module.exports = Supershit
 module.exports.SupershitModel = SupershitModel
+module.exports.SupershitList = SupershitList
