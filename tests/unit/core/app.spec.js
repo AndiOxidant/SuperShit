@@ -314,4 +314,27 @@ describe('Supershit', () => {
       }])
     })
   })
+
+  describe('service()', () => {
+    it('returns a SupershitService class', () => {
+      const Service = supershit.service('test', {})
+      inspect(Service).isFunction()
+    })
+
+    it('has a SupershitService property', () => {
+      inspect(supershit).hasKey('SupershitService')
+      inspect(supershit.SupershitService).isClass()
+    })
+
+    it('instanciates a Supershit service class', () => {
+      const Service = supershit.service('test', {})
+
+      const service = new Service()
+      inspect(service).isObject()
+      inspect(service).hasMethod('findOne')
+      inspect(service).hasMethod('find')
+      inspect(service).hasMethod('save')
+      inspect(service).hasMethod('update')
+    })
+  })
 })

@@ -12,21 +12,24 @@ const storage = new Map()
 const MapService = supershit.service('mapservice', {
   insert (data) {
     const id = storage.size
+    console.log('SET', id, data)
+    data.id = id
     storage.set(id, data)
     return Promise.resolve({
       id
     })
   },
-  update (data) {
-    const id = data.id
+  update (id, data) {
     storage.set(id, data)
+    console.log('CHANGE', id, data)
     return Promise.resolve({
       id
     })
   },
   findOne (query) {
-    const id = query.id
+    const id = parseInt(query.id, 10)
     const item = storage.get(id)
+    console.log('GET', query, item)
     return Promise.resolve(item)
   }
 })
