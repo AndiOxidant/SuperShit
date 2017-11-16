@@ -4,7 +4,11 @@ supershit.config({
     errorLevel: 'info',
     pretty: true,
     parseTime: true
-  }
+  },
+  log: {
+    level: 'info'
+  },
+  debug: 'info'
 })
 const api = supershit.api('/api')
 
@@ -31,6 +35,15 @@ const MapService = supershit.service('mapservice', {
     const item = storage.get(id)
     console.log('GET', query, item)
     return Promise.resolve(item)
+  },
+  find () {
+    const items = []
+
+    storage.forEach((val) => {
+      items.push(val)
+    })
+
+    return Promise.resolve(items)
   }
 })
 
@@ -41,7 +54,13 @@ const FruitsModel = supershit.model('fruits', {
   }
 })
 
+const FruitsList = supershit.list('fruits', {
+  service: MapService,
+  model: FruitsModel
+})
+
 api.route('/fruits', {
   allow: ['CRUD'],
-  model: FruitsModel
+  model: FruitsModel,
+  list: FruitsList
 })

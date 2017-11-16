@@ -70,10 +70,20 @@ const data = await model.fetch({
 // }
 ```
 
+// fetch a list of items
+
+
 **Insert data:**  
 ```shell
 curl -X POST http://localhost:7448/api/fruits \
  -H "accept: application/json" \
  -H "content-type: application/json" \
  -d '{ "name": "Apple", "type": "fruit" }'
+```
+
+** Read from API **
+
+```shell
+curl -X GET http://localhost:7448/api/1 \
+ -H "accept: application/json"
 ```

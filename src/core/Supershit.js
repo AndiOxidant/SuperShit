@@ -116,7 +116,11 @@ class Supershit {
         this.configAll()
       }
 
-      return this.__config.getConfig()
+      const conf = this.__config.getConfig()
+
+      // initialize logger
+      logtopus.getInstance(pkg.name, conf.log)
+      return conf
     }
 
     const conf = new SupershitConfig(customConf)
@@ -187,9 +191,9 @@ class Supershit {
     CoreIO.prettyPrint = conf.api.pretty
     CoreIO.showParseTime = conf.api.parseTime
 
-    // initialize logger
-    const log = logtopus.getInstance(pkg.name, conf.log)
-    if (log.__logLevel !== conf.log.level) {
+    // TODO reconfigure logger
+    const log = this.logger()
+    if (log.getLevel() !== conf.log.level) {
       log.setLevel(conf.log.level)
       log.sys('Setting loglevel to', conf.log.level)
     }
