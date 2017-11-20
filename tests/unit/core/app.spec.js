@@ -337,4 +337,25 @@ describe('Supershit', () => {
       inspect(service).hasMethod('update')
     })
   })
+
+  describe('page()', () => {
+    beforeEach(() => {
+      supershit.__pages = new Map()
+    })
+
+    it('registers a page', () => {
+      const page = supershit.page('/test')
+      inspect(this.__pages).isInstanceOf(Map)
+      inspect(this.__pages.size).isEql(1)
+      inspect(this.__pages.get('/test')).isEql(page)
+    })
+
+    it('registers a html skeleton under base path', () => {
+
+    })
+
+    it('registers a /app/pages route', () => {
+
+    })
+  })
 })

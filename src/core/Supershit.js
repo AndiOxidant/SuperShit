@@ -13,6 +13,7 @@ const SupershitRouter = require('./SupershitRouter')
 const SupershitModel = require('./SupershitModel')
 const SupershitService = require('./SupershitService')
 const SupershitList = require('./SupershitList')
+const SupershitPage = require('./SupershitPage')
 const WebBuilder = require('../utils/WebBuilder')
 
 const API_ERROR_LEVELS = {
@@ -37,6 +38,8 @@ class Supershit {
     this.config(conf)
 
     CoreIO.CoreEvents.on('server:init', this.loadRoutes.bind(this))
+
+    this.__pages = new Map()
   }
 
   api (mount) {
@@ -46,12 +49,15 @@ class Supershit {
   /**
    * Register a supershit app
    *
+   * **conf**
+   * `title` Set a page title
+   *
    * @method app
    * @static
    * @version 1.0.0
    *
    * @param  {object} conf Custom configuration
-   * @return {[type]}      [description]
+   * @return {object}      Returns a SupershitApp instance
    */
   app (conf) {
     CoreIO.htmlPage('/', {
@@ -60,6 +66,8 @@ class Supershit {
         '/js/bundle.js'
       ]
     })
+
+    // refactor
 
     const nodes = new SupershitNode({
       type: 'root',
@@ -163,6 +171,25 @@ class Supershit {
   }
 
   /**
+   * Registers a page on frontend site
+   *
+   * @method  page
+   * @param   {string} path Page path
+   * @param   {object} conf Page configuration
+   * @returns {object} Returns a SupershitPage instance
+   */
+  page (path, conf) {
+    const page = new SupershitPage(path, conf)
+    const log = this.logger()
+    if (this.__pages.has(page.path)) {
+      log.warn(`Page ${page.path} already registered!`)
+      return
+    }
+
+    this.__pages.add(page.path, page)
+  }
+
+  /**
    * Create a SupershitService instance
    *
    * @param  {string} name List name
@@ -180,6 +207,10 @@ class Supershit {
   loadRoutes () {
     const routes = superimport.importAll(path.join(__dirname, '../routes/'))
     routes.forEach((r) => r(this))
+  }
+
+  registerHtmlPage (path, data, conf) {
+    return CoreIO.htmlPage(path, data, conf)
   }
 
   configAll () {
@@ -201,6 +232,7 @@ class Supershit {
 }
 
 module.exports = Supershit
-module.exports.SupershitModel = SupershitModel
 module.exports.SupershitList = SupershitList
+module.exports.SupershitModel = SupershitModel
+module.exports.SupershitPage = SupershitPage
 module.exports.SupershitService = SupershitService
