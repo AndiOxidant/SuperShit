@@ -70,7 +70,7 @@ const data = await model.fetch({
 // }
 ```
 
-// fetch a list of items
+#### Fetch a list of items
 
 
 **Insert data:**  
@@ -87,3 +87,13 @@ curl -X POST http://localhost:7448/api/fruits \
 curl -X GET http://localhost:7448/api/1 \
  -H "accept: application/json"
 ```
+
+### Methods
+
+#### save()
+#### insert()
+#### update()
+#### findOne()
+#### find()
+#### fetch()
+#### delete()

@@ -1,17 +1,7 @@
-const SupershitModel = require('../core/SupershitModel')
+module.exports = (supershit) => {
+  return supershit.model('appStatsModel', {
+    schema: {
 
-class AppStatsModel extends SupershitModel {
-  constructor (...args) {
-    super(...args)
-
-    this.schema = {
-      uptime: { type: 'number', required: true }
     }
-  }
-
-  init () {
-    this.set('uptime', process.uptime())
-  }
+  })
 }
-
-module.exports = AppStatsModel
