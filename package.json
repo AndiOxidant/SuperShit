@@ -1,6 +1,6 @@
 {
   "name": "supershit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "I peace of awsomeshit which improves your live.",
   "main": "src/app.js",
   "author": "Andi Heinkelein <andifeind@noname-media.com>",
@@ -16,8 +16,8 @@
     "co": "4.6.0",
     "colorfy": "1.0.0",
     "commander": "2.11.0",
-    "coreio": "0.4.0",
-    "eslint": "4.10.0",
+    "coreio": "0.5.0",
+    "eslint": "4.11.0",
     "express-server": "0.7.0",
     "logtopus": "1.0.1",
     "nodemon": "1.12.1",

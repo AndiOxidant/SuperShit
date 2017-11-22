@@ -4,7 +4,7 @@ inspect.useSinon(sinon)
 
 const SupershitPage = require('../../../src/core/SupershitPage')
 
-describe.only('SupershitPage', () => {
+describe('SupershitPage', () => {
   describe('class', () => {
     it('is a class', () => {
       inspect(SupershitPage).isClass()

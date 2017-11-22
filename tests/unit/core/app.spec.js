@@ -338,7 +338,7 @@ describe('Supershit', () => {
     })
   })
 
-  describe('page()', () => {
+  describe.skip('page()', () => {
     beforeEach(() => {
       supershit.__pages = new Map()
     })
