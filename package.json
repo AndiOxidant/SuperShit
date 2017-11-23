@@ -26,6 +26,7 @@
     "superconf": "1.0.1",
     "superfs": "0.7.0",
     "superimport": "1.0.1",
+    "superjoin": "0.5.0",
     "xqcore": "0.14.0"
   },
   "devDependencies": {
@@ -36,7 +37,6 @@
     "mocha": "4.0.1",
     "shell-inspect": "1.1.0",
     "sinon": "4.1.2",
-    "superjoin": "0.5.0"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 1328 tests/unit/**/*.spec.js",
