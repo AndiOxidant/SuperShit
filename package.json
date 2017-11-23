@@ -36,7 +36,7 @@
     "lagoon-reporter": "0.3.4",
     "mocha": "4.0.1",
     "shell-inspect": "1.1.0",
-    "sinon": "4.1.2",
+    "sinon": "4.1.2"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 1328 tests/unit/**/*.spec.js",
