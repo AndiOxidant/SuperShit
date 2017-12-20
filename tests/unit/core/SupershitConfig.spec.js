@@ -22,7 +22,7 @@ describe('SupershitConfig', () => {
     it('loads a json config', () => {
       const conf = new SupershitConfig()
       conf.load('tests/fixtures/config/json')
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         foo: 'bla',
         bar: 'blub',
         log: {
@@ -34,7 +34,7 @@ describe('SupershitConfig', () => {
     it('loads a cson config', () => {
       const conf = new SupershitConfig()
       conf.load('tests/fixtures/config/cson')
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         foo: 'bla',
         bar: 'blub',
         log: {
@@ -46,7 +46,7 @@ describe('SupershitConfig', () => {
     it('loads a yml config', () => {
       const conf = new SupershitConfig()
       conf.load('tests/fixtures/config/yaml')
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         foo: 'bla',
         bar: 'blub',
         log: {
@@ -63,7 +63,7 @@ describe('SupershitConfig', () => {
       })
 
       conf.load('tests/fixtures/config/json')
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         foo: 'bla',
         bar: 'blub',
         log: {
@@ -80,7 +80,7 @@ describe('SupershitConfig', () => {
       })
 
       conf.load('tests/fixtures/config/cson')
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         foo: 'bla',
         bar: 'blub',
         log: {
@@ -97,7 +97,7 @@ describe('SupershitConfig', () => {
       })
 
       conf.load('tests/fixtures/config/yaml')
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         foo: 'bla',
         bar: 'blub',
         log: {
@@ -111,7 +111,7 @@ describe('SupershitConfig', () => {
     it('returns a configuration object', () => {
       const conf = new SupershitConfig()
 
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         server: {
           port: 7448
         }
@@ -125,7 +125,7 @@ describe('SupershitConfig', () => {
         }
       })
 
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         server: {
           port: 1234
         }
@@ -139,7 +139,7 @@ describe('SupershitConfig', () => {
         }
       })
 
-      inspect(conf).hasProps({
+      inspect(conf.__config).hasProps({
         server: {
           port: 7448,
           host: 'http://test.io'

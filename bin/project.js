@@ -1,7 +1,9 @@
 'use strict'
 
 const ProjectManager = require('../src/utils/ProjectManager')
+const NPMUpdate = require('../src/utils/NPMUpdate')
 const colorfy = require('colorfy')
+const async = require('co')
 
 module.exports = (supershit) => {
   return supershit
@@ -14,9 +16,11 @@ module.exports = (supershit) => {
       const cf = colorfy()
       cf.txt('Create new Supershit project').lime(projectName).txt('in dir').grey(projectDir).print()
 
-      ProjectManager.createProject(projectName, projectDir, {
-        overwrite: ctx.overwrite
-      }).then((task) => {
+      return async(function * () {
+        const task = yield ProjectManager.createProject(projectName, projectDir, {
+          overwrite: ctx.overwrite
+        })
+
         for (const fl of task.copiedFiles) {
           const name = fl.isDir ? `${fl.relative}/` : fl.relative
           const type = fl.isDir ? 'dir ' : 'file'
@@ -27,7 +31,13 @@ module.exports = (supershit) => {
           }
         }
 
+        const { npmInstall, npmCheck } = yield NPMUpdate.update(projectDir)
+        cf.grey(npmCheck)
+        cf.grey(npmInstall.stdout)
+
         cf.green('DONE').print()
+
+        return null
       })
     })
 }

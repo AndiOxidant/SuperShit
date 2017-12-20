@@ -146,7 +146,7 @@ describe('Supershit', () => {
   describe('config', () => {
     it('load configs from a config file', () => {
       const config = supershit.config()
-      inspect(config).isInstanceOf(SupershitConfig)
+      inspect(config).isObject()
     })
 
     it('load configs gets cached', () => {
@@ -242,6 +242,120 @@ describe('Supershit', () => {
       inspect(logger).isObject()
       inspect(logger).hasMethod('info')
       inspect(logger).hasMethod('debug')
+    })
+  })
+
+  describe('model()', () => {
+    it('returns a SupershitModel class', () => {
+      const Model = supershit.model('test', {})
+      inspect(Model).isFunction()
+    })
+
+    it('has a SupershitModel property', () => {
+      inspect(supershit).hasKey('SupershitModel')
+      inspect(supershit.SupershitModel).isClass()
+    })
+
+    it('instanciates a Supershit modelclass', () => {
+      const Model = supershit.model('test', {})
+
+      const model = new Model()
+      inspect(model).isObject()
+      inspect(model).hasMethod('get')
+      inspect(model).hasMethod('set')
+    })
+
+    it('instanciates a SupershitModel class with preset data', () => {
+      const Model = supershit.model('test', {})
+
+      const model = new Model({
+        foo: 'Foo'
+      })
+
+      const data = model.get()
+      inspect(data).isObject()
+      inspect(data).isEql({
+        foo: 'Foo'
+      })
+    })
+  })
+
+  describe('list()', () => {
+    it('returns a SupershitList class', () => {
+      const List = supershit.list('test', {})
+      inspect(List).isFunction()
+    })
+
+    it('has a SupershitList property', () => {
+      inspect(supershit).hasKey('SupershitList')
+      inspect(supershit.SupershitList).isClass()
+    })
+
+    it('instanciates a Supershit listclass', () => {
+      const List = supershit.list('test', {})
+
+      const list = new List()
+      inspect(list).isObject()
+      inspect(list).hasMethod('push')
+      inspect(list).hasMethod('shift')
+    })
+
+    it('instanciates a SupershitList class with preset data', () => {
+      const List = supershit.list('test', {})
+
+      const list = new List({
+        foo: 'Foo'
+      })
+
+      const data = list.toArray()
+      inspect(data).isArray()
+      inspect(data).isEql([{
+        foo: 'Foo'
+      }])
+    })
+  })
+
+  describe('service()', () => {
+    it('returns a SupershitService class', () => {
+      const Service = supershit.service('test', {})
+      inspect(Service).isFunction()
+    })
+
+    it('has a SupershitService property', () => {
+      inspect(supershit).hasKey('SupershitService')
+      inspect(supershit.SupershitService).isClass()
+    })
+
+    it('instanciates a Supershit service class', () => {
+      const Service = supershit.service('test', {})
+
+      const service = new Service()
+      inspect(service).isObject()
+      inspect(service).hasMethod('findOne')
+      inspect(service).hasMethod('find')
+      inspect(service).hasMethod('save')
+      inspect(service).hasMethod('update')
+    })
+  })
+
+  describe.skip('page()', () => {
+    beforeEach(() => {
+      supershit.__pages = new Map()
+    })
+
+    it('registers a page', () => {
+      const page = supershit.page('/test')
+      inspect(this.__pages).isInstanceOf(Map)
+      inspect(this.__pages.size).isEql(1)
+      inspect(this.__pages.get('/test')).isEql(page)
+    })
+
+    it('registers a html skeleton under base path', () => {
+
+    })
+
+    it('registers a /app/pages route', () => {
+
     })
   })
 })

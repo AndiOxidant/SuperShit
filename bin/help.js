@@ -66,7 +66,9 @@ module.exports = (supershit) => {
 
         let cmdModules = []
         cmdPaths.forEach((cmdPath) => {
-          const modules = superimport.importAll(cmdPath)
+          const modules = superimport.importAll(cmdPath, {
+            silent: true
+          })
           if (modules) {
             for (const moduleFn of modules) {
               const mod = moduleFn(supershit)

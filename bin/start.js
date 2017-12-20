@@ -37,6 +37,7 @@ module.exports = (supershit) => {
             pm2.disconnect()
             CLITools.printPM2Status(list)
           })
+
           if (err) {
             throw err
           }

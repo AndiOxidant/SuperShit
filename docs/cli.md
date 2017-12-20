@@ -1,7 +1,7 @@
 Supershit CLI
 =============
 
-Supershit has a commandline interface. Run `npm i -g supershit`
+Supershit has a commandline interface. Run `npm i -g supershit` to install supershit CLI globaly
 
 ## Commands
 
@@ -13,11 +13,13 @@ Change into your project root and type `supershit help`
 
 Command | Description
 --------|------------
-`dev` | Start app in devmode. Reloads add everytime when any source file changes
+`dev` | Start app in devmode. Reloads app everytime when any source file changes
 `help` | Shows a list of all available commands
 `project` | Create new supershit project
-`start` | Starts app in cluster mode
-`stop` | Stops a running app
+`start` | Start app in cluster mode
+`restart` | Restart app in cluster mode
+`stop` | Stop a running app
+`status` | Show app status
 
 
 ### Create new project
@@ -36,14 +38,58 @@ Argument | Required | Description
 `projectDir` | - | Project folder
 
 
+### Start app
+
+`supershit start [options]`
+
+Start a supershit-app in clustermode. It spawns 4 instances per default.
+Uses current working dir as project dir.
+
+#### Arguments:
+Argument | Required | Description
+---------|:--------:|------------
+`instances` | - | Start [number] instances
+
+
+### Restart app
+
+`supershit resstart [options]`
+
+Restart a running supershit-app.
+
+#### Arguments:
+This task hasn't got any arguments.
+
+### Stop app
+
+`supershit stop [options]`
+
+Stops a running supershit-app.
+Uses current working dir as project dir.
+
+#### Arguments:
+This task hasn't got any arguments.
+
+
+### Show app status
+
+`supershit status [options]`
+
+Shows status of a current running supershit-app.
+
+#### Arguments:
+This task hasn't got any arguments.
+
+
+
 ## Register own Commands
 
-Its easy to create own CLI tasks. In your project folder is a `bin/` dir for CLI commands.
+Its easy to create own CLI commands. In your project folder is a `bin/` dir for CLI commands.
 The filename should be identical with the command, otherwise Supershit can't find it during a call.
 
 Lets create a `hello` command which prints `Hello World!` on the screen.
 
-**Step 1:** Create a file for the task: `bin/hello.js`
+**Step 1:** Create a file for the task: `touch bin/hello.js`
 
 **Step 2:** Insert the following code:
 
@@ -59,7 +105,7 @@ module.exports = (supershit) => {
 
 **Step 3:** Call in a command line `supershit hello` and you'll see `Hello World!` on your screen.
 
-A call of `supershit.cmd()` registers a CLI task and returns a `SupershitCommand` object. The `.action()` method requires an action function which get called then. The action method has one `ctx` argument followed by all command line arguments. The `ctx` object contains all options.
+A call of `supershit.cmd()` registers a CLI task and returns a `SupershitCommand` object. The `.action()` method requires an action function which get called when the command is called. The action method has one `ctx` argument followed by all command line arguments. The `ctx` object contains all options.
 
 ```js
 module.exports = (supershit) => {
@@ -67,7 +113,7 @@ module.exports = (supershit) => {
     .cmd('hello <name>')
     .option('-l, --lowercase', 'Lowercase the output')
     .action((ctx, name) => {
-      let msg = `Hello ${name}!`
+      const msg = `Hello ${name}!`
       if (ctx.lowercase) {
         console.log(msg.toLowerCase())
       } else {

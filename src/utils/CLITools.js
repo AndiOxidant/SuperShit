@@ -1,5 +1,6 @@
 'use strict'
 
+const cli = require('child_process')
 const CLITable = require('cli-table')
 
 class CLITools {
@@ -23,6 +24,24 @@ class CLITools {
 
     table.push.apply(table, lines)
     console.log(table.toString()) // eslint-disable-line no-console
+  }
+
+  static exec (cmd, opt) {
+    opt = opt || {}
+    return new Promise((resolve, reject) => {
+      let sess
+      const cliOpt = Object.assign({
+        env: process.env
+      }, opt)
+
+      sess = cli.exec(cmd, cliOpt, (err, stdout, stderr) => {
+        if (err) return reject(err)
+        resolve(Object.assign(sess, {
+          stderr,
+          stdout
+        }))
+      })
+    })
   }
 }
 
