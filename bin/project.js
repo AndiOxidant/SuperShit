@@ -8,6 +8,7 @@ const async = require('co')
 module.exports = (supershit) => {
   return supershit
     .cmd('project [name] [projectDir]')
+    .description('Create a Supershit project')
     .option('-o, --overwrite', 'Overwrite existing files')
     .action((ctx, projectName, projectDir) => {
       projectName = ProjectManager.getProjectName(projectName)
