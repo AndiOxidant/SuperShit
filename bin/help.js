@@ -10,7 +10,7 @@ function printModule (mod, indention, verbose) {
   const cf = colorfy()
     .yellow(mod.command)
     .txt(' '.repeat(indention - mod.command.length))
-    .lgrey(mod.description)
+    .lgrey(mod.desc)
 
   if (verbose) {
     cf

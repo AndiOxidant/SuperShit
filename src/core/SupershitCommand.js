@@ -34,7 +34,7 @@ class SupershitCommand {
   }
 
   description (desc) {
-    this.description = desc
+    this.desc = desc
     return this
   }
 
@@ -114,8 +114,8 @@ class SupershitCommand {
 
     const cf = colorfy().nl()
 
-    if (this.description) {
-      cf.txt(this.description).nl(2)
+    if (this.desc) {
+      cf.txt(this.desc).nl(2)
     }
 
     cf.txt('Usage:').llgrey(this.command).grey('[options]').lgrey(this.argsStr || '').nl(2)

@@ -14,15 +14,15 @@
   "dependencies": {
     "cli-table": "0.3.1",
     "co": "4.6.0",
-    "colorfy": "1.0.0",
-    "commander": "2.11.0",
+    "colorfy": "1.1.1",
+    "commander": "2.13.0",
     "coreio": "0.5.0",
-    "eslint": "4.11.0",
+    "eslint": "4.16.0",
     "express-server": "0.7.0",
     "logtopus": "1.0.1",
-    "nodemon": "1.12.1",
-    "npm-check-updates": "2.13.0",
-    "pm2": "2.7.2",
+    "nodemon": "1.14.11",
+    "npm-check-updates": "2.14.0",
+    "pm2": "2.9.1",
     "superconf": "1.0.1",
     "superfs": "0.7.0",
     "superimport": "1.0.1",
@@ -36,7 +36,7 @@
     "lagoon-reporter": "0.3.4",
     "mocha": "4.0.1",
     "shell-inspect": "1.1.0",
-    "sinon": "4.1.2"
+    "sinon": "4.2.0"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 1328 tests/unit/**/*.spec.js",
