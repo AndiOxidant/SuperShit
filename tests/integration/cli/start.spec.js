@@ -9,7 +9,7 @@ const CMD = path.join(__dirname, '../../../bin/supershit')
 const WORKING_DIR = path.join(__dirname, '../../fixtures/')
 const LOGFILE = path.join(WORKING_DIR, 'logs/test.log')
 
-describe.only('CLI', () => {
+describe('CLI', () => {
   before(() => {
     inspect.removeFile(LOGFILE)
   })
@@ -25,7 +25,7 @@ describe.only('CLI', () => {
     })
 
     it('should have started 4 instances', function () {
-      this.retries(100)
+      this.retries(1000)
       inspect(LOGFILE).isFile()
       inspect(inspect.readFile(LOGFILE)).isEql(':T:T:T:T')
     })
