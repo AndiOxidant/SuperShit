@@ -39,7 +39,8 @@
     "sinon": "4.2.0"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 1328 tests/unit/**/*.spec.js",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 10000 tests/unit/**/*.spec.js",
     "test:integration": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 10000 tests/integration/**/*.spec.js",
     "lint": "eslint src/ tests/ bin/ drafts/ examples/ web/"
   },

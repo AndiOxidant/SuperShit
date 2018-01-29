@@ -1,33 +1,11 @@
 #!/usr/bin/env node
-'use strict'
 
 const path = require('path')
-
-const cmdName = process.argv[2] || 'help'
-const superimport = require('superimport')
 const supershit = require('../')
 
-try {
-  const cmdPaths = [
-    path.join(process.cwd(), 'bin'),
-    path.join(__dirname)
-  ]
+const cmdPaths = [
+  path.join(process.cwd(), 'bin'),
+  path.join(__dirname)
+]
 
-  const command = superimport(cmdName + '.js', cmdPaths)(supershit)
-  if (!command) {
-    throw new Error('Supershit comand script does not return a SupershitCommand object!')
-  }
-
-  const actionCall = command.exec(process.argv)
-  if (actionCall && typeof actionCall.then === 'function' && typeof actionCall.catch === 'function') {
-    actionCall.then((ctx) => {
-      // process.exit(0)
-    }).catch((callErr) => {
-      console.error(`Error on cmd call!`, callErr.stack || callErr)
-      process.exit(1)
-    })
-  }
-} catch (err) {
-  console.error(`No ${cmdName} task was defined!`, err.stack)
-  process.exit(1)
-}
+supershit.commandLine(cmdPaths, process.argv)

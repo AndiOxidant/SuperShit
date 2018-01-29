@@ -3,3 +3,4 @@ logs/
 tmp/
 package-lock.json
 tests/fixtures/logs/
+npm-debug.log

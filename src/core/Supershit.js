@@ -1,4 +1,5 @@
 'use strict'
+'use strict'
 
 const path = require('path')
 
@@ -9,6 +10,7 @@ const logtopus = require('logtopus')
 const SupershitNode = require('./SupershitNode')
 const SupershitConfig = require('./SupershitConfig')
 const SupershitCommand = require('./SupershitCommand')
+const SupershitCommandLine = require('./SupershitCommandLine')
 const SupershitRouter = require('./SupershitRouter')
 const SupershitModel = require('./SupershitModel')
 const SupershitService = require('./SupershitService')
@@ -228,6 +230,12 @@ class Supershit {
       log.setLevel(conf.log.level)
       log.sys('Setting loglevel to', conf.log.level)
     }
+  }
+
+  commandLine (cmdPaths, argv) {
+    const cmdln = new SupershitCommandLine(cmdPaths)
+    cmdln.parse(argv)
+    return cmdln
   }
 }
 
