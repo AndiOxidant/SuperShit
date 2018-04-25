@@ -22,6 +22,7 @@ class SupershitConfig {
   constructor (customConf) {
     this.__customConf = customConf || {}
     this.__config = {}
+    this.projectDir = process.cwd()
 
     this.__config = superconf.config({
       dept: 1
@@ -46,7 +47,8 @@ class SupershitConfig {
       opts.cwd = path.resolve(process.cwd(), files)
     }
 
-    const loadedConf = superconf(process.env.NODE_ENV || 'development', opts)
+    const env = process.env.NODE_ENV || 'development'
+    const loadedConf = superconf(env, opts)
     const conf = superconf.config({
       dept: 1
     }).merge(loadedConf || {}, this.__config, this.__customConf)

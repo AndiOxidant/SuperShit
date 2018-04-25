@@ -1,5 +1,6 @@
 const path = require('path')
 const superimport = require('superimport')
+const colorfy = require('colorfy')
 
 class SupershitCommandLine {
   constructor (cmdPaths) {
@@ -28,7 +29,11 @@ class SupershitCommandLine {
         })
       }
     } catch (err) {
-      console.error(`No ${cmdName} task was defined!`, err.stack)
+      if (cmdName === 'help') {
+        this.renderCommands(argv)
+      } else {
+        console.error(`No ${cmdName} task was defined!`, err.stack)
+      }
       process.exit(1)
     }
 
@@ -39,6 +44,36 @@ class SupershitCommandLine {
     const cmdModule = superimport(`${cmdName}.js`, this.cmdPaths)
     const supershit = require('../../')
     return cmdModule(supershit)
+  }
+
+  load (instance) {
+    const cmdModules = superimport.importAll(this.cmdPaths)
+    this.modules = cmdModules.map((cmd) => {
+      return cmd(instance)
+    })
+  }
+
+  renderCommands () {
+    let longest = 0
+    const commands = this.modules.map((m) => {
+      longest = Math.max(longest, m.command.length)
+      return {
+        command: m.command,
+        description: m.desc
+      }
+    })
+
+    const cf = colorfy()
+    cf.txt('Commands:').nl()
+    commands.forEach((c) => {
+      cf
+        .yellow(c.command)
+        .txt(' '.repeat(longest - c.command.length + 2))
+        .lgrey(c.description)
+        .nl()
+    })
+
+    cf.print()
   }
 }
 

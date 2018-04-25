@@ -8,7 +8,6 @@ class NodeParser {
 
   parse () {
     this.loadNodes().then((nodeConf) => {
-      console.log('PARSE NODES', nodeConf)
     }).catch(console.error)
   }
 }

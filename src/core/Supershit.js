@@ -137,7 +137,7 @@ class Supershit {
     conf.load()
     this.__config = conf
     this.configAll()
-    return conf.getConfig()
+    return this.__config.getConfig()
   }
 
   /**
@@ -234,6 +234,7 @@ class Supershit {
 
   commandLine (cmdPaths, argv) {
     const cmdln = new SupershitCommandLine(cmdPaths)
+    cmdln.load(this)
     cmdln.parse(argv)
     return cmdln
   }
