@@ -1,5 +1,7 @@
-const supershit = require('../src/Supershit')
-
-supershit.cmd('example', (cmd) => {
-  console.log('Hello World')
-})
+module.exports = (supershit) => {
+  return supershit
+    .cmd('example')
+    .action((cmd) => {
+      console.log('Hello World')
+    })
+}
