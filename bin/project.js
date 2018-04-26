@@ -11,8 +11,8 @@ module.exports = (supershit) => {
     .description('Create a Supershit project')
     .option('-o, --overwrite', 'Overwrite existing files')
     .action((ctx, projectName, projectDir) => {
-      projectName = ProjectManager.getProjectName(projectName)
       projectDir = ProjectManager.getProjectDir(projectName, projectDir)
+      projectName = ProjectManager.getProjectName(projectName)
 
       const cf = colorfy()
       cf.txt('Create new Supershit project').lime(projectName).txt('in dir').grey(projectDir).print()

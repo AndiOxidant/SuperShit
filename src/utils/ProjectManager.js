@@ -9,7 +9,6 @@ const SuperFS = require('superfs')
 class ProjectManager {
   static getProjectName (projectName) {
     if (!projectName) {
-      console.log()
       return path.basename(process.cwd())
     }
 
