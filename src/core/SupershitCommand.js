@@ -4,6 +4,7 @@ const path = require('path')
 const Commander = require('commander').Command
 const logtopus = require('logtopus')
 const colorfy = require('colorfy')
+const prompt = require('prompt')
 
 const log = logtopus.getLogger('supershit')
 
@@ -12,6 +13,7 @@ class SupershitCommand {
     conf = conf || {}
     this.workingDir = conf.workingDir || process.cwd()
     this.options = []
+    this.questions = []
     this.args = []
 
     if (conf.verbose) {
@@ -70,8 +72,6 @@ class SupershitCommand {
     command.option('-?, --help', 'Output the help page')
     command.parse(argv || process.argv)
 
-    console.log(command)
-
     const ctx = Object.assign({
 
     }, this.getOptions(command))
@@ -88,7 +88,6 @@ class SupershitCommand {
   getOptions (command) {
     const options = {}
     for (const opt of command.options) {
-      console.log(opt)
       const name = opt.long.substr(2).replace(/^no-/, '')
       if (command.hasOwnProperty(name)) {
         options[name] = opt.bool ? true : command[name]
@@ -155,6 +154,35 @@ class SupershitCommand {
     }
 
     cf.print(ctx.color)
+  }
+
+  ask (question) {
+    if (question.allow) {
+      question.pattern = new RegExp(`^${question.allow.join('|')}$`)
+    }
+
+    if (question.type === 'bool') {
+      if (!question.before) {
+        question.type = 'string'
+        question.required = true
+        question.before = (val) => {
+          return !!/^t(rue)?|y(es)?|enabled|on$/i.test(val)
+        }
+      }
+    }
+
+    this.questions.push(question)
+    return this
+  }
+
+  prompt () {
+    return new Promise((resolve, reject) => {
+      prompt.start()
+      prompt.get(this.questions, (err, res) => {
+        if (err) return reject(err)
+        resolve(res)
+      })
+    })
   }
 }
 
