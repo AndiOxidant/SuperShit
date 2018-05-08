@@ -33,7 +33,7 @@ describe('NPMUpdate', () => {
       inspect(npmCheck).isPromise()
       return npmCheck.then((updateable) => {
         inspect(updateable).isEql({
-          coreio: '~0.5.0',
+          coreio: '~0.5.1',
           firetpl: '~0.6.2'
         })
       })
@@ -49,7 +49,7 @@ describe('NPMUpdate', () => {
         const json = inspect.readJSON(path.join(projectDir, 'package.json'))
         inspect(json).hasProps({
           dependencies: {
-            coreio: '~0.5.0',
+            coreio: '~0.5.1',
             firetpl: '~0.6.2'
           }
         })

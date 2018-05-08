@@ -6,7 +6,7 @@ inspect.useSinon(sinon)
 const SupershitCommand = require('../../../src/core/SupershitCommand')
 const SupershitCommandLine = require('../../../src/core/SupershitCommandLine')
 
-describe.only('SupershitCommandLine', () => {
+describe('SupershitCommandLine', () => {
   describe('instance', () => {
     it('creates an instance of SupershitCommandLine', () => {
       inspect(SupershitCommandLine).isClass()

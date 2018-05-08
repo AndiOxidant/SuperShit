@@ -67,7 +67,7 @@ class SupershitCommand {
       command.option(opt[0], opt[1], opt[2])
     }
 
-    command.option('-t, --test [foo]', 'Test CMD')
+    // command.option('-t, --test [foo]', 'Test CMD')
     command.option('-c, --no-color', 'Disable CLI colors')
     command.option('-?, --help', 'Output the help page')
     command.parse(argv || process.argv)

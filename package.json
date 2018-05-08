@@ -42,7 +42,7 @@
   "scripts": {
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 10000 tests/unit/**/*.spec.js",
-    "test:integration": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 10000 tests/integration/**/*.spec.js",
+    "test:integration": "NODE_ENV=test mocha --reporter lagoon-reporter --recursive --timeout 30000 tests/integration/**/*.spec.js",
     "lint": "eslint src/ tests/ bin/ drafts/ examples/ web/"
   },
   "repository": {

@@ -145,21 +145,15 @@ describe('SupershitCommand', () => {
   })
 
   describe('exec()', () => {
-    let origArgv
+    let testArgv
 
     beforeEach(() => {
       // backup orig argv
-      origArgv = process.argv
-      process.argv = [
+      testArgv = [
         process.env._,
         path.join(__dirname, 'bin/supershit'),
         'hello'
       ]
-    })
-
-    afterEach(() => {
-      // restore orig argv
-      process.argv = origArgv
     })
 
     it('executes a command', () => {
@@ -170,7 +164,7 @@ describe('SupershitCommand', () => {
         .cmd('hello')
         .action(actionStub)
 
-      cmd.exec()
+      cmd.exec(testArgv)
       inspect(actionStub).wasCalledOnce()
       inspect(actionStub).wasCalledWith({
         color: true,
@@ -186,8 +180,8 @@ describe('SupershitCommand', () => {
         .cmd('hello <str>')
         .action(actionStub)
 
-      process.argv.push('Hello World!')
-      cmd.exec()
+      testArgv.push('Hello World!')
+      cmd.exec(testArgv)
       inspect(actionStub).wasCalledOnce()
       inspect(actionStub).wasCalledWith({
         color: true,
@@ -204,9 +198,9 @@ describe('SupershitCommand', () => {
         .option('-c, --no-color', 'Disable CLI colors')
         .action(actionStub)
 
-      process.argv.push('-c')
-      process.argv.push('Hello World!')
-      cmd.exec()
+      testArgv.push('-c')
+      testArgv.push('Hello World!')
+      cmd.exec(testArgv)
 
       inspect(actionStub).wasCalledOnce()
       inspect(actionStub).wasCalledWith({

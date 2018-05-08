@@ -21,7 +21,6 @@ describe('CLI', () => {
   describe('project command', () => {
     it('should output a project page', () => {
       return shellInspect
-        .debug()
         .cmd(`${CMD} project test ${PROJECT_DIR}`)
         .test((ctx) => {
           // ctx.print()
