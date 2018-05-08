@@ -18,6 +18,11 @@ class SupershitPage {
 
     return p.join('')
   }
+
+  cmp (cmpName, opts) {
+    const component = new SupershitComponent(cmpName, opts)
+    this.__components.add(component)
+  }
 }
 
 module.exports = SupershitPage

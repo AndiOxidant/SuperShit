@@ -9,7 +9,7 @@ module.exports = (supershit) => {
     title: 'App stats'
   })
 
-  const statsCmp = supershit.cmp('Stats', {
+  const statsCmp = page.cmp('Stats', {
     model: AppStatsModel
   })
 }
