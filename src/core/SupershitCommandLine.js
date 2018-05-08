@@ -47,10 +47,18 @@ class SupershitCommandLine {
   }
 
   load (instance) {
-    const cmdModules = superimport.importAll(this.cmdPaths)
-    this.modules = cmdModules.map((cmd) => {
-      return cmd(instance)
-    })
+    try {
+      const cmdModules = superimport.importAll(this.cmdPaths)
+      this.modules = cmdModules.map((cmd) => {
+        return cmd(instance)
+      })
+    } catch (err) {
+      if (err.code === 'ENOENT') {
+        return []
+      }
+
+      throw err
+    }
   }
 
   renderCommands () {
