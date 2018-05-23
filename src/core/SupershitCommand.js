@@ -4,7 +4,7 @@ const path = require('path')
 const Commander = require('commander').Command
 const logtopus = require('logtopus')
 const colorfy = require('colorfy')
-const prompt = require('prompt')
+const superprompt = require('superprompt')
 
 const log = logtopus.getLogger('supershit')
 
@@ -157,32 +157,12 @@ class SupershitCommand {
   }
 
   ask (question) {
-    if (question.allow) {
-      question.pattern = new RegExp(`^${question.allow.join('|')}$`)
-    }
-
-    if (question.type === 'bool') {
-      if (!question.before) {
-        question.type = 'string'
-        question.required = true
-        question.before = (val) => {
-          return !!/^t(rue)?|y(es)?|enabled|on$/i.test(val)
-        }
-      }
-    }
-
     this.questions.push(question)
     return this
   }
 
   prompt () {
-    return new Promise((resolve, reject) => {
-      prompt.start()
-      prompt.get(this.questions, (err, res) => {
-        if (err) return reject(err)
-        resolve(res)
-      })
-    })
+    return superprompt(this.questions)
   }
 }
 
