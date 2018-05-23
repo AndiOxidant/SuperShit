@@ -168,7 +168,8 @@ describe('SupershitCommand', () => {
       inspect(actionStub).wasCalledOnce()
       inspect(actionStub).wasCalledWith({
         color: true,
-        help: false
+        help: false,
+        questions: []
       })
     })
 
@@ -185,7 +186,8 @@ describe('SupershitCommand', () => {
       inspect(actionStub).wasCalledOnce()
       inspect(actionStub).wasCalledWith({
         color: true,
-        help: false
+        help: false,
+        questions: []
       }, 'Hello World!')
     })
 
@@ -205,7 +207,8 @@ describe('SupershitCommand', () => {
       inspect(actionStub).wasCalledOnce()
       inspect(actionStub).wasCalledWith({
         color: false,
-        help: false
+        help: false,
+        questions: []
       }, 'Hello World!')
     })
   })

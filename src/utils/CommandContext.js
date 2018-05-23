@@ -2,6 +2,7 @@ const superprompt = require('superprompt')
 
 class CommandContext {
   constructor (opts) {
+    Object.assign(this, opts)
     this.questions = []
   }
 
