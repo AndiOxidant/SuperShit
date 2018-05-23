@@ -15,7 +15,7 @@ describe('Supershit', () => {
     let api
 
     beforeEach(() => {
-      sandbox = sinon.sandbox.create()
+      sandbox = sinon.createSandbox()
 
       api = supershit.api('/foo', {
         noServer: true

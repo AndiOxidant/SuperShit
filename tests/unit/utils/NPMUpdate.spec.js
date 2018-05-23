@@ -28,7 +28,7 @@ describe('NPMUpdate', () => {
       }
     })
 
-    sandbox = sinon.sandbox.create()
+    sandbox = sinon.createSandbox()
     runStub = sandbox.stub(ncu, 'run')
     runStub.returns(Promise.resolve({
       coreio: '~0.2.3',
@@ -66,7 +66,7 @@ describe('NPMUpdate', () => {
     let sandbox
 
     beforeEach(() => {
-      sandbox = sinon.sandbox.create()
+      sandbox = sinon.createSandbox()
       execStub = sandbox.stub(childProcess, 'exec')
       execStub.yieldsAsync(null, 'NPM UPDATE', '')
       execStub.returns({
