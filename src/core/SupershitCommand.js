@@ -1,10 +1,8 @@
-'use strict'
-
 const path = require('path')
+const CommandContext = require('../utils/CommandContext')
 const Commander = require('commander').Command
 const logtopus = require('logtopus')
 const colorfy = require('colorfy')
-const superprompt = require('superprompt')
 
 const log = logtopus.getLogger('supershit')
 
@@ -13,7 +11,6 @@ class SupershitCommand {
     conf = conf || {}
     this.workingDir = conf.workingDir || process.cwd()
     this.options = []
-    this.questions = []
     this.args = []
 
     if (conf.verbose) {
@@ -72,9 +69,7 @@ class SupershitCommand {
     command.option('-?, --help', 'Output the help page')
     command.parse(argv || process.argv)
 
-    const ctx = Object.assign({
-
-    }, this.getOptions(command))
+    const ctx = new CommandContext(this.getOptions(command))
 
     if (ctx.help) {
       this.printHelp(command, ctx)
@@ -154,15 +149,6 @@ class SupershitCommand {
     }
 
     cf.print(ctx.color)
-  }
-
-  ask (question) {
-    this.questions.push(question)
-    return this
-  }
-
-  prompt () {
-    return superprompt(this.questions)
   }
 }
 

@@ -33,7 +33,7 @@ function printHeader () {
     .txt('                               |_|')
     .nl()
     .nl()
-    .txt('Usage: supershit')
+    .txt('Usage: supershit ')
     .grey('<command> [options] ')
     .nl(2)
     .txt('Commands:')
@@ -44,7 +44,7 @@ function printHeader () {
 function printFooter () {
   colorfy()
     .nl(2)
-    .txt('Powered by Supershit')
+    .txt('Powered by Supershit ')
     .lime(`v${pkg.version}`)
     .nl()
     .print()
@@ -67,8 +67,10 @@ module.exports = (supershit) => {
         let cmdModules = []
         cmdPaths.forEach((cmdPath) => {
           const modules = superimport.importAll(cmdPath, {
-            silent: true
+            silent: true,
+            recursive: true
           })
+
           if (modules) {
             for (const moduleFn of modules) {
               const mod = moduleFn(supershit)
