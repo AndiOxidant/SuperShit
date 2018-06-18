@@ -43,13 +43,17 @@ class SupershitCommandLine {
   import (cmdName) {
     const cmdModule = superimport(`${cmdName}.js`, this.cmdPaths)
     const supershit = require('../../')
-    return cmdModule(supershit)
+    return cmdModule.__esModule ? cmdModule.default(supershit) : cmdModule(supershit)
   }
 
   load (instance) {
     try {
       const cmdModules = superimport.importAll(this.cmdPaths)
       this.modules = cmdModules.map((cmd) => {
+        if (cmd.__esModule) {
+          return cmd.default(instance)
+        }
+
         return cmd(instance)
       })
     } catch (err) {
