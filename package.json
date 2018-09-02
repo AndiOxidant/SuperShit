@@ -16,7 +16,7 @@
     "co": "4.6.0",
     "colorfy": "2.0.2",
     "commander": "2.17.1",
-    "coreio": "0.5.1",
+    "coreio": "0.5.2",
     "eslint": "5.5.0",
     "express-server": "0.7.0",
     "logtopus": "1.0.2",
